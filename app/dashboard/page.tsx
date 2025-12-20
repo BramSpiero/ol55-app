@@ -6,6 +6,7 @@ import { calculatePaceInfo, getStatusColor, getStatusBgColor, getStatusLabel } f
 import Link from 'next/link'
 import AppShell from '@/components/layout/AppShell'
 import DashboardClient from './DashboardClient'
+import DebugMenu from '@/components/debug/DebugMenu'
 
 export default async function DashboardPage() {
   const supabase = createClient()
@@ -206,9 +207,14 @@ export default async function DashboardPage() {
           </div>
         )}
 
-        {/* Version indicator */}
-        <div className="text-center mt-8 mb-4">
-          <span className="text-xs text-midnight-400">v0.7.0</span>
+        {/* Version and debug */}
+        <div className="flex items-center justify-center gap-4 mt-8 mb-4">
+          <span className="text-xs text-midnight-400">v0.8.0</span>
+          <DebugMenu 
+            userId={user.id} 
+            currentWeek={currentWeek} 
+            currentDay={currentDay} 
+          />
         </div>
       </div>
     </AppShell>

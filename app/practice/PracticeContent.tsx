@@ -14,8 +14,11 @@ interface PracticeContentProps {
   dayContent: DayContent | undefined
   currentWeek: number
   currentDay: number
+  progressWeek: number
+  progressDay: number
   todaysPractice: any
   userId: string
+  isReviewMode: boolean
 }
 
 export default function PracticeContent({
@@ -24,8 +27,11 @@ export default function PracticeContent({
   dayContent,
   currentWeek,
   currentDay,
+  progressWeek,
+  progressDay,
   todaysPractice,
-  userId
+  userId,
+  isReviewMode
 }: PracticeContentProps) {
   const router = useRouter()
   const supabase = createClient()
@@ -36,79 +42,105 @@ export default function PracticeContent({
   const [showComplete, setShowComplete] = useState(false)
   const [showContinue, setShowContinue] = useState(false)
 
-  const practiceComplete = todaysPractice?.completed || false
+  // In review mode, we don't track completion status the same way
+  const practiceComplete = !isReviewMode && (todaysPractice?.completed || false)
 
   const handleComplete = async () => {
     setCompleting(true)
-    const today = new Date().toISOString().split('T')[0]
+    
+    // Only update progress if NOT in review mode
+    if (!isReviewMode) {
+      const today = new Date().toISOString().split('T')[0]
 
-    // Log the practice
-    const { error: logError } = await supabase
-      .from('practice_logs')
-      .upsert({
-        user_id: userId,
-        practice_date: today,
-        week_number: currentWeek,
-        day_number: currentDay,
-        completed: true,
-        difficulty_rating: difficulty,
-        notes: notes || null
-      }, {
-        onConflict: 'user_id,practice_date'
-      })
-
-    if (logError) {
-      console.error('Error logging practice:', logError)
-      setCompleting(false)
-      return
-    }
-
-    // Calculate next position
-    let nextWeek = currentWeek
-    let nextDay = currentDay + 1
-    let nextPhase = Math.ceil(nextWeek / 8)
-
-    if (nextDay > 7) {
-      nextDay = 1
-      nextWeek += 1
-      nextPhase = Math.ceil(nextWeek / 8)
-    }
-
-    // Calculate days completed (curriculum days, not calendar days)
-    const newDaysCompleted = ((nextWeek - 1) * 7) + (nextDay - 1)
-
-    if (nextWeek <= 48) {
-      const { error: progressError } = await supabase
-        .from('progress')
-        .update({
-          current_week: nextWeek,
-          current_day: nextDay,
-          phase: nextPhase,
-          days_completed: newDaysCompleted
+      // Log the practice
+      const { error: logError } = await supabase
+        .from('practice_logs')
+        .upsert({
+          user_id: userId,
+          practice_date: today,
+          week_number: currentWeek,
+          day_number: currentDay,
+          completed: true,
+          difficulty_rating: difficulty,
+          notes: notes || null
+        }, {
+          onConflict: 'user_id,practice_date'
         })
-        .eq('user_id', userId)
 
-      if (progressError) {
-        console.error('Error updating progress:', progressError)
+      if (logError) {
+        console.error('Error logging practice:', logError)
+        setCompleting(false)
+        return
+      }
+
+      // Calculate next position
+      let nextWeek = currentWeek
+      let nextDay = currentDay + 1
+      let nextPhase = Math.ceil(nextWeek / 8)
+
+      if (nextDay > 7) {
+        nextDay = 1
+        nextWeek += 1
+        nextPhase = Math.ceil(nextWeek / 8)
+      }
+
+      // Calculate days completed (curriculum days, not calendar days)
+      const newDaysCompleted = ((nextWeek - 1) * 7) + (nextDay - 1)
+
+      if (nextWeek <= 48) {
+        const { error: progressError } = await supabase
+          .from('progress')
+          .update({
+            current_week: nextWeek,
+            current_day: nextDay,
+            phase: nextPhase,
+            days_completed: newDaysCompleted
+          })
+          .eq('user_id', userId)
+
+        if (progressError) {
+          console.error('Error updating progress:', progressError)
+        }
       }
     }
 
-    // Show continue option instead of redirecting
+    // Show continue option
     setShowContinue(true)
     setCompleting(false)
   }
 
   const handleContinue = () => {
-    router.refresh()
-    setShowComplete(false)
-    setShowContinue(false)
-    setDifficulty(3)
-    setNotes('')
+    // Calculate next lesson in sequence (whether reviewing or progressing)
+    let nextWeek = currentWeek
+    let nextDay = currentDay + 1
+
+    if (nextDay > 7) {
+      nextDay = 1
+      nextWeek += 1
+    }
+
+    // Navigate to the next lesson
+    if (nextWeek <= 48) {
+      if (isReviewMode) {
+        // Stay in review mode, go to next lesson in the reviewed sequence
+        router.push(`/practice?week=${nextWeek}&day=${nextDay}`)
+      } else {
+        // Go to current progress (which was just updated)
+        router.push('/practice?t=' + Date.now())
+      }
+    } else {
+      // Curriculum complete!
+      router.push('/dashboard')
+    }
   }
 
   const handleFinishForToday = () => {
     router.push('/dashboard')
-    router.refresh()
+  }
+
+  const handleBackToProgress = () => {
+    // Exit review mode, go back to current progress
+    router.push('/practice')
   }
 
   if (!dayContent) {
@@ -128,6 +160,23 @@ export default function PracticeContent({
 
   return (
     <AppShell displayName={profile?.display_name}>
+      {/* Review mode banner */}
+      {isReviewMode && (
+        <div className="bg-blue-50 border-b border-blue-200 px-4 py-2">
+          <div className="max-w-4xl mx-auto flex items-center justify-between">
+            <span className="text-xs md:text-sm text-blue-700">
+              📖 Reviewing Week {currentWeek}, Day {currentDay}
+            </span>
+            <button
+              onClick={handleBackToProgress}
+              className="text-xs md:text-sm text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Back to Week {progressWeek}, Day {progressDay} →
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Subheader */}
       <div className="bg-white border-b border-midnight-100 px-4 py-2 sticky top-[57px] z-30 md:hidden">
         <div className="text-xs text-midnight-500 text-center">
@@ -321,29 +370,37 @@ export default function PracticeContent({
         )}
 
         {showContinue && (
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 md:p-6">
+          <div className={`${isReviewMode ? 'bg-blue-50 border-blue-200' : 'bg-green-50 border-green-200'} border rounded-xl p-4 md:p-6`}>
             <div className="text-center mb-6">
-              <div className="text-3xl md:text-4xl mb-3">✓</div>
-              <h2 className="font-semibold text-green-800 mb-2 text-base md:text-lg">
-                Day {currentDay} complete!
+              <div className="text-3xl md:text-4xl mb-3">{isReviewMode ? '📖' : '✓'}</div>
+              <h2 className={`font-semibold mb-2 text-base md:text-lg ${isReviewMode ? 'text-blue-800' : 'text-green-800'}`}>
+                {isReviewMode ? 'Review complete!' : `Day ${currentDay} complete!`}
               </h2>
-              <p className="text-green-700 text-sm md:text-base">
-                Great work. Want to keep going?
+              <p className={`text-sm md:text-base ${isReviewMode ? 'text-blue-700' : 'text-green-700'}`}>
+                {isReviewMode ? 'Continue reviewing or go back to your current lesson?' : 'Great work. Want to keep going?'}
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                onClick={handleFinishForToday}
-                className="flex-1 px-6 py-3 border border-green-300 text-green-700 hover:bg-green-100 rounded-lg font-medium transition-colors min-h-[48px]"
+                onClick={isReviewMode ? handleBackToProgress : handleFinishForToday}
+                className={`flex-1 px-6 py-3 border rounded-lg font-medium transition-colors min-h-[48px] ${
+                  isReviewMode 
+                    ? 'border-blue-300 text-blue-700 hover:bg-blue-100' 
+                    : 'border-green-300 text-green-700 hover:bg-green-100'
+                }`}
               >
-                Done for today
+                {isReviewMode ? `Back to Week ${progressWeek}, Day ${progressDay}` : 'Done for today'}
               </button>
               <button
                 onClick={handleContinue}
-                className="flex-1 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors min-h-[48px]"
+                className={`flex-1 px-6 py-3 text-white font-semibold rounded-lg transition-colors min-h-[48px] ${
+                  isReviewMode 
+                    ? 'bg-blue-600 hover:bg-blue-700' 
+                    : 'bg-green-600 hover:bg-green-700'
+                }`}
               >
-                Continue to Day {currentDay < 7 ? currentDay + 1 : 1} →
+                Continue to {currentDay < 7 ? `Day ${currentDay + 1}` : `Week ${currentWeek + 1}`} →
               </button>
             </div>
           </div>
