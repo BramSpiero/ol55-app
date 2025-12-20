@@ -34,13 +34,15 @@ export default async function PracticePage() {
   const weekContent = getWeek(currentWeek)
   const dayContent = getDay(currentWeek, currentDay)
 
-  // Get today's practice status
+  // Get today's practice status - check if THIS specific day was completed today
   const today = new Date().toISOString().split('T')[0]
   const { data: todaysPractice } = await supabase
     .from('practice_logs')
     .select('*')
     .eq('user_id', user.id)
     .eq('practice_date', today)
+    .eq('week_number', currentWeek)
+    .eq('day_number', currentDay)
     .single()
 
   return (
