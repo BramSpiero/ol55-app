@@ -129,24 +129,24 @@ export default function PracticeContent({
     if (nextWeek <= 48) {
       if (isReviewMode) {
         // Stay in review mode, go to next lesson in the reviewed sequence
-        router.push(`/practice?week=${nextWeek}&day=${nextDay}`)
+        window.location.href = `/practice?week=${nextWeek}&day=${nextDay}`
       } else {
-        // Go to current progress (which was just updated)
-        router.push('/practice?t=' + Date.now())
+        // Hard navigation to force server re-fetch with updated progress
+        window.location.href = '/practice'
       }
     } else {
       // Curriculum complete!
-      router.push('/dashboard')
+      window.location.href = '/dashboard'
     }
   }
 
   const handleFinishForToday = () => {
-    router.push('/dashboard')
+    window.location.href = '/dashboard'
   }
 
   const handleBackToProgress = () => {
     // Exit review mode, go back to current progress
-    router.push('/practice')
+    window.location.href = '/practice'
   }
 
   if (!dayContent) {

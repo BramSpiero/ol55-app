@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 
 interface DebugMenuProps {
@@ -15,7 +14,6 @@ export default function DebugMenu({ userId, currentWeek, currentDay }: DebugMenu
   const [isResetting, setIsResetting] = useState(false)
   const [jumpWeek, setJumpWeek] = useState(currentWeek)
   const [jumpDay, setJumpDay] = useState(currentDay)
-  const router = useRouter()
   const supabase = createClient()
 
   const handleResetProgress = async () => {
@@ -44,7 +42,7 @@ export default function DebugMenu({ userId, currentWeek, currentDay }: DebugMenu
         .delete()
         .eq('user_id', userId)
       
-      router.refresh()
+      window.location.reload()
     }
     
     setIsResetting(false)
@@ -74,7 +72,7 @@ export default function DebugMenu({ userId, currentWeek, currentDay }: DebugMenu
       console.error('Jump error:', error)
       alert('Failed to update progress')
     } else {
-      router.refresh()
+      window.location.reload()
     }
     
     setIsOpen(false)
