@@ -7,15 +7,23 @@
   --background-rgb: 253, 248, 243;
 }
 
-/* Prevent horizontal overflow */
-html, body {
+/* Prevent horizontal overflow - aggressive */
+html {
   overflow-x: hidden;
-  max-width: 100vw;
+  scroll-behavior: smooth;
 }
 
 body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+/* Ensure all containers respect viewport */
+*, *::before, *::after {
+  max-width: 100vw;
 }
 
 /* Safe area for iOS */
@@ -27,6 +35,7 @@ body {
 .abcjs-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .abcjs-container svg {
@@ -50,11 +59,6 @@ button {
   user-select: none;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Hide scrollbar on mobile nav area */
 .hide-scrollbar {
   -ms-overflow-style: none;
@@ -64,7 +68,12 @@ html {
   display: none;
 }
 
-/* Constrain content */
-.max-w-screen {
+/* Content constraint class */
+.content-container {
+  width: 100%;
   max-width: 100vw;
+  overflow-x: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }

@@ -47,6 +47,10 @@ Play all the C's from lowest to highest. Then highest to lowest. Notice how they
         'Understand why these notes matter for our song'
       ],
       content: `D is between the two black keys in the group of 2. G is between the second and third black keys in the group of 3. These are critical: "Ol' 55" is in D major, and the main chords are D, G, and A. Today we lock in D and G.`,
+      keyboardDiagram: {
+        highlightNotes: ['D', 'G'],
+        title: 'Find D and G on the keyboard'
+      },
       exercises: [
         {
           id: exerciseId(1, 2, 1),
@@ -87,6 +91,10 @@ G,, G, G g g'|]`,
         'Start building keyboard geography muscle memory'
       ],
       content: `Now we connect the dots. You should be able to put your finger on any C, D, or G instantly. This is your internal GPS for the keyboard.`,
+      keyboardDiagram: {
+        highlightNotes: ['C', 'D', 'G'],
+        title: 'Your landmark notes: C, D, and G'
+      },
       exercises: [
         {
           id: exerciseId(1, 3, 1),

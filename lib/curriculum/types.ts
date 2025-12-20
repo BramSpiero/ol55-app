@@ -8,6 +8,13 @@ export interface Exercise {
   common_mistakes: string[]
 }
 
+export interface KeyboardDiagramConfig {
+  highlightNotes: string[]
+  title?: string
+  startOctave?: number
+  octaves?: number
+}
+
 export interface DayContent {
   day_number: number
   type: 'info_dump' | 'practice' | 'review'
@@ -16,6 +23,7 @@ export interface DayContent {
   content: string
   exercises: Exercise[]
   checkpoint_criteria?: string[]
+  keyboardDiagram?: KeyboardDiagramConfig
 }
 
 export interface WeekContent {

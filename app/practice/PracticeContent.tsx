@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import ABCRenderer from '@/components/music/ABCRenderer'
+import KeyboardDiagram from '@/components/music/KeyboardDiagram'
 import AppShell from '@/components/layout/AppShell'
 import type { WeekContent, DayContent } from '@/lib/curriculum/types'
 
@@ -52,7 +53,7 @@ export default function PracticeContent({
     if (!isReviewMode) {
       const today = new Date().toISOString().split('T')[0]
 
-      // Log the practice
+      // Log the practice - use insert with upsert behavior
       const { error: logError } = await supabase
         .from('practice_logs')
         .upsert({
@@ -64,11 +65,13 @@ export default function PracticeContent({
           difficulty_rating: difficulty,
           notes: notes || null
         }, {
-          onConflict: 'user_id,practice_date'
+          onConflict: 'user_id,practice_date',
+          ignoreDuplicates: false
         })
 
       if (logError) {
         console.error('Error logging practice:', logError)
+        alert('Error saving progress: ' + logError.message)
         setCompleting(false)
         return
       }
@@ -100,6 +103,9 @@ export default function PracticeContent({
 
         if (progressError) {
           console.error('Error updating progress:', progressError)
+          alert('Error updating progress: ' + progressError.message)
+        } else {
+          console.log('Progress updated to W' + nextWeek + 'D' + nextDay)
         }
       }
     }
@@ -227,6 +233,18 @@ export default function PracticeContent({
             ))}
           </div>
         </div>
+
+        {/* Keyboard Diagram */}
+        {dayContent.keyboardDiagram && (
+          <div className="mb-4 md:mb-6">
+            <KeyboardDiagram
+              highlightNotes={dayContent.keyboardDiagram.highlightNotes}
+              title={dayContent.keyboardDiagram.title}
+              startOctave={dayContent.keyboardDiagram.startOctave || 3}
+              octaves={dayContent.keyboardDiagram.octaves || 2}
+            />
+          </div>
+        )}
 
         {/* Exercises */}
         {dayContent.exercises.length > 0 && (
