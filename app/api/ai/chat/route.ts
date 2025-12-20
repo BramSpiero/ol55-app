@@ -3,6 +3,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import { createClient } from '@/lib/supabase/server'
 import { buildSystemPrompt } from '@/lib/ai/prompts'
 import { getWeek, getDay } from '@/lib/curriculum/data'
+import { calculatePaceInfo } from '@/lib/pace/calculations'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY!,
@@ -46,11 +47,20 @@ export async function POST(request: NextRequest) {
     const currentWeek = progress?.current_week || 1
     const currentDay = progress?.current_day || 1
     const currentPhase = progress?.phase || 1
+    const daysCompleted = progress?.days_completed || ((currentWeek - 1) * 7) + (currentDay - 1)
 
     const weekContent = getWeek(currentWeek)
     const dayContent = getDay(currentWeek, currentDay)
 
-    // Build system prompt
+    // Calculate pace info
+    const startDate = profile?.start_date ? new Date(profile.start_date) : new Date()
+    const targetEndDate = profile?.target_end_date 
+      ? new Date(profile.target_end_date) 
+      : new Date(startDate.getTime() + 365 * 24 * 60 * 60 * 1000)
+    
+    const paceInfo = calculatePaceInfo(startDate, targetEndDate, daysCompleted)
+
+    // Build system prompt with pace awareness
     const systemPrompt = buildSystemPrompt({
       displayName: profile?.display_name || 'Student',
       musicalBackground: profile?.musical_background || 'none',
@@ -59,7 +69,8 @@ export async function POST(request: NextRequest) {
       currentDay,
       phase: currentPhase,
       weekContent,
-      dayContent
+      dayContent,
+      paceInfo
     })
 
     // Build messages array

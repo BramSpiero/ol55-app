@@ -12,6 +12,11 @@ body {
   background: rgb(var(--background-rgb));
 }
 
+/* Safe area for iOS */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 /* ABC.js notation styling */
 .abcjs-container svg {
   max-width: 100%;
@@ -21,4 +26,29 @@ body {
 .abcjs-cursor {
   stroke: #d47d42;
   stroke-width: 2;
+}
+
+/* Touch-friendly tap targets */
+button, a {
+  min-height: 44px;
+}
+
+/* Prevent text selection on buttons */
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar on mobile nav area */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

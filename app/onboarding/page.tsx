@@ -38,6 +38,11 @@ export default function OnboardingPage() {
       return
     }
 
+    // Calculate target end date (1 year from start)
+    const startDate = new Date(formData.start_date)
+    const targetEndDate = new Date(startDate)
+    targetEndDate.setFullYear(targetEndDate.getFullYear() + 1)
+
     const { error } = await supabase
       .from('profiles')
       .update({
@@ -46,6 +51,7 @@ export default function OnboardingPage() {
         equipment: formData.equipment,
         practice_time_preference: formData.practice_time_preference,
         start_date: formData.start_date,
+        target_end_date: targetEndDate.toISOString().split('T')[0],
         onboarding_completed: true
       })
       .eq('id', user.id)

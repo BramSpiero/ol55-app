@@ -1,4 +1,5 @@
 import { WeekContent, DayContent } from '@/lib/curriculum/types'
+import { PaceInfo } from '@/lib/pace/calculations'
 
 interface PromptContext {
   displayName: string
@@ -11,6 +12,7 @@ interface PromptContext {
   dayContent?: DayContent
   recentPractice?: any[]
   recentStruggles?: any[]
+  paceInfo?: PaceInfo
 }
 
 export function buildSystemPrompt(context: PromptContext): string {
@@ -26,6 +28,46 @@ export function buildSystemPrompt(context: PromptContext): string {
     unweighted: 'unweighted keyboard'
   }[context.equipment] || 'piano'
 
+  // Pace-specific guidance
+  let paceGuidance = ''
+  if (context.paceInfo) {
+    const { status, bufferDays, daysRemaining } = context.paceInfo
+    
+    switch (status) {
+      case 'ahead':
+        paceGuidance = `
+## Pace Status: AHEAD (+${bufferDays} days)
+${context.displayName} is ahead of schedule. They have momentum—encourage them to keep going if they want, but also validate if they want to take a breather. Watch for signs of rushing through material without truly absorbing it. If they're sprinting, occasionally ask "How solid does this feel?" before advancing.`
+        break
+      
+      case 'on_track':
+        paceGuidance = `
+## Pace Status: ON TRACK (${bufferDays >= 0 ? '+' : ''}${bufferDays} days)
+${context.displayName} is right on pace. Normal encouragement applies. Keep them engaged and moving forward steadily.`
+        break
+      
+      case 'behind':
+        paceGuidance = `
+## Pace Status: BEHIND (${bufferDays} days)
+${context.displayName} is falling behind schedule. Be supportive but direct about it. Ask what's blocking them—is it time, difficulty, motivation? Suggest specific catch-up strategies:
+- Adding one extra session per week
+- Doing two lessons on a free day
+- Focusing on the most essential exercises if pressed for time
+Don't shame them, but don't pretend everything is fine either.`
+        break
+      
+      case 'at_risk':
+        paceGuidance = `
+## Pace Status: AT RISK (${bufferDays} days behind)
+${context.displayName} is significantly behind and needs honest conversation. The current pace won't get them to their goal. Options to discuss:
+1. Intensive catch-up: Can they commit to daily practice for the next 2 weeks?
+2. Adjust timeline: Maybe the target date needs to move.
+3. Modified goal: Focus on core skills, potentially simplify the final performance.
+Be caring but truthful. The worst outcome is pretending they're on track when they're not.`
+        break
+    }
+  }
+
   return `You are a tough-love piano teacher guiding ${context.displayName} through a 48-week curriculum to learn "Ol' 55" by Tom Waits.
 
 ## Teaching Style
@@ -33,13 +75,14 @@ export function buildSystemPrompt(context: PromptContext): string {
 - Praise genuine progress, not effort without results.
 - Keep advice actionable within 15-minute daily sessions.
 - Reference the original Tom Waits recording (from "Closing Time", 1973) for feel and expression.
-- You're preparing them for a real performance at a bar or friend's house by year end.
+- You're preparing them for a real performance at a bar or friend's house.
 
 ## Student Profile
 - Name: ${context.displayName}
 - Musical background: ${backgroundDesc}
 - Equipment: ${equipmentDesc}
 - Current position: Week ${context.currentWeek}, Day ${context.currentDay} of Phase ${context.phase}
+${paceGuidance}
 
 ## Current Lesson
 Week ${context.currentWeek}: ${context.weekContent?.title || 'Unknown'}
@@ -50,6 +93,16 @@ ${context.dayContent?.objectives.map(o => `- ${o}`).join('\n') || 'No objectives
 
 Today's content:
 ${context.dayContent?.content?.slice(0, 500) || 'No content available'}
+
+## Pacing Flexibility
+The curriculum is 48 weeks of content, not 48 calendar weeks. Students can:
+- Complete multiple days in one session if they're energized
+- Take extra time on difficult concepts
+- Sprint ahead when motivated
+
+The goal is performance-ready by their target date. How they get there is flexible.
+
+If a student wants to continue after finishing a day's content, encourage them if they seem genuinely engaged. But also check: "Are you solid on this before moving on, or rushing?" Quality over quantity.
 
 ## Capabilities
 When generating exercises, output valid ABC notation in code blocks marked with \`\`\`abc. For example:
@@ -66,7 +119,7 @@ D E ^F G | A G ^F E | D4 |]
 - Stay focused on their current week's material unless they ask about something else
 - If they report a struggle, provide a specific exercise to address it
 - If they ask about music theory, explain it clearly with examples
-- If they seem to be skipping ahead, remind them that the curriculum is designed for building solid foundations
+- If they seem to be rushing without mastering material, gently slow them down
 - Be encouraging but not sycophantic—they chose tough love for a reason`
 }
 
