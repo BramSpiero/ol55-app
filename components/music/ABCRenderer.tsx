@@ -10,112 +10,153 @@ interface ABCRendererProps {
 export default function ABCRenderer({ notation, title }: ABCRendererProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [tempo, setTempo] = useState(100) // percentage
-  const synthRef = useRef<any>(null)
-  const timerRef = useRef<any>(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [tempo, setTempo] = useState(100)
+  const [error, setError] = useState<string | null>(null)
+  const synthControlRef = useRef<any>(null)
+  const abcjsRef = useRef<any>(null)
+  const visualObjRef = useRef<any>(null)
 
   useEffect(() => {
-    // Dynamically import abcjs since it requires window
     const loadABC = async () => {
       if (typeof window === 'undefined' || !containerRef.current) return
       
       const ABCJS = await import('abcjs')
+      abcjsRef.current = ABCJS
       
       // Render the notation
-      ABCJS.renderAbc(containerRef.current, notation, {
+      const visualObj = ABCJS.renderAbc(containerRef.current, notation, {
         responsive: 'resize',
-        add_classes: true
+        add_classes: true,
+        paddingtop: 0,
+        paddingbottom: 0,
+        paddingleft: 0,
+        paddingright: 0
       })
+      
+      visualObjRef.current = visualObj[0]
     }
 
     loadABC()
+    
+    return () => {
+      // Cleanup on unmount
+      if (synthControlRef.current) {
+        try {
+          synthControlRef.current.stop()
+        } catch (e) {
+          // Ignore cleanup errors
+        }
+      }
+    }
   }, [notation])
 
   const handlePlay = async () => {
-    if (typeof window === 'undefined') return
+    if (!abcjsRef.current || !visualObjRef.current) return
     
-    const ABCJS = await import('abcjs')
+    const ABCJS = abcjsRef.current
 
     if (isPlaying) {
       // Stop playback
-      if (synthRef.current) {
-        synthRef.current.stop()
+      if (synthControlRef.current) {
+        synthControlRef.current.stop()
       }
       setIsPlaying(false)
       return
     }
 
-    // Create synth and play
-    if (!synthRef.current) {
-      synthRef.current = new ABCJS.synth.CreateSynth()
-    }
+    setIsLoading(true)
+    setError(null)
 
-    const visualObj = ABCJS.renderAbc('*', notation)[0]
-    
     try {
-      await synthRef.current.init({
-        visualObj: visualObj,
+      // Check if AudioContext is available
+      if (!ABCJS.synth.supportsAudio()) {
+        setError('Audio not supported in this browser')
+        setIsLoading(false)
+        return
+      }
+
+      // Create synth control if it doesn't exist
+      if (!synthControlRef.current) {
+        synthControlRef.current = new ABCJS.synth.SynthController()
+      }
+
+      // Create a new synth for this playback
+      const synth = new ABCJS.synth.CreateSynth()
+      
+      // Initialize with the visual object
+      await synth.init({
+        visualObj: visualObjRef.current,
         options: {
-          qpm: Math.round(72 * (tempo / 100)) // Base tempo adjusted by slider
+          qpm: Math.round(80 * (tempo / 100)),
+          soundFontUrl: 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/',
+          onEnded: () => {
+            setIsPlaying(false)
+          }
         }
       })
-      await synthRef.current.prime()
-      synthRef.current.start()
+
+      // Prime the audio (load the samples)
+      await synth.prime()
+
+      // Start playback
+      synth.start()
+      synthControlRef.current = synth
       setIsPlaying(true)
 
-      // Auto-stop when done
-      const duration = synthRef.current.getDuration() * 1000
-      timerRef.current = setTimeout(() => {
-        setIsPlaying(false)
-      }, duration)
     } catch (err) {
       console.error('Playback error:', err)
+      setError('Could not play audio. Try again.')
+    } finally {
+      setIsLoading(false)
     }
   }
-
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current)
-      if (synthRef.current) synthRef.current.stop()
-    }
-  }, [])
 
   return (
     <div className="bg-white rounded-lg border border-midnight-200 overflow-hidden">
       {title && (
-        <div className="px-4 py-2 bg-midnight-50 border-b border-midnight-200">
-          <h4 className="font-medium text-midnight-800 text-sm">{title}</h4>
+        <div className="px-3 md:px-4 py-2 bg-midnight-50 border-b border-midnight-200">
+          <h4 className="font-medium text-midnight-800 text-xs md:text-sm">{title}</h4>
         </div>
       )}
       
       <div 
         ref={containerRef} 
-        className="p-4 abcjs-container"
+        className="p-2 md:p-4 abcjs-container overflow-x-auto"
       />
       
-      <div className="px-4 py-3 bg-midnight-50 border-t border-midnight-200 flex items-center gap-4">
+      {error && (
+        <div className="px-3 py-2 bg-red-50 text-red-700 text-xs md:text-sm">
+          {error}
+        </div>
+      )}
+      
+      <div className="px-3 md:px-4 py-2 md:py-3 bg-midnight-50 border-t border-midnight-200 flex items-center gap-3 md:gap-4">
         <button
           onClick={handlePlay}
-          className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
-            isPlaying 
-              ? 'bg-red-100 text-red-700 hover:bg-red-200' 
-              : 'bg-whiskey-100 text-whiskey-700 hover:bg-whiskey-200'
+          disabled={isLoading}
+          className={`px-3 md:px-4 py-2 rounded-lg font-medium text-xs md:text-sm transition-colors min-w-[70px] md:min-w-[80px] ${
+            isLoading
+              ? 'bg-midnight-200 text-midnight-500 cursor-wait'
+              : isPlaying 
+                ? 'bg-red-100 text-red-700 hover:bg-red-200' 
+                : 'bg-whiskey-100 text-whiskey-700 hover:bg-whiskey-200'
           }`}
         >
-          {isPlaying ? '⏹ Stop' : '▶ Play'}
+          {isLoading ? '...' : isPlaying ? '⏹ Stop' : '▶ Play'}
         </button>
         
-        <div className="flex items-center gap-2 flex-1">
-          <span className="text-xs text-midnight-500">Tempo:</span>
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          <span className="text-xs text-midnight-500 hidden sm:inline">Tempo:</span>
           <input
             type="range"
             min="50"
             max="150"
             value={tempo}
             onChange={(e) => setTempo(parseInt(e.target.value))}
-            className="flex-1 h-2 bg-midnight-200 rounded-lg appearance-none cursor-pointer"
+            className="flex-1 h-2 bg-midnight-200 rounded-lg appearance-none cursor-pointer min-w-[60px]"
           />
-          <span className="text-xs text-midnight-600 w-12">{tempo}%</span>
+          <span className="text-xs text-midnight-600 w-8 md:w-12 text-right">{tempo}%</span>
         </div>
       </div>
     </div>
