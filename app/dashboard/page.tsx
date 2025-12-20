@@ -5,6 +5,7 @@ import { getPhaseName } from '@/lib/curriculum/types'
 import { calculatePaceInfo, getStatusColor, getStatusBgColor, getStatusLabel } from '@/lib/pace/calculations'
 import Link from 'next/link'
 import AppShell from '@/components/layout/AppShell'
+import DashboardClient from './DashboardClient'
 
 export default async function DashboardPage() {
   const supabase = createClient()
@@ -55,6 +56,7 @@ export default async function DashboardPage() {
 
   return (
     <AppShell displayName={profile?.display_name}>
+      <DashboardClient />
       <div className="max-w-5xl mx-auto px-4 py-6 md:py-8">
         {/* Welcome section */}
         <div className="mb-6 md:mb-8">
@@ -206,7 +208,7 @@ export default async function DashboardPage() {
 
         {/* Version indicator */}
         <div className="text-center mt-8 mb-4">
-          <span className="text-xs text-midnight-400">v0.6.0</span>
+          <span className="text-xs text-midnight-400">v0.7.0</span>
         </div>
       </div>
     </AppShell>

@@ -14,7 +14,7 @@ const week1: WeekContent = {
     {
       day_number: 1,
       type: 'info_dump',
-      title: 'Welcome & Posture',
+      title: 'Welcome & Finding C',
       objectives: [
         'Understand the 48-week journey ahead',
         'Set up proper posture at the piano',
@@ -22,27 +22,20 @@ const week1: WeekContent = {
       ],
       content: `Welcome to Week 1. Let's get something straight: this isn't about talent. It's about showing up for 15 minutes every day for a year. Do that, and you'll be playing "Ol' 55" at a bar by December.
 
+**Your first task is simple: find your piano and sit down at it.**
+
 **Posture matters.** Sit at the center of the keyboard, on the front half of the bench. Your forearms should be roughly parallel to the floor. Feet flat. Shoulders relaxed—not hunched. Wrists level, not drooping or raised.
 
-**Finding C:** Look at the black keys. They come in groups of 2 and 3. C is always immediately to the LEFT of a group of 2 black keys. Find every C on your piano. There are probably 7 or 8 of them. Middle C is roughly in the center—it's the C closest to the middle of your keyboard.
+**Now let's find C:** Look at the black keys. They come in groups of 2 and 3. C is always immediately to the LEFT of a group of 2 black keys. 
 
-Play each C from lowest to highest. Listen to how they're the same note, just higher or lower. This is an octave relationship.`,
-      exercises: [
-        {
-          id: exerciseId(1, 1, 1),
-          title: 'Find All the C\'s',
-          description: 'Play every C on your piano, from lowest to highest, then highest to lowest.',
-          abc_notation: `X:1
-T:All the C's
-M:4/4
-L:1/2
-K:C
-C,, C, C c c' c''|]`,
-          target_tempo: 60,
-          tips: ['Say "C" out loud each time you play one', 'Notice the pattern of 2 black keys'],
-          common_mistakes: ['Confusing C with other notes near black key groups']
-        }
-      ]
+🎯 **Your mission:** Find EVERY C on your piano. There are probably 7 or 8 of them. Play each one. Say "C" out loud as you play it.
+
+Middle C is roughly in the center—it's the C closest to the middle of your keyboard. This will be your home base.
+
+Play all the C's from lowest to highest. Then highest to lowest. Notice how they sound the same, just higher or lower? That's called an octave.
+
+**That's it for today.** Find the C's, play them, say them. Simple. See you tomorrow.`,
+      exercises: []  // No audio exercises on Day 1 - just exploration
     },
     {
       day_number: 2,
