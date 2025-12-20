@@ -203,6 +203,11 @@ export default async function DashboardPage() {
             </div>
           </div>
         )}
+
+        {/* Version indicator */}
+        <div className="text-center mt-8 mb-4">
+          <span className="text-xs text-midnight-400">v0.6.0</span>
+        </div>
       </div>
     </AppShell>
   )

@@ -350,20 +350,31 @@ export default function PracticeContent({
         )}
 
         {practiceComplete && !showContinue && (
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 md:p-6 text-center">
-            <div className="text-3xl md:text-4xl mb-3 md:mb-4">✓</div>
-            <h2 className="font-semibold text-green-800 mb-2 text-sm md:text-base">
-              Today's practice is complete!
-            </h2>
-            <p className="text-green-700 mb-4 text-sm md:text-base">
-              Great work. Come back tomorrow.
-            </p>
-            <Link
-              href="/dashboard"
-              className="text-green-700 hover:underline text-sm md:text-base"
-            >
-              Return to Dashboard
-            </Link>
+          <div className="bg-green-50 border border-green-200 rounded-xl p-4 md:p-6">
+            <div className="text-center mb-4">
+              <div className="text-3xl md:text-4xl mb-3 md:mb-4">✓</div>
+              <h2 className="font-semibold text-green-800 mb-2 text-sm md:text-base">
+                Today's practice is complete!
+              </h2>
+              <p className="text-green-700 text-sm md:text-base">
+                Great work. Want to keep the momentum going?
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/dashboard"
+                className="flex-1 px-6 py-3 border border-green-300 text-green-700 hover:bg-green-100 rounded-lg font-medium transition-colors min-h-[48px] text-center flex items-center justify-center"
+              >
+                Done for today
+              </Link>
+              <button
+                onClick={handleContinue}
+                className="flex-1 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors min-h-[48px]"
+              >
+                Continue to Next Day →
+              </button>
+            </div>
           </div>
         )}
 

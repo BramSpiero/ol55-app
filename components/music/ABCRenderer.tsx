@@ -7,27 +7,31 @@ interface ABCRendererProps {
   title?: string
 }
 
+// Simple note frequency mapping
+const NOTE_FREQUENCIES: { [key: string]: number } = {
+  'C': 261.63, 'D': 293.66, 'E': 329.63, 'F': 349.23,
+  'G': 392.00, 'A': 440.00, 'B': 493.88,
+  'c': 523.25, 'd': 587.33, 'e': 659.25, 'f': 698.46,
+  'g': 783.99, 'a': 880.00, 'b': 987.77,
+}
+
 export default function ABCRenderer({ notation, title }: ABCRendererProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [tempo, setTempo] = useState(100)
   const [error, setError] = useState<string | null>(null)
-  const [audioReady, setAudioReady] = useState(false)
-  const synthRef = useRef<any>(null)
-  const abcjsRef = useRef<any>(null)
-  const visualObjRef = useRef<any>(null)
   const audioContextRef = useRef<AudioContext | null>(null)
+  const playingRef = useRef<boolean>(false)
 
   useEffect(() => {
     const loadABC = async () => {
       if (typeof window === 'undefined' || !containerRef.current) return
       
       const ABCJS = await import('abcjs')
-      abcjsRef.current = ABCJS
       
       // Render the notation
-      const visualObj = ABCJS.renderAbc(containerRef.current, notation, {
+      ABCJS.renderAbc(containerRef.current, notation, {
         responsive: 'resize',
         add_classes: true,
         paddingtop: 0,
@@ -35,46 +39,88 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
         paddingleft: 0,
         paddingright: 0
       })
-      
-      visualObjRef.current = visualObj[0]
     }
 
     loadABC()
     
     return () => {
-      if (synthRef.current) {
-        try {
-          synthRef.current.stop()
-        } catch (e) {
-          // Ignore cleanup errors
-        }
+      playingRef.current = false
+      if (audioContextRef.current) {
+        audioContextRef.current.close()
+        audioContextRef.current = null
       }
     }
   }, [notation])
 
-  const initAudio = async () => {
-    // Create or resume AudioContext on user gesture (required for iOS)
+  // Parse ABC notation to extract notes
+  const parseNotes = (abc: string): string[] => {
+    const notes: string[] = []
+    // Simple regex to find notes - handles basic ABC
+    const noteRegex = /[A-Ga-g][,']*[0-9]*/g
+    const matches = abc.match(noteRegex)
+    if (matches) {
+      matches.forEach(note => {
+        const baseNote = note[0]
+        if (NOTE_FREQUENCIES[baseNote]) {
+          notes.push(baseNote)
+        }
+      })
+    }
+    return notes.length > 0 ? notes : ['C', 'E', 'G', 'C'] // Default if parsing fails
+  }
+
+  const playNotes = async (notes: string[]) => {
     if (!audioContextRef.current) {
       audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
     }
     
-    if (audioContextRef.current.state === 'suspended') {
-      await audioContextRef.current.resume()
-    }
+    const ctx = audioContextRef.current
     
-    return audioContextRef.current
+    if (ctx.state === 'suspended') {
+      await ctx.resume()
+    }
+
+    const noteDuration = 0.5 * (100 / tempo)
+    let startTime = ctx.currentTime
+
+    for (const note of notes) {
+      if (!playingRef.current) break
+      
+      const freq = NOTE_FREQUENCIES[note] || 440
+      
+      const oscillator = ctx.createOscillator()
+      const gainNode = ctx.createGain()
+      
+      oscillator.connect(gainNode)
+      gainNode.connect(ctx.destination)
+      
+      oscillator.type = 'sine'
+      oscillator.frequency.setValueAtTime(freq, startTime)
+      
+      // Envelope for nicer sound
+      gainNode.gain.setValueAtTime(0, startTime)
+      gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.05)
+      gainNode.gain.linearRampToValueAtTime(0, startTime + noteDuration - 0.05)
+      
+      oscillator.start(startTime)
+      oscillator.stop(startTime + noteDuration)
+      
+      startTime += noteDuration
+    }
+
+    // Wait for playback to finish
+    const totalDuration = notes.length * noteDuration * 1000
+    setTimeout(() => {
+      if (playingRef.current) {
+        setIsPlaying(false)
+        playingRef.current = false
+      }
+    }, totalDuration)
   }
 
   const handlePlay = async () => {
-    if (!abcjsRef.current || !visualObjRef.current) {
-      setError('Music not loaded yet')
-      return
-    }
-    
-    const ABCJS = abcjsRef.current
-
-    if (isPlaying && synthRef.current) {
-      synthRef.current.stop()
+    if (isPlaying) {
+      playingRef.current = false
       setIsPlaying(false)
       return
     }
@@ -83,61 +129,17 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
     setError(null)
 
     try {
-      // Initialize audio context on user gesture
-      const audioContext = await initAudio()
-      
-      // Check if audio is supported
-      if (!ABCJS.synth.supportsAudio()) {
-        setError('Audio not supported')
-        setIsLoading(false)
-        return
-      }
-
-      // Create synth
-      const synth = new ABCJS.synth.CreateSynth()
-      
-      // Initialize with audio context
-      await synth.init({
-        visualObj: visualObjRef.current,
-        audioContext: audioContext,
-        millisecondsPerMeasure: Math.round(4000 * (100 / tempo)),
-        options: {
-          soundFontUrl: 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/',
-          program: 0, // Acoustic Grand Piano
-        }
-      })
-
-      // Load the audio samples
-      await synth.prime()
-      
-      // Store reference for stop
-      synthRef.current = synth
-      
-      // Start playback
-      synth.start()
+      playingRef.current = true
       setIsPlaying(true)
-      setAudioReady(true)
-
-      // Listen for end
-      const checkEnded = setInterval(() => {
-        if (synth.getIsRunning && !synth.getIsRunning()) {
-          setIsPlaying(false)
-          clearInterval(checkEnded)
-        }
-      }, 500)
-
-      // Fallback timeout based on rough duration estimate
-      const estimatedDuration = (visualObjRef.current.getTotalBeats?.() || 16) * (60000 / (80 * tempo / 100))
-      setTimeout(() => {
-        clearInterval(checkEnded)
-        if (isPlaying) {
-          setIsPlaying(false)
-        }
-      }, estimatedDuration + 2000)
+      
+      const notes = parseNotes(notation)
+      await playNotes(notes)
 
     } catch (err: any) {
       console.error('Playback error:', err)
-      setError(err.message || 'Could not play audio')
+      setError('Could not play audio')
+      setIsPlaying(false)
+      playingRef.current = false
     } finally {
       setIsLoading(false)
     }
@@ -174,7 +176,7 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
                 : 'bg-whiskey-100 text-whiskey-700 hover:bg-whiskey-200 active:bg-whiskey-300'
           }`}
         >
-          {isLoading ? 'Loading...' : isPlaying ? '⏹ Stop' : '▶ Play'}
+          {isLoading ? '...' : isPlaying ? '⏹ Stop' : '▶ Play'}
         </button>
         
         <div className="flex items-center gap-2 flex-1 min-w-0">
