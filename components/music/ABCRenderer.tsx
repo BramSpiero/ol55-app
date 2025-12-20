@@ -13,9 +13,11 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [tempo, setTempo] = useState(100)
   const [error, setError] = useState<string | null>(null)
-  const synthControlRef = useRef<any>(null)
+  const [audioReady, setAudioReady] = useState(false)
+  const synthRef = useRef<any>(null)
   const abcjsRef = useRef<any>(null)
   const visualObjRef = useRef<any>(null)
+  const audioContextRef = useRef<AudioContext | null>(null)
 
   useEffect(() => {
     const loadABC = async () => {
@@ -40,10 +42,9 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
     loadABC()
     
     return () => {
-      // Cleanup on unmount
-      if (synthControlRef.current) {
+      if (synthRef.current) {
         try {
-          synthControlRef.current.stop()
+          synthRef.current.stop()
         } catch (e) {
           // Ignore cleanup errors
         }
@@ -51,16 +52,29 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
     }
   }, [notation])
 
+  const initAudio = async () => {
+    // Create or resume AudioContext on user gesture (required for iOS)
+    if (!audioContextRef.current) {
+      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+    }
+    
+    if (audioContextRef.current.state === 'suspended') {
+      await audioContextRef.current.resume()
+    }
+    
+    return audioContextRef.current
+  }
+
   const handlePlay = async () => {
-    if (!abcjsRef.current || !visualObjRef.current) return
+    if (!abcjsRef.current || !visualObjRef.current) {
+      setError('Music not loaded yet')
+      return
+    }
     
     const ABCJS = abcjsRef.current
 
-    if (isPlaying) {
-      // Stop playback
-      if (synthControlRef.current) {
-        synthControlRef.current.stop()
-      }
+    if (isPlaying && synthRef.current) {
+      synthRef.current.stop()
       setIsPlaying(false)
       return
     }
@@ -69,44 +83,61 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
     setError(null)
 
     try {
-      // Check if AudioContext is available
+      // Initialize audio context on user gesture
+      const audioContext = await initAudio()
+      
+      // Check if audio is supported
       if (!ABCJS.synth.supportsAudio()) {
-        setError('Audio not supported in this browser')
+        setError('Audio not supported')
         setIsLoading(false)
         return
       }
 
-      // Create synth control if it doesn't exist
-      if (!synthControlRef.current) {
-        synthControlRef.current = new ABCJS.synth.SynthController()
-      }
-
-      // Create a new synth for this playback
+      // Create synth
       const synth = new ABCJS.synth.CreateSynth()
       
-      // Initialize with the visual object
+      // Initialize with audio context
       await synth.init({
         visualObj: visualObjRef.current,
+        audioContext: audioContext,
+        millisecondsPerMeasure: Math.round(4000 * (100 / tempo)),
         options: {
-          qpm: Math.round(80 * (tempo / 100)),
           soundFontUrl: 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/',
-          onEnded: () => {
-            setIsPlaying(false)
-          }
+          program: 0, // Acoustic Grand Piano
         }
       })
 
-      // Prime the audio (load the samples)
+      // Load the audio samples
       await synth.prime()
-
+      
+      // Store reference for stop
+      synthRef.current = synth
+      
       // Start playback
       synth.start()
-      synthControlRef.current = synth
       setIsPlaying(true)
+      setAudioReady(true)
 
-    } catch (err) {
+      // Listen for end
+      const checkEnded = setInterval(() => {
+        if (synth.getIsRunning && !synth.getIsRunning()) {
+          setIsPlaying(false)
+          clearInterval(checkEnded)
+        }
+      }, 500)
+
+      // Fallback timeout based on rough duration estimate
+      const estimatedDuration = (visualObjRef.current.getTotalBeats?.() || 16) * (60000 / (80 * tempo / 100))
+      setTimeout(() => {
+        clearInterval(checkEnded)
+        if (isPlaying) {
+          setIsPlaying(false)
+        }
+      }, estimatedDuration + 2000)
+
+    } catch (err: any) {
       console.error('Playback error:', err)
-      setError('Could not play audio. Try again.')
+      setError(err.message || 'Could not play audio')
     } finally {
       setIsLoading(false)
     }
@@ -139,11 +170,11 @@ export default function ABCRenderer({ notation, title }: ABCRendererProps) {
             isLoading
               ? 'bg-midnight-200 text-midnight-500 cursor-wait'
               : isPlaying 
-                ? 'bg-red-100 text-red-700 hover:bg-red-200' 
-                : 'bg-whiskey-100 text-whiskey-700 hover:bg-whiskey-200'
+                ? 'bg-red-100 text-red-700 hover:bg-red-200 active:bg-red-300' 
+                : 'bg-whiskey-100 text-whiskey-700 hover:bg-whiskey-200 active:bg-whiskey-300'
           }`}
         >
-          {isLoading ? '...' : isPlaying ? '⏹ Stop' : '▶ Play'}
+          {isLoading ? 'Loading...' : isPlaying ? '⏹ Stop' : '▶ Play'}
         </button>
         
         <div className="flex items-center gap-2 flex-1 min-w-0">

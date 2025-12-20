@@ -137,8 +137,8 @@ export default function PracticeContent({
 
       <div className="max-w-4xl mx-auto px-4 py-4 md:py-8">
         {/* Lesson header */}
-        <div className="mb-4 md:mb-8">
-          <div className="text-whiskey-600 text-xs md:text-sm font-medium mb-1 md:mb-2">
+        <div className="mb-4 md:mb-8 mt-2">
+          <div className="text-whiskey-600 text-xs md:text-sm font-medium mb-1 md:mb-2 hidden md:block">
             {dayContent.type === 'info_dump' ? '📚 Information Day' : 
              dayContent.type === 'review' ? '✓ Weekly Checkpoint' : '🎹 Practice Day'}
           </div>
