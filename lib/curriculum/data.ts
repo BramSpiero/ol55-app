@@ -4505,6 +4505,1731 @@ K:G
   ]
 }
 
+// ============================================================================
+// PHASE 4: Adding Voice (Weeks 25-32)
+// Singing while playing. The ultimate coordination challenge.
+// ============================================================================
+
+const week25: WeekContent = {
+  week_number: 25,
+  phase: 4,
+  title: 'Voice Preparation',
+  overview: 'Before you sing and play simultaneously, you need to know the vocal part cold. This week is about the voice alone—no piano. Learn the melody, the lyrics, the phrasing. Your voice needs to be as automatic as your hands.',
+  theory_concepts: ['Vocal melody', 'Lyrics', 'Phrasing', 'Breath support'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Know the Song',
+      objectives: [
+        'Listen to Ol\' 55 five times today',
+        'Sing along without piano',
+        'Focus on lyrics'
+      ],
+      content: `**Phase 4 begins.** You're about to do something most people never attempt: sing while playing piano.
+
+Here's the truth: if you have to think about either the piano OR the singing, you'll fail at both. Both parts need to be automatic. Your hands are there (Phase 3). Now we make sure your voice is too.
+
+**This week: voice only.** No piano. Just singing.
+
+**Today:** Listen to "Ol' 55" five times. Sing along every time. Don't worry about sounding good—just learn the melody and lyrics. Print them out if you need to.
+
+Lyrics verse 1:
+"Well my time went so quickly, I went lickety-splitly
+Out to my ol' fifty-five
+As I pulled away slowly, feeling so holy
+God knows I was feeling alive"`,
+      exercises: [
+        {
+          id: exerciseId(25, 1, 1),
+          title: 'Sing Verse 1',
+          description: 'Sing verse 1 without any accompaniment.',
+          abc_notation: `X:1
+T:Verse 1 Vocal
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+% Sing this melody
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 74,
+          tips: ['No piano—just your voice', 'Use the recording as reference'],
+          common_mistakes: ['Trying to add piano too soon']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Verse Lyrics Memorization',
+      objectives: [
+        'Memorize all verse lyrics',
+        'Sing without looking at words'
+      ],
+      content: `Memorize the lyrics. There are three verses:
+
+**Verse 1:** "Well my time went so quickly, I went lickety-splitly, out to my ol' fifty-five. As I pulled away slowly, feeling so holy, God knows I was feeling alive."
+
+**Verse 2:** "Now the sun's coming up, I'm riding with Lady Luck, freeway cars and trucks. Stars beginning to fade, and I lead the parade, just a-wishing I'd stayed a little longer."
+
+**Verse 3:** "Six in the morning, gave me no warning, I had to be on my way. Now the cars are all passing me, trucks are all flashing me, I'm headed home from your place."
+
+Sing each verse five times from memory.`,
+      exercises: [
+        {
+          id: exerciseId(25, 2, 1),
+          title: 'Verses from Memory',
+          description: 'Sing all three verses without looking.',
+          abc_notation: `X:1
+T:Verse Melody
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 74,
+          tips: ['Close your eyes', 'Picture the drive home'],
+          common_mistakes: ['Needing to look at lyrics']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Chorus Lyrics',
+      objectives: [
+        'Learn chorus lyrics',
+        'Understand chorus structure'
+      ],
+      content: `The chorus is simpler—it repeats the same lines:
+
+"And I got the sun coming up over the trees
+I got the sun coming up over my knees
+Ol' fifty-five, coming alive
+I got the radio on, I got the windows rolled down"
+
+Or the alternate version:
+"Trucks are passing me by on the highway
+And the sun's coming up over the hill
+Ol' fifty-five, still alive..."
+
+Sing the chorus until it's memorized.`,
+      exercises: [
+        {
+          id: exerciseId(25, 3, 1),
+          title: 'Chorus from Memory',
+          description: 'Sing the chorus without looking.',
+          abc_notation: `X:1
+T:Chorus Melody
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+d4 d2 e2 | d4 z4 | B2 B2 d2 e2 | d4 B2 G2 | A2 A2 B2 c2 | B4 z4 |]`,
+          target_tempo: 74,
+          tips: ['Chorus should feel like release', 'Open up your voice'],
+          common_mistakes: ['Holding back on the chorus']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Full Song Vocal',
+      objectives: [
+        'Sing complete song structure',
+        'Verse - Chorus - Verse - Chorus - Bridge - Chorus - Ending'
+      ],
+      content: `Sing the complete song, start to finish. No piano. Just your voice and the memory of the melody.`,
+      exercises: [
+        {
+          id: exerciseId(25, 4, 1),
+          title: 'Full Song Vocal Only',
+          description: 'Complete song, voice only.',
+          abc_notation: `X:1
+T:Full Song Vocal
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+% Sing full song from memory
+G2 G2 A2 B2 | d4 d2 B2 |]`,
+          target_tempo: 74,
+          tips: ['Keep going even if you blank on lyrics', 'Hum through forgotten parts'],
+          common_mistakes: ['Stopping when you forget words']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Phrasing and Breath',
+      objectives: [
+        'Plan breath points',
+        'Shape the phrases vocally'
+      ],
+      content: `Where do you breathe? Plan it:
+- After "fifty-five" 
+- After "alive"
+- At the end of each line
+
+Don't gasp for air mid-phrase. The song has natural breathing points—use them.`,
+      exercises: [
+        {
+          id: exerciseId(25, 5, 1),
+          title: 'Phrasing Practice',
+          description: 'Sing with planned breath points.',
+          abc_notation: `X:1
+T:Phrasing Practice
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 74,
+          tips: ['Breath at the commas', 'Never gasp mid-word'],
+          common_mistakes: ['Running out of air', 'Breathing in weird spots']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Singing with Feeling',
+      objectives: [
+        'Add expression to vocals',
+        'Tell the story'
+      ],
+      content: `This song is about driving home at dawn, tired but alive. It's nostalgic, wistful, a little triumphant. Let that come through in your voice.`,
+      exercises: [
+        {
+          id: exerciseId(25, 6, 1),
+          title: 'Expressive Singing',
+          description: 'Full song with emotional commitment.',
+          abc_notation: `X:1
+T:Expressive Singing
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 |]`,
+          target_tempo: 74,
+          tips: ['Mean what you sing', 'Picture the sunrise'],
+          common_mistakes: ['Singing mechanically']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 25 Checkpoint',
+      objectives: [
+        'Full song memorized vocally',
+        'Ready to add piano'
+      ],
+      content: `Can you sing the complete song from memory, with expression, at the right tempo? If yes, you're ready to start combining voice and piano.`,
+      exercises: [
+        {
+          id: exerciseId(25, 7, 1),
+          title: 'Vocal Check',
+          description: 'Full song, voice only, from memory.',
+          abc_notation: `X:1
+T:Vocal Check
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 |]`,
+          target_tempo: 74,
+          tips: ['This should feel easy now'],
+          common_mistakes: ['Still needing lyrics reference']
+        }
+      ],
+      checkpoint_criteria: [
+        'All lyrics memorized',
+        'Melody accurate',
+        'Phrasing and breath planned',
+        'Expression present',
+        'Ready for voice + piano'
+      ]
+    }
+  ]
+}
+
+const week26: WeekContent = {
+  week_number: 26,
+  phase: 4,
+  title: 'First Words While Playing',
+  overview: 'The moment of truth. You\'ll start with the simplest possible combination: holding a single chord while speaking (not singing) the lyrics. Then we build from there.',
+  theory_concepts: ['Cognitive load', 'Simplification strategy', 'Gradual integration'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'The Simplification Strategy',
+      objectives: [
+        'Understand why this is hard',
+        'Learn the step-by-step approach',
+        'First attempt: hold chord + speak'
+      ],
+      content: `Here's why singing while playing is hard: your brain is running two complex programs simultaneously. When you first try, both programs crash.
+
+**The solution: simplify everything.**
+
+Step 1: Hold a single chord (no bass movement) while SPEAKING (not singing) the lyrics.
+Step 2: Add simple bass movement while speaking.
+Step 3: Switch from speaking to humming.
+Step 4: Finally, actual singing.
+
+**Today:** Play a G chord. Hold it. While holding it, SPEAK (don't sing): "Well my time went so quickly..."`,
+      exercises: [
+        {
+          id: exerciseId(26, 1, 1),
+          title: 'Hold + Speak',
+          description: 'Hold G chord, speak verse 1 lyrics.',
+          abc_notation: `X:1
+T:Hold and Speak
+M:4/4
+L:1
+Q:1/4=60
+K:G
+[G,,D,G,B,d]4 |]`,
+          target_tempo: 60,
+          tips: ['Just hold the chord', 'Speak rhythmically, like you\'re reciting poetry'],
+          common_mistakes: ['Trying to sing instead of speak']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Chord Changes + Speaking',
+      objectives: [
+        'Change chords while speaking',
+        'Very slow tempo'
+      ],
+      content: `Now change chords—G to Bm to C to D—while speaking the lyrics. Go very slow. The chord changes happen at phrase endings.`,
+      exercises: [
+        {
+          id: exerciseId(26, 2, 1),
+          title: 'Changes + Speak',
+          description: 'Chord progression while speaking.',
+          abc_notation: `X:1
+T:Changes + Speak
+M:4/4
+L:1
+Q:1/4=40
+K:G
+[G,,D,][GBd] | [B,,^F,][BdF] | [C,G,][CEG] | [D,A,][D^FA] |]`,
+          target_tempo: 40,
+          tips: ['Chord changes don\'t need to be rhythmic yet', 'Just change when you need to'],
+          common_mistakes: ['Trying to time chord changes perfectly']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Bass Pattern + Speaking',
+      objectives: [
+        'Add root-fifth bass while speaking',
+        'First multi-tasking'
+      ],
+      content: `Now the LH moves while you speak. Play the root-fifth pattern (G-D, G-D) while speaking the verse. Very slow.`,
+      exercises: [
+        {
+          id: exerciseId(26, 3, 1),
+          title: 'Bass + Speak',
+          description: 'Bass pattern while speaking lyrics.',
+          abc_notation: `X:1
+T:Bass + Speak
+M:4/4
+L:1/2
+Q:1/4=40
+K:G
+[G,,][GBd] [D,]z | [G,,][GBd] [D,]z |]`,
+          target_tempo: 40,
+          tips: ['LH keeps moving', 'Voice keeps speaking', 'They don\'t have to sync perfectly'],
+          common_mistakes: ['Stopping one to focus on the other']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Speaking to Humming',
+      objectives: [
+        'Transition from speaking to humming',
+        'Pitch without words'
+      ],
+      content: `Now instead of speaking, hum the melody while playing. Humming is easier than singing because you don't have to articulate words. Just the tune.`,
+      exercises: [
+        {
+          id: exerciseId(26, 4, 1),
+          title: 'Hum + Play',
+          description: 'Hum the verse melody while playing chords.',
+          abc_notation: `X:1
+T:Hum + Play
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 45,
+          tips: ['Lips closed', 'Hum the melody', 'Hands keep moving'],
+          common_mistakes: ['Opening mouth to sing words']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'First Real Singing',
+      objectives: [
+        'Sing first phrase while playing',
+        'Just 4 bars'
+      ],
+      content: `The moment: actually sing "Well my time went so quickly" while playing the first two bars. Just those words, just that music. Go slow.`,
+      exercises: [
+        {
+          id: exerciseId(26, 5, 1),
+          title: 'First Sung Phrase',
+          description: 'Sing "Well my time went so quickly" with accompaniment.',
+          abc_notation: `X:1
+T:First Sung Phrase
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 45,
+          tips: ['This is the breakthrough moment', 'It will feel impossible, then suddenly possible'],
+          common_mistakes: ['Giving up too quickly']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Expand to First Line',
+      objectives: [
+        'Sing complete first line with piano',
+        'Build on yesterday'
+      ],
+      content: `Expand: sing "Well my time went so quickly, I went lickety-splitly, out to my ol' fifty-five" while playing. One complete lyrical line.`,
+      exercises: [
+        {
+          id: exerciseId(26, 6, 1),
+          title: 'First Line Sung',
+          description: 'Complete first line with accompaniment.',
+          abc_notation: `X:1
+T:First Line Sung
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 45,
+          tips: ['If you got this, you can get the whole song'],
+          common_mistakes: ['Underestimating this achievement']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 26 Checkpoint',
+      objectives: [
+        'Can sing first line while playing',
+        'Breakthrough achieved'
+      ],
+      content: `Can you sing the first line of the verse while playing piano? Even at 45 BPM? Even roughly? This is the hardest breakthrough—the rest is refinement.`,
+      exercises: [
+        {
+          id: exerciseId(26, 7, 1),
+          title: 'Sing + Play Check',
+          description: 'First line, voice and piano together.',
+          abc_notation: `X:1
+T:Sing + Play Check
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 45,
+          tips: ['You did something most people can\'t'],
+          common_mistakes: ['Not recognizing the milestone']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can speak lyrics over chord changes',
+        'Can hum melody while playing',
+        'Can sing at least first line while playing',
+        'Breakthrough moment achieved'
+      ]
+    }
+  ]
+}
+
+const week27: WeekContent = {
+  week_number: 27,
+  phase: 4,
+  title: 'Complete Verse - Singing',
+  overview: 'Building out from the first line to the complete verse. Same slow, methodical approach. By the end of this week: one full verse, sung while playing.',
+  theory_concepts: ['Building sections', 'Repetition', 'Patience'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Second Line Addition',
+      objectives: [
+        'Add "As I pulled away slowly..."',
+        'Connect both lines'
+      ],
+      content: `You have line 1. Now add line 2: "As I pulled away slowly, feeling so holy, God knows I was feeling alive."
+
+Same melody, new words. Same piano, same tempo (45 BPM). Connect the two lines.`,
+      exercises: [
+        {
+          id: exerciseId(27, 1, 1),
+          title: 'Add Second Line',
+          description: 'Both verse lines, sung with piano.',
+          abc_notation: `X:1
+T:Both Verse Lines
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 45,
+          tips: ['Same skills, more material'],
+          common_mistakes: ['Rushing to add more']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Verse Repetitions',
+      objectives: [
+        'Sing verse 5 times',
+        'Build consistency'
+      ],
+      content: `Repetition is the path. Sing the complete verse with piano 5 times. Note where you stumble—those spots need extra work.`,
+      exercises: [
+        {
+          id: exerciseId(27, 2, 1),
+          title: 'Verse x5',
+          description: 'Complete verse, 5 repetitions.',
+          abc_notation: `X:1
+T:Verse x5
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 45,
+          tips: ['Each rep should feel slightly easier'],
+          common_mistakes: ['Quality degrading with repetition']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Problem Spot Surgery',
+      objectives: [
+        'Identify your weak spot',
+        'Drill it 15 times'
+      ],
+      content: `Where did you stumble yesterday? That transition, that word, that chord change—isolate it. Drill it 15 times.`,
+      exercises: [
+        {
+          id: exerciseId(27, 3, 1),
+          title: 'Drill Weak Spot',
+          description: 'Your problem area, 15 repetitions.',
+          abc_notation: `X:1
+T:Drill Weak Spot
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 45,
+          tips: ['Be honest about what\'s hard'],
+          common_mistakes: ['Not drilling enough']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Tempo Bump to 50',
+      objectives: [
+        'Push verse to 50 BPM',
+        'Maintain voice + piano'
+      ],
+      content: `If 45 BPM feels solid, try 50. Still slow, but closer to target. Quality over speed—if 50 is chaos, stay at 48.`,
+      exercises: [
+        {
+          id: exerciseId(27, 4, 1),
+          title: 'Verse at 50',
+          description: 'Complete verse at 50 BPM with singing.',
+          abc_notation: `X:1
+T:Verse at 50
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['5 BPM is noticeable', 'Don\'t force it'],
+          common_mistakes: ['Ego pushing tempo too fast']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'All Three Verses',
+      objectives: [
+        'Apply skills to verses 2 and 3',
+        'Same melody, different words'
+      ],
+      content: `The verse melody repeats with different lyrics. Apply what you've learned to verses 2 and 3. Same piano, different words.`,
+      exercises: [
+        {
+          id: exerciseId(27, 5, 1),
+          title: 'All Verses',
+          description: 'Verses 1, 2, 3 sung with piano.',
+          abc_notation: `X:1
+T:All Verses
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 50,
+          tips: ['Lyrics change, melody stays', 'Piano stays consistent'],
+          common_mistakes: ['Different verses throwing off piano']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Verse Expression',
+      objectives: [
+        'Add dynamics while singing',
+        'Make it musical'
+      ],
+      content: `Now that you can do it, make it sound good. Dynamics, phrasing, feeling. The verse should tell a story.`,
+      exercises: [
+        {
+          id: exerciseId(27, 6, 1),
+          title: 'Expressive Verse',
+          description: 'Verse with musical expression.',
+          abc_notation: `X:1
+T:Expressive Verse
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['You\'re a performer now', 'Mean what you sing'],
+          common_mistakes: ['Survival mode instead of performance mode']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 27 Checkpoint',
+      objectives: [
+        'Complete verse sung with piano at 50 BPM',
+        'Ready for chorus'
+      ],
+      content: `Can you sing a complete verse while playing at 50 BPM? All three verses with different lyrics? You're more than halfway through Phase 4.`,
+      exercises: [
+        {
+          id: exerciseId(27, 7, 1),
+          title: 'Verse Sing Check',
+          description: 'Complete verse, voice + piano, 50 BPM.',
+          abc_notation: `X:1
+T:Verse Check
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Major milestone'],
+          common_mistakes: ['Undervaluing progress']
+        }
+      ],
+      checkpoint_criteria: [
+        'Complete verse sung with piano',
+        'All three verse lyrics work',
+        'Tempo at 50 BPM',
+        'Expression present',
+        'Ready for chorus'
+      ]
+    }
+  ]
+}
+
+const week28: WeekContent = {
+  week_number: 28,
+  phase: 4,
+  title: 'Chorus - Singing',
+  overview: 'Apply the same approach to the chorus. The chorus is emotionally bigger—let that come through. "Sun\'s coming up..."',
+  theory_concepts: ['Chorus energy', 'Lifting the voice', 'Section contrast'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Chorus Introduction',
+      objectives: [
+        'Apply verse skills to chorus',
+        'Understand chorus energy difference'
+      ],
+      content: `The chorus is where you let loose. "Sun's coming up, I'm riding with Lady Luck..." It's the release after the verse's story.
+
+Same approach as verse: slow, methodical, build phrase by phrase. But emotionally bigger.`,
+      exercises: [
+        {
+          id: exerciseId(28, 1, 1),
+          title: 'Chorus First Line',
+          description: 'First line of chorus, sung with piano.',
+          abc_notation: `X:1
+T:Chorus First Line
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 45,
+          tips: ['Open up your voice', 'Chorus = release'],
+          common_mistakes: ['Singing chorus like verse']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Build Chorus',
+      objectives: [
+        'Add chorus lines progressively',
+        'Complete chorus sung'
+      ],
+      content: `Build out the complete chorus, line by line. "Sun's coming up..." into "I'm riding with Lady Luck..." into "Freeway cars and trucks..."`,
+      exercises: [
+        {
+          id: exerciseId(28, 2, 1),
+          title: 'Complete Chorus',
+          description: 'Full chorus sung with piano.',
+          abc_notation: `X:1
+T:Complete Chorus
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 45,
+          tips: ['D7sus4 in chorus, not regular D'],
+          common_mistakes: ['Wrong chord on chorus D']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Chorus at 50 BPM',
+      objectives: [
+        'Match verse tempo',
+        'Sections should align'
+      ],
+      content: `Bring chorus to 50 BPM to match your verse work. The tempo should be consistent between sections.`,
+      exercises: [
+        {
+          id: exerciseId(28, 3, 1),
+          title: 'Chorus at 50',
+          description: 'Full chorus at 50 BPM with singing.',
+          abc_notation: `X:1
+T:Chorus at 50
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Same tempo as verse now'],
+          common_mistakes: ['Tempo mismatch between sections']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Verse to Chorus Transition',
+      objectives: [
+        'Connect verse into chorus while singing',
+        'The crucial transition'
+      ],
+      content: `The payoff: verse into chorus, singing throughout. End of verse, lift into chorus. This is where the song comes alive.`,
+      exercises: [
+        {
+          id: exerciseId(28, 4, 1),
+          title: 'V to C Sung',
+          description: 'Verse into chorus, singing throughout.',
+          abc_notation: `X:1
+T:V to C Sung
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+% Last line of verse into first line of chorus
+[D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] | [G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Feel the lift', 'Voice opens on chorus'],
+          common_mistakes: ['No energy change at transition']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Full V + C Sung',
+      objectives: [
+        'Complete verse + chorus, sung',
+        'Core of the song'
+      ],
+      content: `Full verse into full chorus, singing and playing. This is the heart of the song—if you can do this, you can do the whole thing.`,
+      exercises: [
+        {
+          id: exerciseId(28, 5, 1),
+          title: 'V + C Full',
+          description: 'Verse and chorus, sung throughout.',
+          abc_notation: `X:1
+T:V + C Full
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+% Verse
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |
+% Chorus
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['This is real singing-while-playing'],
+          common_mistakes: ['Treating this as just practice']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Expression Throughout',
+      objectives: [
+        'Dynamic contrast between sections',
+        'Tell the story'
+      ],
+      content: `Verse is storytelling, chorus is release. Let those dynamics show. Quieter verse, bigger chorus.`,
+      exercises: [
+        {
+          id: exerciseId(28, 6, 1),
+          title: 'Dynamic V + C',
+          description: 'Verse + chorus with dynamic contrast.',
+          abc_notation: `X:1
+T:Dynamic V + C
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Tell the story with dynamics'],
+          common_mistakes: ['Same volume throughout']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 28 Checkpoint',
+      objectives: [
+        'V + C sung at 50 BPM',
+        'Core song structure with voice'
+      ],
+      content: `Can you sing verse + chorus while playing at 50 BPM? You're doing what most people dream of—singing your own piano accompaniment.`,
+      exercises: [
+        {
+          id: exerciseId(28, 7, 1),
+          title: 'V + C Sing Check',
+          description: 'Verse and chorus, sung, 50 BPM.',
+          abc_notation: `X:1
+T:V + C Check
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Celebrate this'],
+          common_mistakes: ['Not realizing how far you\'ve come']
+        }
+      ],
+      checkpoint_criteria: [
+        'Chorus sung with piano at 50 BPM',
+        'V to C transition smooth',
+        'Dynamic contrast present',
+        'Core song structure with voice complete'
+      ]
+    }
+  ]
+}
+
+const week29: WeekContent = {
+  week_number: 29,
+  phase: 4,
+  title: 'Complete Song with Voice',
+  overview: 'All sections with voice. Verse, chorus, verse, chorus, bridge, chorus, ending. The complete song, sung and played.',
+  theory_concepts: ['Complete performance', 'Endurance', 'Song form'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Bridge Section',
+      objectives: [
+        'Apply skills to bridge',
+        'Same as verse musically'
+      ],
+      content: `The bridge uses the verse chord pattern with different lyrics. If you can sing the verse, you can sing the bridge. Apply the same approach.`,
+      exercises: [
+        {
+          id: exerciseId(29, 1, 1),
+          title: 'Bridge Sung',
+          description: 'Bridge section, sung with piano.',
+          abc_notation: `X:1
+T:Bridge Sung
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Same as verse, different words'],
+          common_mistakes: ['Treating bridge as totally new']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Ending Section',
+      objectives: [
+        'Sing "Freeway cars and trucks" over ending chords',
+        'The repeating outro'
+      ],
+      content: `The ending repeats "Freeway cars and trucks" over the chromatic descent: G - C#m - C - Dmaj7. Sing the hook while playing the pattern.`,
+      exercises: [
+        {
+          id: exerciseId(29, 2, 1),
+          title: 'Ending Sung',
+          description: 'Ending section with vocal hook.',
+          abc_notation: `X:1
+T:Ending Sung
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [G,,] | [^C,][^CEG]2 [^C,] | [C,][CEG]2 [C,] | [D,][D^FAc]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Hook repeats as song fades'],
+          common_mistakes: ['Losing the chromatic bass']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'First Half Run',
+      objectives: [
+        'V1 - C - V2 - C sung',
+        'First half of song'
+      ],
+      content: `Run the first half of the song: Verse 1, Chorus, Verse 2, Chorus. All sung, all played.`,
+      exercises: [
+        {
+          id: exerciseId(29, 3, 1),
+          title: 'First Half',
+          description: 'V1-C-V2-C, sung throughout.',
+          abc_notation: `X:1
+T:First Half
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Push through without stopping'],
+          common_mistakes: ['Stopping at section boundaries']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Second Half Run',
+      objectives: [
+        'Bridge - C - Ending sung',
+        'Second half of song'
+      ],
+      content: `Run the second half: Bridge (Verse 3), final Chorus, Ending. Complete the structure.`,
+      exercises: [
+        {
+          id: exerciseId(29, 4, 1),
+          title: 'Second Half',
+          description: 'Bridge-C-Ending, sung throughout.',
+          abc_notation: `X:1
+T:Second Half
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Ending can repeat as long as you want'],
+          common_mistakes: ['Abrupt ending']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Full Song Attempt',
+      objectives: [
+        'Complete song, sung and played',
+        'First full run'
+      ],
+      content: `The moment: complete song, start to finish, singing and playing. It doesn't have to be perfect. Just complete.`,
+      exercises: [
+        {
+          id: exerciseId(29, 5, 1),
+          title: 'Full Song Sung',
+          description: 'Complete song, voice and piano.',
+          abc_notation: `X:1
+T:Full Song Sung
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['No stopping', 'Push through mistakes'],
+          common_mistakes: ['Stopping for errors']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Full Song Repetition',
+      objectives: [
+        'Second complete run',
+        'Note improvements'
+      ],
+      content: `Second complete run. Was it better than yesterday? Note what improved and what still needs work.`,
+      exercises: [
+        {
+          id: exerciseId(29, 6, 1),
+          title: 'Full Song x2',
+          description: 'Second complete run-through.',
+          abc_notation: `X:1
+T:Full Song x2
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Compare to yesterday'],
+          common_mistakes: ['Not noticing improvement']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 29 Checkpoint',
+      objectives: [
+        'Complete song sung at 50 BPM',
+        'All sections connected'
+      ],
+      content: `Can you sing and play the complete song at 50 BPM? Even with rough edges? You're performing now.`,
+      exercises: [
+        {
+          id: exerciseId(29, 7, 1),
+          title: 'Complete Song Check',
+          description: 'Full song, voice and piano.',
+          abc_notation: `X:1
+T:Complete Check
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['This is a major achievement'],
+          common_mistakes: ['Downplaying this milestone']
+        }
+      ],
+      checkpoint_criteria: [
+        'Complete song sung with piano',
+        'All sections connected',
+        'Tempo at 50 BPM',
+        'Can push through without stopping'
+      ]
+    }
+  ]
+}
+
+const week30: WeekContent = {
+  week_number: 30,
+  phase: 4,
+  title: 'Building Tempo with Voice',
+  overview: 'You can sing the whole song at 50 BPM. Now we push toward target tempo (74 BPM) while maintaining voice + piano integration.',
+  theory_concepts: ['Tempo building with vocals', 'Maintaining quality', 'Performance tempo'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Tempo Push Strategy',
+      objectives: [
+        'Understand tempo building with vocals',
+        'First push: 50 to 55 BPM'
+      ],
+      content: `Adding voice makes tempo building harder—more cognitive load. Go slower with tempo increases than you did in Phase 3.
+
+**Today:** Try the complete song at 55 BPM. If voice and piano fall apart, drop back to 52.`,
+      exercises: [
+        {
+          id: exerciseId(30, 1, 1),
+          title: 'Full Song 55',
+          description: 'Complete song at 55 BPM with voice.',
+          abc_notation: `X:1
+T:Full Song 55
+M:4/4
+L:1/4
+Q:1/4=55
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 55,
+          tips: ['Voice makes tempo harder'],
+          common_mistakes: ['Pushing too fast']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Consolidate 55',
+      objectives: [
+        'Make 55 BPM comfortable',
+        'Multiple runs'
+      ],
+      content: `Stay at 55 until it feels solid. Two complete runs at 55 BPM.`,
+      exercises: [
+        {
+          id: exerciseId(30, 2, 1),
+          title: '55 x2',
+          description: 'Two complete songs at 55 BPM.',
+          abc_notation: `X:1
+T:55 x2
+M:4/4
+L:1/4
+Q:1/4=55
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 55,
+          tips: ['Second run should feel easier'],
+          common_mistakes: ['Rushing to 60']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Push to 58',
+      objectives: [
+        'Small increment',
+        'Test comfort zone'
+      ],
+      content: `Small bump to 58 BPM. These increments feel small but matter when you're singing too.`,
+      exercises: [
+        {
+          id: exerciseId(30, 3, 1),
+          title: 'Full Song 58',
+          description: 'Complete song at 58 BPM.',
+          abc_notation: `X:1
+T:Full Song 58
+M:4/4
+L:1/4
+Q:1/4=58
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 58,
+          tips: ['Every 3 BPM is noticeable'],
+          common_mistakes: ['Skipping increments']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Target 60',
+      objectives: [
+        '60 BPM with voice',
+        'Significant milestone'
+      ],
+      content: `60 BPM is a big milestone—80% of target tempo, with voice. This is real performing territory.`,
+      exercises: [
+        {
+          id: exerciseId(30, 4, 1),
+          title: 'Full Song 60',
+          description: 'Complete song at 60 BPM with voice.',
+          abc_notation: `X:1
+T:Full Song 60
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['80% of target tempo'],
+          common_mistakes: ['Tension as tempo increases']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Consolidate 60',
+      objectives: [
+        'Lock in 60 BPM',
+        'Make it feel normal'
+      ],
+      content: `Stay at 60. Make it comfortable. Two complete runs.`,
+      exercises: [
+        {
+          id: exerciseId(30, 5, 1),
+          title: '60 x2',
+          description: 'Two complete songs at 60 BPM.',
+          abc_notation: `X:1
+T:60 x2
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Consistency is the goal'],
+          common_mistakes: ['Quality variation between runs']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Test 65',
+      objectives: [
+        'Push boundary',
+        'Find current ceiling'
+      ],
+      content: `Test your ceiling: try 65 BPM. This is above comfortable—see what happens.`,
+      exercises: [
+        {
+          id: exerciseId(30, 6, 1),
+          title: 'Test 65',
+          description: 'Full song at 65 BPM.',
+          abc_notation: `X:1
+T:Test 65
+M:4/4
+L:1/4
+Q:1/4=65
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 65,
+          tips: ['This is a test, not the target'],
+          common_mistakes: ['Getting frustrated if it\'s hard']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 30 Checkpoint',
+      objectives: [
+        'Full song at 60+ BPM with voice',
+        'Tempo building continues'
+      ],
+      content: `Where did you land? 60? 65? Whatever your comfortable tempo, you're performing now—singing and playing a complete song.`,
+      exercises: [
+        {
+          id: exerciseId(30, 7, 1),
+          title: 'Tempo Check',
+          description: 'Full song at your comfortable tempo.',
+          abc_notation: `X:1
+T:Tempo Check
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Be honest about your tempo'],
+          common_mistakes: ['Claiming faster than you can do']
+        }
+      ],
+      checkpoint_criteria: [
+        'Full song with voice at 60+ BPM',
+        'Quality maintained at faster tempo',
+        'No complete breakdowns',
+        'Tempo building strategy understood'
+      ]
+    }
+  ]
+}
+
+const week31: WeekContent = {
+  week_number: 31,
+  phase: 4,
+  title: 'Expression and Feel',
+  overview: 'You can do it. Now make it beautiful. This week focuses on the musical qualities that separate playing from performing.',
+  theory_concepts: ['Swing feel', 'Vocal expression', 'Piano touch', 'Dynamics'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'The Swing Feel',
+      objectives: [
+        'Understand swing rhythm',
+        'Apply to piano and voice'
+      ],
+      content: `"Ol' 55" has a gentle swing feel. Not strict swing like jazz—just a relaxed, lilting quality. The eighth notes aren't perfectly even; they have a slight long-short pattern.
+
+Listen to the original recording. Feel how it swings. Apply that to both your piano and your voice.`,
+      exercises: [
+        {
+          id: exerciseId(31, 1, 1),
+          title: 'Swing Feel',
+          description: 'Full song with swing feel emphasized.',
+          abc_notation: `X:1
+T:Swing Feel
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Lazy, relaxed eighth notes', 'Not mechanical'],
+          common_mistakes: ['Too strict/mechanical']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Vocal Expression',
+      objectives: [
+        'Sing with more feeling',
+        'Tell the story'
+      ],
+      content: `Your voice is telling a story about driving home at dawn, tired but alive. Let that wistfulness, that nostalgia, come through. Mean what you sing.`,
+      exercises: [
+        {
+          id: exerciseId(31, 2, 1),
+          title: 'Expressive Singing',
+          description: 'Full song with emotional commitment.',
+          abc_notation: `X:1
+T:Expressive Singing
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Picture the sunrise', 'Feel the freedom'],
+          common_mistakes: ['Singing without feeling']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Dynamic Arc',
+      objectives: [
+        'Shape the whole song dynamically',
+        'Verse quiet, chorus bigger, ending fades'
+      ],
+      content: `The song has a dynamic arc: verses are intimate, choruses open up, the ending fades into dawn. Plan your dynamics for the whole song.`,
+      exercises: [
+        {
+          id: exerciseId(31, 3, 1),
+          title: 'Dynamic Arc',
+          description: 'Full song with planned dynamics.',
+          abc_notation: `X:1
+T:Dynamic Arc
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Plan dynamics before you start'],
+          common_mistakes: ['Flat dynamics throughout']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Piano Touch',
+      objectives: [
+        'Refine piano tone',
+        'Support the voice, don\'t compete'
+      ],
+      content: `Your piano should support your voice, not fight with it. Play with a warm, round tone. Don't bang—caress the keys.`,
+      exercises: [
+        {
+          id: exerciseId(31, 4, 1),
+          title: 'Piano Touch',
+          description: 'Focus on tone quality while singing.',
+          abc_notation: `X:1
+T:Piano Touch
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Warm tone', 'Voice is the star'],
+          common_mistakes: ['Piano too loud or harsh']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Complete Musical Performance',
+      objectives: [
+        'Put it all together',
+        'Perform, don\'t just play'
+      ],
+      content: `Combine everything: swing feel, vocal expression, dynamic arc, piano touch. This isn't practice anymore—this is performing.`,
+      exercises: [
+        {
+          id: exerciseId(31, 5, 1),
+          title: 'Full Performance',
+          description: 'Complete song as a performance.',
+          abc_notation: `X:1
+T:Full Performance
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Commit fully', 'Perform for an imaginary audience'],
+          common_mistakes: ['Holding back']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Record Yourself',
+      objectives: [
+        'Record and listen back',
+        'Hear what others hear'
+      ],
+      content: `Record yourself performing the complete song. Listen back. Be honest: what needs work? What sounds good?`,
+      exercises: [
+        {
+          id: exerciseId(31, 6, 1),
+          title: 'Self Recording',
+          description: 'Record and analyze.',
+          abc_notation: `X:1
+T:Self Recording
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Recording reveals truth', 'Don\'t be too hard on yourself'],
+          common_mistakes: ['Not recording', 'Being overly critical']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 31 Checkpoint',
+      objectives: [
+        'Musical performance quality',
+        'Ready for final push'
+      ],
+      content: `Your performance should now have swing, expression, dynamics, and quality touch. Does it feel like music, not exercise?`,
+      exercises: [
+        {
+          id: exerciseId(31, 7, 1),
+          title: 'Musical Quality Check',
+          description: 'Full performance with all elements.',
+          abc_notation: `X:1
+T:Quality Check
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['This should feel like performing'],
+          common_mistakes: ['Still treating it as practice']
+        }
+      ],
+      checkpoint_criteria: [
+        'Swing feel present',
+        'Vocal expression evident',
+        'Dynamic arc planned and executed',
+        'Piano touch supports voice',
+        'Performance quality, not just accuracy'
+      ]
+    }
+  ]
+}
+
+const week32: WeekContent = {
+  week_number: 32,
+  phase: 4,
+  title: 'Phase 4 Finale - Voice Integration Complete',
+  overview: 'Final week of Phase 4. Push tempo toward 65-70 BPM while maintaining all the musical qualities you\'ve developed. By the end: a performable version of the song.',
+  theory_concepts: ['Performance tempo', 'Integration', 'Phase completion'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Final Tempo Push',
+      objectives: [
+        'Target: 65-70 BPM',
+        'Maintain quality'
+      ],
+      content: `Final push: get to 65-70 BPM while keeping everything musical. Target tempo is 74, but 65-70 is close enough to sound right.`,
+      exercises: [
+        {
+          id: exerciseId(32, 1, 1),
+          title: 'Push to 65',
+          description: 'Full song at 65 BPM.',
+          abc_notation: `X:1
+T:Push to 65
+M:4/4
+L:1/4
+Q:1/4=65
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 65,
+          tips: ['Quality over speed'],
+          common_mistakes: ['Sacrificing musicality for tempo']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Lock in 65',
+      objectives: [
+        'Consolidate 65 BPM',
+        'Multiple runs'
+      ],
+      content: `Make 65 feel comfortable. Two complete performances at 65 BPM.`,
+      exercises: [
+        {
+          id: exerciseId(32, 2, 1),
+          title: '65 x2',
+          description: 'Two full performances at 65 BPM.',
+          abc_notation: `X:1
+T:65 x2
+M:4/4
+L:1/4
+Q:1/4=65
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 65,
+          tips: ['Consistency between runs'],
+          common_mistakes: ['Variation in quality']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Test 68',
+      objectives: [
+        'Push toward 70',
+        'Find your comfortable ceiling'
+      ],
+      content: `Test 68 BPM. Getting closer to target. How does it feel?`,
+      exercises: [
+        {
+          id: exerciseId(32, 3, 1),
+          title: 'Test 68',
+          description: 'Full song at 68 BPM.',
+          abc_notation: `X:1
+T:Test 68
+M:4/4
+L:1/4
+Q:1/4=68
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 68,
+          tips: ['Close to target tempo'],
+          common_mistakes: ['Tension building']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Target 70',
+      objectives: [
+        '70 BPM with voice',
+        '95% of target tempo'
+      ],
+      content: `70 BPM—95% of target tempo. If you can do this with voice and all the musical qualities, you're ready to perform.`,
+      exercises: [
+        {
+          id: exerciseId(32, 4, 1),
+          title: 'Target 70',
+          description: 'Full song at 70 BPM.',
+          abc_notation: `X:1
+T:Target 70
+M:4/4
+L:1/4
+Q:1/4=70
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 70,
+          tips: ['Almost there'],
+          common_mistakes: ['Losing musicality at speed']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Performance Run',
+      objectives: [
+        'Full performance at your best tempo',
+        'Treat as real performance'
+      ],
+      content: `Whatever tempo you can do with quality—60, 65, 70—do a full performance. Treat it as real. Breathe, commit, perform.`,
+      exercises: [
+        {
+          id: exerciseId(32, 5, 1),
+          title: 'Performance Run',
+          description: 'Full performance at comfortable tempo.',
+          abc_notation: `X:1
+T:Performance Run
+M:4/4
+L:1/4
+Q:1/4=68
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 68,
+          tips: ['This is a performance, not practice'],
+          common_mistakes: ['Not treating it seriously']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Record Final Performance',
+      objectives: [
+        'Record your Phase 4 performance',
+        'Document progress'
+      ],
+      content: `Record yourself performing the complete song. This is your Phase 4 milestone recording. Compare to where you started.`,
+      exercises: [
+        {
+          id: exerciseId(32, 6, 1),
+          title: 'Final Recording',
+          description: 'Record complete performance.',
+          abc_notation: `X:1
+T:Final Recording
+M:4/4
+L:1/4
+Q:1/4=68
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 68,
+          tips: ['Keep this recording'],
+          common_mistakes: ['Not documenting progress']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Phase 4 Complete!',
+      objectives: [
+        'Celebrate Phase 4 completion',
+        'Ready for refinement'
+      ],
+      content: `**Phase 4 Complete!** You can sing and play "Ol' 55." You're doing something most people never achieve—performing a song with your own piano accompaniment.
+
+Phase 5 is refinement: getting to target tempo, polishing details, preparing for actual performance. You're 2/3 of the way through the program.`,
+      exercises: [
+        {
+          id: exerciseId(32, 7, 1),
+          title: 'Phase 4 Finale',
+          description: 'Celebration performance.',
+          abc_notation: `X:1
+T:Phase 4 Finale
+M:4/4
+L:1/4
+Q:1/4=68
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 68,
+          tips: ['You did it', 'Sing and play together'],
+          common_mistakes: ['Not celebrating']
+        }
+      ],
+      checkpoint_criteria: [
+        'Full song sung with piano at 65-70 BPM',
+        'Swing feel present',
+        'Vocal expression evident',
+        'Dynamic arc present',
+        'Recording made',
+        'PHASE 4 COMPLETE - Voice integration achieved!'
+      ]
+    }
+  ]
+}
+
 // Combine into curriculum
 export const curriculum: Curriculum = {
   phases: [
@@ -4525,8 +6250,14 @@ export const curriculum: Curriculum = {
       name: 'Hands Together',
       description: 'The hard part. Slow, methodical integration of both hands. This is where most adult beginners quit—you won\'t.',
       weeks: [week17, week18, week19, week20, week21, week22, week23, week24]
+    },
+    {
+      number: 4,
+      name: 'Adding Voice',
+      description: 'Singing while playing. The ultimate coordination challenge. You\'ll learn to perform, not just play.',
+      weeks: [week25, week26, week27, week28, week29, week30, week31, week32]
     }
-    // Phases 4-6 would be added as curriculum expands
+    // Phases 5-6 would be added as curriculum expands
   ]
 }
 
