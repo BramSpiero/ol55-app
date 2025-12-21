@@ -13,6 +13,7 @@ interface PromptContext {
   recentPractice?: any[]
   recentStruggles?: any[]
   paceInfo?: PaceInfo
+  allowProfanity?: boolean
 }
 
 export function buildSystemPrompt(context: PromptContext): string {
@@ -27,6 +28,11 @@ export function buildSystemPrompt(context: PromptContext): string {
     weighted_digital: 'weighted digital piano',
     unweighted: 'unweighted keyboard'
   }[context.equipment] || 'piano'
+
+  // Language style based on profanity setting
+  const languageStyle = context.allowProfanity 
+    ? `Feel free to use casual language including mild profanity for emphasis when appropriate. You can say things like "don't half-ass this" or "that sounds like crap, let's fix it." Keep it natural and motivational, not gratuitous.`
+    : `Keep your language professional and clean. No profanity. You can still be direct and honest without swearing.`
 
   // Pace-specific guidance
   let paceGuidance = ''
@@ -76,6 +82,7 @@ Be caring but truthful. The worst outcome is pretending they're on track when th
 - Keep advice actionable within 15-minute daily sessions.
 - Reference the original Tom Waits recording (from "Closing Time", 1973) for feel and expression.
 - You're preparing them for a real performance at a bar or friend's house.
+- ${languageStyle}
 
 ## Student Profile
 - Name: ${context.displayName}
@@ -94,6 +101,10 @@ ${context.dayContent?.objectives.map(o => `- ${o}`).join('\n') || 'No objectives
 Today's content:
 ${context.dayContent?.content?.slice(0, 500) || 'No content available'}
 
+## Song Details
+"Ol' 55" is in G major (not D as sometimes listed). Key chords: G, Bm, C, D, Gmaj7, D7sus4, Em.
+Tempo: ~74 BPM with a swing feel. The song has a warm, nostalgic late-night drive character.
+
 ## Pacing Flexibility
 The curriculum is 48 weeks of content, not 48 calendar weeks. Students can:
 - Complete multiple days in one session if they're energized
@@ -111,8 +122,8 @@ X:1
 T:Custom Exercise
 M:4/4
 L:1/4
-K:D
-D E ^F G | A G ^F E | D4 |]
+K:G
+G A B c | d c B A | G4 |]
 \`\`\`
 
 ## Guidelines
@@ -120,7 +131,8 @@ D E ^F G | A G ^F E | D4 |]
 - If they report a struggle, provide a specific exercise to address it
 - If they ask about music theory, explain it clearly with examples
 - If they seem to be rushing without mastering material, gently slow them down
-- Be encouraging but not sycophantic—they chose tough love for a reason`
+- Be encouraging but not sycophantic—they chose tough love for a reason
+- Never discuss politics, religion, or other non-music topics. Redirect to piano practice.`
 }
 
 export function buildConversationContext(messages: any[]): { role: 'user' | 'assistant', content: string }[] {

@@ -39,6 +39,16 @@ export default function Header({ displayName }: HeaderProps) {
               {item.label}
             </Link>
           ))}
+          <Link 
+            href="/settings"
+            className={`transition-colors ${
+              pathname === '/settings'
+                ? 'text-whiskey-600 font-medium'
+                : 'text-midnight-600 hover:text-midnight-900'
+            }`}
+          >
+            ⚙️
+          </Link>
           {displayName && (
             <div className="text-sm text-midnight-500 pl-4 border-l border-midnight-200">
               {displayName}
@@ -46,9 +56,14 @@ export default function Header({ displayName }: HeaderProps) {
           )}
         </nav>
 
-        {/* Mobile - just show name */}
-        <div className="md:hidden text-sm text-midnight-500">
-          {displayName}
+        {/* Mobile - show name and settings */}
+        <div className="md:hidden flex items-center gap-3">
+          <Link href="/settings" className="text-midnight-500">
+            ⚙️
+          </Link>
+          <span className="text-sm text-midnight-500">
+            {displayName}
+          </span>
         </div>
       </div>
     </header>

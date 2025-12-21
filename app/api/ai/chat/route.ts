@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     
     const paceInfo = calculatePaceInfo(startDate, targetEndDate, daysCompleted)
 
-    // Build system prompt with pace awareness
+    // Build system prompt with pace awareness and profanity setting
     const systemPrompt = buildSystemPrompt({
       displayName: profile?.display_name || 'Student',
       musicalBackground: profile?.musical_background || 'none',
@@ -70,7 +70,8 @@ export async function POST(request: NextRequest) {
       phase: currentPhase,
       weekContent,
       dayContent,
-      paceInfo
+      paceInfo,
+      allowProfanity: profile?.allow_profanity ?? true
     })
 
     // Build messages array

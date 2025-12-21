@@ -8,7 +8,7 @@ const week1: WeekContent = {
   week_number: 1,
   phase: 1,
   title: 'Keyboard Geography',
-  overview: 'This week is about building your foundation. Before you play a single melody, you need to know where you are on the keyboard and how to sit at it properly. We\'re finding all the C\'s, D\'s, and G\'s—the key landmarks for "Ol\' 55" which is in D major.',
+  overview: 'This week is about building your foundation. Before you play a single melody, you need to know where you are on the keyboard and how to sit at it properly. We\'re finding all the C\'s, G\'s, and D\'s—the key landmarks for "Ol\' 55" which is in G major.',
   theory_concepts: ['Piano key layout', 'Octaves', 'White vs black keys'],
   days: [
     {
@@ -40,34 +40,20 @@ Play all the C's from lowest to highest. Then highest to lowest. Notice how they
     {
       day_number: 2,
       type: 'practice',
-      title: 'Finding D and G',
+      title: 'Finding G and D',
       objectives: [
-        'Find all D\'s on the keyboard',
         'Find all G\'s on the keyboard',
+        'Find all D\'s on the keyboard',
         'Understand why these notes matter for our song'
       ],
-      content: `D is between the two black keys in the group of 2. G is between the second and third black keys in the group of 3. These are critical: "Ol' 55" is in D major, and the main chords are D, G, and A. Today we lock in D and G.`,
+      content: `G is between the second and third black keys in the group of 3. D is between the two black keys in the group of 2. These are critical: "Ol' 55" is in G major, and G is our home chord. D is the dominant—it creates tension that wants to resolve back to G.`,
       keyboardDiagram: {
-        highlightNotes: ['D', 'G'],
-        title: 'Find D and G on the keyboard'
+        highlightNotes: ['G', 'D'],
+        title: 'Find G and D on the keyboard'
       },
       exercises: [
         {
           id: exerciseId(1, 2, 1),
-          title: 'Find All the D\'s',
-          description: 'Play every D on your piano, low to high.',
-          abc_notation: `X:1
-T:All the D's
-M:4/4
-L:1/2
-K:D
-D,, D, D d d' d''|]`,
-          target_tempo: 60,
-          tips: ['D sits snugly between the 2 black keys'],
-          common_mistakes: ['Playing E instead of D']
-        },
-        {
-          id: exerciseId(1, 2, 2),
           title: 'Find All the G\'s',
           description: 'Play every G on your piano, low to high.',
           abc_notation: `X:1
@@ -79,33 +65,47 @@ G,, G, G g g'|]`,
           target_tempo: 60,
           tips: ['G is in the group of 3 black keys, between keys 2 and 3'],
           common_mistakes: ['Confusing G with A or F']
+        },
+        {
+          id: exerciseId(1, 2, 2),
+          title: 'Find All the D\'s',
+          description: 'Play every D on your piano, low to high.',
+          abc_notation: `X:1
+T:All the D's
+M:4/4
+L:1/2
+K:D
+D,, D, D d d' d''|]`,
+          target_tempo: 60,
+          tips: ['D sits snugly between the 2 black keys'],
+          common_mistakes: ['Playing E instead of D']
         }
       ]
     },
     {
       day_number: 3,
       type: 'practice',
-      title: 'C-D-G Landmarks',
+      title: 'C-G-D Landmarks',
       objectives: [
-        'Jump between C, D, and G confidently',
+        'Jump between C, G, and D confidently',
         'Start building keyboard geography muscle memory'
       ],
-      content: `Now we connect the dots. You should be able to put your finger on any C, D, or G instantly. This is your internal GPS for the keyboard.`,
+      content: `Now we connect the dots. You should be able to put your finger on any C, G, or D instantly. This is your internal GPS for the keyboard. These three notes form the backbone of countless songs, including "Ol' 55".`,
       keyboardDiagram: {
-        highlightNotes: ['C', 'D', 'G'],
-        title: 'Your landmark notes: C, D, and G'
+        highlightNotes: ['C', 'G', 'D'],
+        title: 'Your landmark notes: C, G, and D'
       },
       exercises: [
         {
           id: exerciseId(1, 3, 1),
-          title: 'C-D-G Jumps',
-          description: 'Play C, then D, then G in the same octave. Repeat in different octaves.',
+          title: 'C-G-D Jumps',
+          description: 'Play C, then G, then D in the same octave. Repeat in different octaves.',
           abc_notation: `X:1
-T:C-D-G Landmarks
+T:C-G-D Landmarks
 M:4/4
 L:1/4
 K:C
-C D G2 | c d g2 | c' d' g'2 |]`,
+C G, D2 | c g d'2 |]`,
           target_tempo: 60,
           tips: ['Look at where your finger is going before you move', 'Don\'t rush'],
           common_mistakes: ['Looking at your hands too much—try to feel the distances']
@@ -635,124 +635,124 @@ C D E F | G A B c | C, D, E, F, | G, A, B, C |]`,
 const week4: WeekContent = {
   week_number: 4,
   phase: 1,
-  title: 'D Major Five-Finger & Coordination',
-  overview: 'D major is the key of "Ol\' 55." This week we get comfortable in D position—your home base for the rest of the year. We also push coordination further with both hands playing simultaneously.',
-  theory_concepts: ['D major scale', 'F# and C#', 'Home key concept'],
+  title: 'G Major Five-Finger & Coordination',
+  overview: 'G major is the key of "Ol\' 55." This week we solidify G position—your home base for the rest of the year. We also push coordination further with both hands playing simultaneously.',
+  theory_concepts: ['G major scale', 'F#', 'Home key concept', 'Dominant chord (D)'],
   days: [
     {
       day_number: 1,
       type: 'info_dump',
-      title: 'D Major - Your Home Key',
-      objectives: ['Learn D major five-finger position', 'Understand why D major is home', 'First black key in position: F#'],
-      content: `"Ol\' 55" is in D major. D is home. The D major scale uses F# and C#, but in the five-finger position (D-E-F#-G-A), you only encounter F#.
+      title: 'G Major - Your Home Key',
+      objectives: ['Solidify G major five-finger position', 'Understand why G major is home', 'Introduction to F# in the full scale'],
+      content: `"Ol' 55" is in G major. G is home. The G major scale uses one sharp: F#. In the five-finger position (G-A-B-C-D), you don't encounter F# yet—but when we play the full G major scale, your fourth finger will land on it.
 
-F# is the black key between F and G. Your third finger (middle finger) will naturally land on it in D position. Get comfortable with this now.`,
+The D chord is your dominant—it creates tension that wants to resolve back to G. This G→D→G relationship is the heartbeat of countless songs, including ours.`,
       exercises: [
         {
           id: exerciseId(4, 1, 1),
-          title: 'D Major Five-Finger RH',
-          description: 'Play D-E-F#-G-A with right hand. Note the black key.',
+          title: 'G Major Five-Finger RH - Solid',
+          description: 'Play G-A-B-C-D with right hand. Make it automatic.',
           abc_notation: `X:1
-T:D Major Five-Finger RH
+T:G Major Five-Finger RH
 M:4/4
 L:1/4
-K:D
-D E ^F G | A G ^F E | D4 |]`,
-          target_tempo: 72,
-          tips: ['Third finger naturally curves onto F#', 'Don\'t stretch—position your hand correctly'],
-          common_mistakes: ['Playing F natural instead of F#', 'Tension reaching for black key']
+K:G
+G A B c | d c B A | G4 |]`,
+          target_tempo: 76,
+          tips: ['This should feel like home now', 'Completely relaxed'],
+          common_mistakes: ['Still thinking too much—it should be reflexive']
         }
       ]
     },
     {
       day_number: 2,
       type: 'practice',
-      title: 'D Major LH',
-      objectives: ['D major five-finger in left hand', 'Black key comfort with non-dominant hand'],
-      content: `Same position, other hand. LH in D major also uses F#. Pinky on D, thumb on A.`,
+      title: 'Full G Major Scale',
+      objectives: ['Play full G major scale (one octave)', 'Learn the F# position', 'Understand scale fingering'],
+      content: `The full G major scale: G-A-B-C-D-E-F#-G. F# is the black key between F and G. Standard fingering: 1-2-3-1-2-3-4-5 (RH going up). The thumb crosses under after finger 3.`,
       exercises: [
         {
           id: exerciseId(4, 2, 1),
-          title: 'D Major Five-Finger LH',
-          description: 'Play D-E-F#-G-A with left hand.',
+          title: 'G Major Scale RH',
+          description: 'Play G major scale one octave, ascending and descending.',
           abc_notation: `X:1
-T:D Major Five-Finger LH
+T:G Major Scale RH
 M:4/4
 L:1/4
-K:D bass
-D, E, ^F, G, | A, G, ^F, E, | D,4 |]`,
+K:G
+G A B c | d e ^f g | ^f e d c | B A G2 |]`,
           target_tempo: 66,
-          tips: ['Second finger on F#', 'Wrist stays level even with black key'],
-          common_mistakes: ['Wrist twisting to reach F#']
+          tips: ['Thumb crosses under smoothly after B', 'F# is your fourth finger'],
+          common_mistakes: ['Bumpy thumb crossing', 'Playing F natural']
         }
       ]
     },
     {
       day_number: 3,
       type: 'practice',
-      title: 'Parallel Motion in D',
-      objectives: ['Both hands play the same notes together', 'Parallel motion concept'],
-      content: `Parallel motion: both hands play the same notes in the same direction. This is different from contrary motion. Both are essential.`,
+      title: 'G Major Scale LH',
+      objectives: ['Play full G major scale with left hand', 'Mirror the RH fingering'],
+      content: `Left hand G major scale uses fingering 5-4-3-2-1-3-2-1 going up. The third finger crosses over after the thumb.`,
       exercises: [
         {
           id: exerciseId(4, 3, 1),
-          title: 'D Major Parallel Motion',
-          description: 'Both hands play D-E-F#-G-A together, going up, then down.',
+          title: 'G Major Scale LH',
+          description: 'Play G major scale one octave with left hand.',
           abc_notation: `X:1
-T:D Major Parallel
+T:G Major Scale LH
 M:4/4
 L:1/4
-K:D
-[D,D] [E,E] [^F,^F] [G,G] | [A,A] [G,G] [^F,^F] [E,E] | [D,D]4 |]`,
-          target_tempo: 50,
-          tips: ['Hands hit each note at exactly the same time', 'Both hands hit F# together'],
-          common_mistakes: ['One hand arriving early', 'Different volumes between hands']
+K:G bass
+G,, A,, B,, C, | D, E, ^F, G, | ^F, E, D, C, | B,, A,, G,,2 |]`,
+          target_tempo: 60,
+          tips: ['Third finger crosses over smoothly', 'Keep wrist level'],
+          common_mistakes: ['Uneven tempo during finger crossing']
         }
       ]
     },
     {
       day_number: 4,
       type: 'practice',
-      title: 'All Three Positions',
-      objectives: ['Fluency in C, G, and D positions', 'Quick position changes'],
-      content: `You now know three positions: C, G, D. Practice moving between all three. This builds the flexibility you\'ll need.`,
+      title: 'Parallel Motion in G',
+      objectives: ['Both hands play G scale together', 'Parallel motion concept'],
+      content: `Parallel motion: both hands play the same notes in the same direction. Start slow—this requires coordination.`,
       exercises: [
         {
           id: exerciseId(4, 4, 1),
-          title: 'Three Position Round Trip',
-          description: 'Play C position, G position, D position, then back through G to C.',
+          title: 'G Major Parallel Motion',
+          description: 'Both hands play G major five-finger together.',
           abc_notation: `X:1
-T:Three Positions
+T:G Major Parallel
 M:4/4
 L:1/4
-K:C
-C D E F | G A B c | D E ^F G | A4 |]`,
-          target_tempo: 60,
-          tips: ['Each position should feel equally comfortable', 'Find the landmarks quickly'],
-          common_mistakes: ['D position feels harder (it will at first—keep practicing)']
+K:G
+[G,G] [A,A] [B,B] [c,c] | [d,d] [c,c] [B,B] [A,A] | [G,G]4 |]`,
+          target_tempo: 50,
+          tips: ['Hands hit each note at exactly the same time'],
+          common_mistakes: ['One hand arriving early', 'Different volumes between hands']
         }
       ]
     },
     {
       day_number: 5,
       type: 'practice',
-      title: 'Hands Together in D',
-      objectives: ['Extended parallel motion practice', 'Build D major muscle memory'],
-      content: `More time in D position. This is your home key. Get comfortable here.`,
+      title: 'All Three Positions',
+      objectives: ['Fluency in C, G, and D positions', 'Quick position changes'],
+      content: `You now know C, G, and the full G major scale. Practice moving between positions smoothly.`,
       exercises: [
         {
           id: exerciseId(4, 5, 1),
-          title: 'D Major Extended',
-          description: 'Play D major parallel motion three times without stopping.',
+          title: 'Three Position Round Trip',
+          description: 'Play C position, G position, back to C.',
           abc_notation: `X:1
-T:D Major Extended Practice
+T:Position Changes
 M:4/4
 L:1/4
-K:D
-[D,D] [E,E] [^F,^F] [G,G] | [A,A] [G,G] [^F,^F] [E,E] | [D,D]2 z2 |]`,
+K:C
+C D E F | G A B c | d c B A | G F E D | C4 |]`,
           target_tempo: 60,
-          tips: ['Don\'t stop between repetitions', 'Maintain focus all the way through'],
-          common_mistakes: ['Quality degrades on repetitions 2 and 3']
+          tips: ['Each position should feel equally comfortable'],
+          common_mistakes: ['Hesitating during position shifts']
         }
       ]
     },
@@ -766,7 +766,7 @@ K:D
         {
           id: exerciseId(4, 6, 1),
           title: 'Month 1 Review',
-          description: 'Play C position (both hands), G position (both hands), D position (both hands).',
+          description: 'Play C position (both hands), G position (both hands), G major scale.',
           abc_notation: `X:1
 T:Month 1 Review
 M:4/4
@@ -1021,13 +1021,13 @@ const week6: WeekContent = {
     exercises: [{
       id: exerciseId(6, i + 1, 1),
       title: 'Chord + Melody',
-      description: 'LH plays D chord, RH plays D major five-finger.',
+      description: 'LH plays G chord, RH plays G major five-finger.',
       abc_notation: `X:1
 T:Chord + Melody
 M:4/4
 L:1/4
-K:D
-[D,^F,A,]4 | D E ^F G | A G ^F E | D4 |]`,
+K:G
+[G,B,D]4 | G A B c | d c B A | G4 |]`,
       target_tempo: 60,
       tips: ['LH sustains while RH moves', 'Listen for balance'],
       common_mistakes: ['LH overpowers RH melody']
@@ -1039,28 +1039,28 @@ K:D
 const week7: WeekContent = {
   week_number: 7,
   phase: 1,
-  title: 'I-IV-V in D Major',
-  overview: 'The I-IV-V progression is the backbone of countless songs, including "Ol\' 55." In D major, that\'s D (I), G (IV), and A (V). Time to add the A chord.',
+  title: 'I-IV-V in G Major',
+  overview: 'The I-IV-V progression is the backbone of countless songs, including "Ol\' 55." In G major, that\'s G (I), C (IV), and D (V). These are the essential chords.',
   theory_concepts: ['Roman numeral analysis', 'I-IV-V progression', 'Dominant chord'],
   days: Array.from({ length: 7 }, (_, i) => ({
     day_number: i + 1,
     type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
     title: `Day ${i + 1}`,
-    objectives: ['Learn A major triad', 'Play I-IV-V progression in D'],
-    content: 'A major triad: A-C#-E. This completes your primary chord vocabulary for "Ol\' 55."',
+    objectives: ['Play I-IV-V progression in G', 'Understand chord functions'],
+    content: 'G (I) is home. C (IV) adds movement. D (V) creates tension that wants to resolve back to G. This is the heartbeat of "Ol\' 55."',
     exercises: [{
       id: exerciseId(7, i + 1, 1),
       title: 'I-IV-V-I Progression',
-      description: 'Play D - G - A - D progression.',
+      description: 'Play G - C - D - G progression.',
       abc_notation: `X:1
-T:I-IV-V-I in D
+T:I-IV-V-I in G
 M:4/4
 L:1
-K:D
-[D^FA] | [GBd] | [A^ce] | [D^FA] |]`,
+K:G
+[GBd] | [CEG] | [D^FA] | [GBd] |]`,
       target_tempo: 60,
-      tips: ['Hear the tension and release', 'A wants to resolve to D'],
-      common_mistakes: ['Forgetting C# in A chord']
+      tips: ['Hear the tension and release', 'D wants to resolve to G'],
+      common_mistakes: ['Forgetting F# in D chord']
     }],
     checkpoint_criteria: i === 6 ? ['Can play I-IV-V-I smoothly', 'Understand the function of each chord'] : undefined
   }))
@@ -1069,25 +1069,25 @@ K:D
 const week8: WeekContent = {
   week_number: 8,
   phase: 1,
-  title: 'Adding ii and vi Chords',
-  overview: 'Em (ii) and Bm (vi) add color to the progression. "Ol\' 55" uses these chords for emotional depth. This completes the harmonic vocabulary you need.',
-  theory_concepts: ['Minor triads', 'ii and vi chords', 'Complete chord vocabulary'],
+  title: 'Adding ii, iii, and vi Chords',
+  overview: 'Bm (iii), Em (vi), and Am (ii) add color to the progression. "Ol\' 55" uses these chords for emotional depth. This completes the harmonic vocabulary you need.',
+  theory_concepts: ['Minor triads', 'Secondary chords', 'Complete chord vocabulary'],
   days: Array.from({ length: 7 }, (_, i) => ({
     day_number: i + 1,
     type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
     title: `Day ${i + 1}`,
-    objectives: ['Learn Em and Bm triads', 'Complete chord vocabulary for song'],
-    content: 'Em (E-G-B) and Bm (B-D-F#) are minor triads. They sound "sadder" than major triads. Both appear in "Ol\' 55."',
+    objectives: ['Learn Bm, Em, and Am triads', 'Complete chord vocabulary for song'],
+    content: `The chords in "Ol' 55" are: G, Bm, C, D, Gmaj7, D7sus4, Em, C#m. Today we focus on the minor triads. Bm (B-D-F#) and Em (E-G-B) are minor triads—they sound more melancholy than major triads.`,
     exercises: [{
       id: exerciseId(8, i + 1, 1),
       title: 'Minor Triads',
-      description: 'Play Em and Bm chords.',
+      description: 'Play Bm and Em chords.',
       abc_notation: `X:1
 T:Minor Triads
 M:4/4
 L:1
-K:D
-[EGB] | [Bd^F] |]`,
+K:G
+[Bd^f] | [EGB] |]`,
       target_tempo: 60,
       tips: ['Minor third is one half step smaller than major third', 'Notice the darker sound'],
       common_mistakes: ['Playing E major instead of E minor']
