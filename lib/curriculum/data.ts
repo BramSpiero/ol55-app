@@ -1092,8 +1092,1720 @@ K:G
       tips: ['Minor third is one half step smaller than major third', 'Notice the darker sound'],
       common_mistakes: ['Playing E major instead of E minor']
     }],
-    checkpoint_criteria: i === 6 ? ['Can play all chords for Ol\' 55: D, G, A, Em, Bm', 'Phase 1 complete!'] : undefined
+    checkpoint_criteria: i === 6 ? ['Can play all chords for Ol\' 55: G, Bm, C, D, Em', 'Phase 1 complete!'] : undefined
   }))
+}
+
+// ============================================================================
+// PHASE 2: Song Introduction (Weeks 9-16)
+// Start learning the actual song, hands separate
+// ============================================================================
+
+const week9: WeekContent = {
+  week_number: 9,
+  phase: 2,
+  title: 'Verse Melody - Right Hand',
+  overview: 'Welcome to Phase 2! We\'re finally touching the actual song. This week: the verse melody, right hand only. Listen to the original recording multiple times before each practice session. You need to hear it in your head before your fingers can play it.',
+  theory_concepts: ['Melody', 'Phrasing', 'Learning by ear vs notation'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'The Verse Melody',
+      objectives: [
+        'Listen to Ol\' 55 at least 3 times today',
+        'Identify the verse melody shape',
+        'Learn the first phrase by ear'
+      ],
+      content: `Phase 2 begins. The foundation work is done—now we build the actual song on top of it.
+
+**First things first:** Listen to the original Tom Waits recording from "Closing Time" (1973). Not the Eagles cover—the original. Listen to it three times today. Pay attention to the vocal melody in the verse.
+
+The verse melody is conversational. It tells a story: "Well my time went so quickly, I went lickety-splitly, out to my ol' fifty-five..."
+
+**The melody starts on G**, moves up stepwise, peaks on D, and comes back down. It's not flashy—it's storytelling. Your right hand is going to learn to sing this melody.
+
+Today's task: Listen, then try to pick out the first phrase on your piano. Don't look at notation yet. Use your ear.`,
+      exercises: [
+        {
+          id: exerciseId(9, 1, 1),
+          title: 'Find the Opening Note',
+          description: 'The verse starts on G. Play G and sing "Well my time went so quickly" with it.',
+          abc_notation: `X:1
+T:Verse Opening Note
+M:4/4
+L:1/4
+Q:1/4=74
+K:G
+G4 |]`,
+          target_tempo: 74,
+          tips: ['Sing along as you play', 'G is your anchor note'],
+          common_mistakes: ['Starting on wrong note', 'Not listening to recording first']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'First Phrase by Ear',
+      objectives: [
+        'Pick out "Well my time went so quickly" on piano',
+        'Verify with notation',
+        'Build ear training skills'
+      ],
+      content: `Yesterday you found the opening G. Today, try to pick out the rest of the first phrase by ear. The melody moves: G-G-A-B-D. It climbs up, then jumps to D.
+
+After you try by ear, check yourself with this notation:`,
+      exercises: [
+        {
+          id: exerciseId(9, 2, 1),
+          title: 'First Phrase',
+          description: '"Well my time went so quickly" - G G A B D',
+          abc_notation: `X:1
+T:Verse - First Phrase
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 z4 |]`,
+          target_tempo: 74,
+          tips: ['Fingering: 1-1-2-3-5 (thumb on G, pinky reaches D)'],
+          common_mistakes: ['Rushing through', 'Not singing along']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Complete First Line',
+      objectives: [
+        'Learn "I went lickety-splitly"',
+        'Connect both halves of the line'
+      ],
+      content: `The melody continues: D-D-B, then descends A-G-E-D back to G. This completes the first full line of the verse.`,
+      exercises: [
+        {
+          id: exerciseId(9, 3, 1),
+          title: 'First Line Complete',
+          description: '"Well my time went so quickly, I went lickety-splitly out to my ol\' fifty-five"',
+          abc_notation: `X:1
+T:Verse - First Line
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 60,
+          tips: ['Slow it way down at first', 'The descent should feel like exhaling'],
+          common_mistakes: ['Speeding up on the descent', 'Not breathing with the phrase']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Second Verse Line',
+      objectives: [
+        'Learn "As I pulled away slowly"',
+        'Notice it\'s the same melody as line one'
+      ],
+      content: `Good news: the second line uses the exact same melody. "As I pulled away slowly, feeling so holy, God knows I was feeling alive." Same notes, different words.`,
+      exercises: [
+        {
+          id: exerciseId(9, 4, 1),
+          title: 'Second Line (Same Melody)',
+          description: 'Practice the melody again with the second set of lyrics in mind.',
+          abc_notation: `X:1
+T:Verse - Second Line
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 66,
+          tips: ['Repetition is your friend', 'This is how you build muscle memory'],
+          common_mistakes: ['Getting bored—embrace the repetition']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Full Verse Melody',
+      objectives: [
+        'Play both lines back to back',
+        'Work on smooth transitions'
+      ],
+      content: `Put it together. Two lines, same melody, back to back. This IS the verse. If you can play this smoothly, you've learned the verse melody.`,
+      exercises: [
+        {
+          id: exerciseId(9, 5, 1),
+          title: 'Complete Verse Melody',
+          description: 'Both verse lines, right hand only.',
+          abc_notation: `X:1
+T:Verse - Complete Melody
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 60,
+          tips: ['No pause between lines', 'Think of it as one continuous thought'],
+          common_mistakes: ['Stopping between lines', 'Losing tempo consistency']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Verse at Tempo',
+      objectives: [
+        'Bring verse melody up to 70+ BPM',
+        'Maintain expression while increasing speed'
+      ],
+      content: `Time to approach target tempo. The song sits around 74 BPM with a relaxed swing feel. Don't rush it—the magic is in the laid-back groove.`,
+      exercises: [
+        {
+          id: exerciseId(9, 6, 1),
+          title: 'Verse at Near-Tempo',
+          description: 'Full verse, aiming for 70-74 BPM.',
+          abc_notation: `X:1
+T:Verse - At Tempo
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 74,
+          tips: ['Use metronome', 'Stay relaxed—tension shows in the sound'],
+          common_mistakes: ['Tensing up at faster tempo', 'Losing the swing feel']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 9 Checkpoint',
+      objectives: [
+        'Play verse melody from memory',
+        'Sing along while playing'
+      ],
+      content: `Checkpoint time. Can you play the verse melody without looking at notation? Can you sing the lyrics while your right hand plays? If yes, you're ready for Week 10.`,
+      exercises: [
+        {
+          id: exerciseId(9, 7, 1),
+          title: 'Verse Melody Check',
+          description: 'Play verse from memory, singing along.',
+          abc_notation: `X:1
+T:Verse Check
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |]`,
+          target_tempo: 74,
+          tips: ['Close your eyes', 'Trust your muscle memory'],
+          common_mistakes: ['Panicking when you can\'t see notation']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can play verse melody at 70+ BPM',
+        'Can play from memory (no notation)',
+        'Can sing lyrics while playing melody'
+      ]
+    }
+  ]
+}
+
+const week10: WeekContent = {
+  week_number: 10,
+  phase: 2,
+  title: 'Chorus Melody - Right Hand',
+  overview: 'The chorus is the emotional peak: "Sun\'s coming up, I\'m riding with lady luck." The melody is different from the verse—higher, more open. This week we learn it.',
+  theory_concepts: ['Chorus structure', 'Melodic contrast', 'Emotional arc'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'The Chorus',
+      objectives: [
+        'Listen for the chorus in the recording',
+        'Understand how it differs from verse',
+        'Learn the opening phrase'
+      ],
+      content: `The chorus lifts. Where the verse tells a story conversationally, the chorus opens up emotionally. "Sun's coming up, I'm riding with lady luck, freeway cars and trucks..."
+
+Listen to how the melody sits higher than the verse. It starts on D (high D), not G. The feeling is more expansive—like watching the sunrise from your car.
+
+**Today:** Find that opening D and learn "Sun's coming up."`,
+      exercises: [
+        {
+          id: exerciseId(10, 1, 1),
+          title: 'Chorus Opening',
+          description: '"Sun\'s coming up" - starts on high D',
+          abc_notation: `X:1
+T:Chorus - Opening
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+d4 d2 e2 | d4 z4 |]`,
+          target_tempo: 74,
+          tips: ['D is your pinky in G position', 'Let the note ring'],
+          common_mistakes: ['Starting too low', 'Rushing the phrase']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Lady Luck Line',
+      objectives: [
+        'Learn "I\'m riding with lady luck"',
+        'Connect to opening phrase'
+      ],
+      content: `The melody descends: "I'm riding with lady luck" goes B-B-D-E-D-B-G. It's like the sun rising, then settling into the day.`,
+      exercises: [
+        {
+          id: exerciseId(10, 2, 1),
+          title: 'Lady Luck Phrase',
+          description: '"I\'m riding with lady luck"',
+          abc_notation: `X:1
+T:Chorus - Lady Luck
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+B2 B2 d2 e2 | d4 B2 G2 |]`,
+          target_tempo: 66,
+          tips: ['Feel the descent', 'Land solidly on G'],
+          common_mistakes: ['Losing the groove']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Freeway Line',
+      objectives: [
+        'Learn "Freeway cars and trucks"',
+        'This phrase repeats in the outro'
+      ],
+      content: `"Freeway cars and trucks" - A-A-B-C-B. Simple, repetitive, hypnotic. This phrase is the hook of the song—you'll play it many times in the ending.`,
+      exercises: [
+        {
+          id: exerciseId(10, 3, 1),
+          title: 'Freeway Phrase',
+          description: '"Freeway cars and trucks"',
+          abc_notation: `X:1
+T:Chorus - Freeway
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+A2 A2 B2 c2 | B4 z4 |]`,
+          target_tempo: 74,
+          tips: ['This is the hook—make it memorable', 'Slight emphasis on "Free-"'],
+          common_mistakes: ['Playing it flat/emotionless']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Full Chorus Melody',
+      objectives: [
+        'Connect all three phrases',
+        'Play complete chorus melody'
+      ],
+      content: `Put all three phrases together. This is your chorus melody. The whole section repeats (you'll sing it twice each time through).`,
+      exercises: [
+        {
+          id: exerciseId(10, 4, 1),
+          title: 'Complete Chorus',
+          description: 'All three phrases connected.',
+          abc_notation: `X:1
+T:Chorus - Complete
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+d4 d2 e2 | d4 z4 | B2 B2 d2 e2 | d4 B2 G2 | A2 A2 B2 c2 | B4 z4 |]`,
+          target_tempo: 60,
+          tips: ['Think in phrases, not individual notes', 'Breathe between phrases'],
+          common_mistakes: ['Running phrases together without shape']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Verse to Chorus Transition',
+      objectives: [
+        'Practice moving from verse to chorus',
+        'Feel the lift when chorus arrives'
+      ],
+      content: `In the actual song, you go from verse directly into chorus. Practice that transition—end of verse G, then up to chorus D.`,
+      exercises: [
+        {
+          id: exerciseId(10, 5, 1),
+          title: 'Verse to Chorus',
+          description: 'Last line of verse into chorus.',
+          abc_notation: `X:1
+T:Verse to Chorus
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+A2 G2 E2 D2 | G6 z2 | d4 d2 e2 | d4 z4 |]`,
+          target_tempo: 66,
+          tips: ['Feel the lift from G up to D', 'The energy shifts'],
+          common_mistakes: ['No change in energy between sections']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Chorus at Tempo',
+      objectives: [
+        'Bring chorus to 70+ BPM',
+        'Maintain the emotional lift'
+      ],
+      content: `Same as verse work—bring it up to tempo while keeping the feel. The chorus should feel like relief after the verse's story.`,
+      exercises: [
+        {
+          id: exerciseId(10, 6, 1),
+          title: 'Chorus at Tempo',
+          description: 'Full chorus at near-target tempo.',
+          abc_notation: `X:1
+T:Chorus at Tempo
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+d4 d2 e2 | d4 z4 | B2 B2 d2 e2 | d4 B2 G2 | A2 A2 B2 c2 | B4 z4 |]`,
+          target_tempo: 74,
+          tips: ['Stay relaxed', 'The swing feel is crucial'],
+          common_mistakes: ['Tensing up at speed']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 10 Checkpoint',
+      objectives: [
+        'Play chorus from memory',
+        'Play verse + chorus back to back'
+      ],
+      content: `Can you play the chorus from memory? Can you go verse → chorus smoothly? If yes, you've got the complete melody framework.`,
+      exercises: [
+        {
+          id: exerciseId(10, 7, 1),
+          title: 'Verse + Chorus Check',
+          description: 'Full verse into full chorus, from memory.',
+          abc_notation: `X:1
+T:Verse + Chorus
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+d4 d2 e2 | d4 z4 | B2 B2 d2 e2 | d4 B2 G2 | A2 A2 B2 c2 | B4 z4 |]`,
+          target_tempo: 70,
+          tips: ['This is the core of the song', 'Trust your preparation'],
+          common_mistakes: ['Forgetting the transition']
+        }
+      ],
+      checkpoint_criteria: [
+        'Chorus melody memorized',
+        'Can transition smoothly from verse to chorus',
+        'Both sections at 70+ BPM'
+      ]
+    }
+  ]
+}
+
+const week11: WeekContent = {
+  week_number: 11,
+  phase: 2,
+  title: 'Right Hand Chord Voicings',
+  overview: 'You know the melody. Now let\'s learn the chord shapes your right hand will actually play when accompanying yourself. These aren\'t just triads—they\'re the voicings that give the song its warm, jazzy character.',
+  theory_concepts: ['Chord voicings', 'Voice leading', 'Gmaj7', 'D7sus4'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Song Chord Shapes',
+      objectives: [
+        'Review the chords: G, Bm, C, D',
+        'Learn Gmaj7 voicing',
+        'Understand voicing vs basic triad'
+      ],
+      content: `The song uses these chords: G, Bm, C, D, Gmaj7, D7sus4. You learned basic triads in Phase 1. Now we learn the specific voicings that sound right for this song.
+
+**Gmaj7** adds an F# on top of the G triad: G-B-D-F#. It's that warm, sophisticated sound you hear at the end of verse phrases.
+
+Today: Master the G to Gmaj7 movement.`,
+      exercises: [
+        {
+          id: exerciseId(11, 1, 1),
+          title: 'G to Gmaj7',
+          description: 'The signature warm sound of this song.',
+          abc_notation: `X:1
+T:G to Gmaj7
+M:4/4
+L:1/2
+Q:1/4=74
+K:G
+[GBd]2 | [GBd^f]2 | [GBd]2 | [GBd^f]2 |]`,
+          target_tempo: 60,
+          tips: ['Just add pinky on F# for Gmaj7', 'Feel the warmth of that added note'],
+          common_mistakes: ['Hitting F natural instead of F#']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'D7sus4 Voicing',
+      objectives: [
+        'Learn D7sus4 (D-G-A)',
+        'Understand sus4 sound'
+      ],
+      content: `D7sus4 replaces the F# in a D chord with G. So instead of D-F#-A, you play D-G-A. It's an unresolved, floating sound—perfect for the "freeway" feeling.`,
+      exercises: [
+        {
+          id: exerciseId(11, 2, 1),
+          title: 'D vs D7sus4',
+          description: 'Hear the difference between D and D7sus4.',
+          abc_notation: `X:1
+T:D vs D7sus4
+M:4/4
+L:1/2
+Q:1/4=74
+K:G
+[D^FA]2 | [DGA]2 | [D^FA]2 | [DGA]2 |]`,
+          target_tempo: 60,
+          tips: ['Sus4 sounds "open" and unresolved', 'Perfect for the dreamy chorus'],
+          common_mistakes: ['Playing D major when D7sus4 is called for']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Verse Chord Sequence',
+      objectives: [
+        'Play G - Bm - C - D progression',
+        'Smooth voice leading between chords'
+      ],
+      content: `The verse progression: G - Bm - C - D, then back to G (often with Gmaj7). Practice moving between these smoothly.`,
+      exercises: [
+        {
+          id: exerciseId(11, 3, 1),
+          title: 'Verse Progression RH',
+          description: 'The verse chord sequence with good voice leading.',
+          abc_notation: `X:1
+T:Verse Chords RH
+M:4/4
+L:1/2
+Q:1/4=74
+K:G
+[GBd]2 [GBd]2 | [BdF]2 [BdF]2 | [CEG]2 [CEG]2 | [D^FA]2 [D^FA]2 |
+[GBd]2 [GBd^f]2 | [GBd]4 |]`,
+          target_tempo: 60,
+          tips: ['Minimize finger movement between chords', 'Common tones stay put'],
+          common_mistakes: ['Lifting hand completely between chords']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Chorus Chord Sequence',
+      objectives: [
+        'Play chorus with D7sus4',
+        'Feel the difference from verse'
+      ],
+      content: `Chorus uses D7sus4 instead of D. This gives it that floating, hopeful quality. G - Bm - C - D7sus4.`,
+      exercises: [
+        {
+          id: exerciseId(11, 4, 1),
+          title: 'Chorus Chords RH',
+          description: 'Chorus progression with D7sus4.',
+          abc_notation: `X:1
+T:Chorus Chords RH
+M:4/4
+L:1/2
+Q:1/4=74
+K:G
+[GBd]2 [GBd]2 | [BdF]2 [BdF]2 | [CEG]2 [CEG]2 | [DGA]2 [DGA]2 |]`,
+          target_tempo: 60,
+          tips: ['Notice how D7sus4 doesn\'t resolve as strongly', 'It keeps the song floating'],
+          common_mistakes: ['Using regular D in chorus']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Chord Rhythm Pattern',
+      objectives: [
+        'Add rhythm to chord changes',
+        'Simple comping pattern'
+      ],
+      content: `Chords need rhythm. A simple pattern: hit chord on beat 1, lift on beat 3, hit again on beat 4. This gives it a gentle swing feel.`,
+      exercises: [
+        {
+          id: exerciseId(11, 5, 1),
+          title: 'Basic Comp Rhythm',
+          description: 'Add swing rhythm to verse chords.',
+          abc_notation: `X:1
+T:Comp Rhythm
+M:4/4
+L:1/4
+Q:1/4=74
+K:G
+[GBd]2 z [GBd] | [BdF]2 z [BdF] | [CEG]2 z [CEG] | [D^FA]2 z [D^FA] |]`,
+          target_tempo: 66,
+          tips: ['Beat 1 and beat 4 are your anchors', 'Let beat 3 breathe'],
+          common_mistakes: ['Rigid rhythm without swing']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Full Song Chords',
+      objectives: [
+        'Play through verse and chorus chords',
+        'Maintain rhythm throughout'
+      ],
+      content: `Put it all together: verse chords, chorus chords, with rhythm. This is your right hand accompaniment pattern.`,
+      exercises: [
+        {
+          id: exerciseId(11, 6, 1),
+          title: 'Full Song Comp',
+          description: 'Verse into chorus, right hand chords.',
+          abc_notation: `X:1
+T:Full Comp Pattern
+M:4/4
+L:1/4
+Q:1/4=74
+K:G
+% Verse
+[GBd]2 z [GBd] | [BdF]2 z [BdF] | [CEG]2 z [CEG] | [D^FA]2 z [D^FA] |
+[GBd]2 [GBd^f] [GBd] | z4 |
+% Chorus  
+[GBd]2 z [GBd] | [BdF]2 z [BdF] | [CEG]2 z [CEG] | [DGA]2 z [DGA] |]`,
+          target_tempo: 66,
+          tips: ['Verse uses D, chorus uses D7sus4', 'Feel the section changes'],
+          common_mistakes: ['Forgetting which D voicing for which section']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 11 Checkpoint',
+      objectives: [
+        'All chord voicings memorized',
+        'Can play verse and chorus progressions with rhythm'
+      ],
+      content: `Checkpoint: Can you play through the chord progressions without thinking about individual shapes? The chords should be automatic.`,
+      exercises: [
+        {
+          id: exerciseId(11, 7, 1),
+          title: 'Chord Voicing Check',
+          description: 'Play G, Gmaj7, Bm, C, D, D7sus4 in sequence.',
+          abc_notation: `X:1
+T:All Voicings
+M:4/4
+L:1/2
+Q:1/4=60
+K:G
+[GBd]2 | [GBd^f]2 | [BdF]2 | [CEG]2 | [D^FA]2 | [DGA]2 |]`,
+          target_tempo: 60,
+          tips: ['Name each chord as you play it'],
+          common_mistakes: ['Hesitating on Gmaj7 or D7sus4']
+        }
+      ],
+      checkpoint_criteria: [
+        'All voicings memorized',
+        'Verse progression smooth',
+        'Chorus progression smooth',
+        'Basic comp rhythm established'
+      ]
+    }
+  ]
+}
+
+const week12: WeekContent = {
+  week_number: 12,
+  phase: 2,
+  title: 'Complete Song - Right Hand',
+  overview: 'This week you put it all together: melody and chords, right hand only. By the end of this week, your right hand should be able to play through the entire song structure.',
+  theory_concepts: ['Song form', 'Sections', 'Arranging for one hand'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Song Structure',
+      objectives: [
+        'Map out the complete song form',
+        'Understand how sections repeat'
+      ],
+      content: `Here's the complete structure of Ol' 55:
+
+**Intro** (4 bars)
+**Verse 1** (8 bars) - "Well my time went so quickly..."
+**Chorus** (8 bars) - "Sun's coming up..."
+**Verse 2** (8 bars) - "Now the time went so quickly..."
+**Chorus** (8 bars)
+**Bridge/Verse 3** (8 bars) - "And I had the parade..."  
+**Chorus** (8 bars)
+**Outro/Ending** - "Freeway cars and trucks" repeating
+
+For right hand alone, you'll alternate between melody (when singing) and chords (for accompaniment feel). Today: play through the intro.`,
+      exercises: [
+        {
+          id: exerciseId(12, 1, 1),
+          title: 'Intro - RH Chords',
+          description: 'Four bar intro: G - Bm - C - D',
+          abc_notation: `X:1
+T:Intro
+M:4/4
+L:1/2
+Q:1/4=74
+K:G
+[GBd]2 [GBd]2 | [BdF]2 [BdF]2 | [CEG]2 [CEG]2 | [D^FA]2 [D^FA]2 |]`,
+          target_tempo: 74,
+          tips: ['This sets up the whole song', 'Count yourself in: 1, 2, 3, 4...'],
+          common_mistakes: ['Starting without establishing tempo']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Intro into Verse',
+      objectives: [
+        'Connect intro to verse melody',
+        'Smooth transition'
+      ],
+      content: `After the intro chords, the verse melody begins. Practice going from D chord into the G melody note.`,
+      exercises: [
+        {
+          id: exerciseId(12, 2, 1),
+          title: 'Intro to Verse',
+          description: 'End of intro into verse melody.',
+          abc_notation: `X:1
+T:Intro to Verse
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+[D^FA]4 [D^FA]4 | G2 G2 A2 B2 | d4 d2 B2 |]`,
+          target_tempo: 70,
+          tips: ['The D chord sets up the G melody note', 'Don\'t pause between sections'],
+          common_mistakes: ['Stopping after intro']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Verse into Chorus',
+      objectives: [
+        'Practice the verse-to-chorus transition',
+        'Feel the energy shift'
+      ],
+      content: `End of verse resolves to G, then chorus lifts to high D. This is the emotional pivot of the song.`,
+      exercises: [
+        {
+          id: exerciseId(12, 3, 1),
+          title: 'Verse to Chorus',
+          description: 'Last line of verse into chorus opening.',
+          abc_notation: `X:1
+T:Verse to Chorus
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+A2 G2 E2 D2 | G6 z2 | d4 d2 e2 | d4 z4 |]`,
+          target_tempo: 70,
+          tips: ['Feel the lift', 'The chorus should feel like relief'],
+          common_mistakes: ['No dynamic change between sections']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Full First Half',
+      objectives: [
+        'Play Intro → Verse → Chorus',
+        'Maintain energy through transitions'
+      ],
+      content: `String together everything up through the first chorus. This is the first half of the song.`,
+      exercises: [
+        {
+          id: exerciseId(12, 4, 1),
+          title: 'First Half',
+          description: 'Intro through first chorus.',
+          abc_notation: `X:1
+T:First Half
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+% Intro chords
+[GBd]4 [GBd]4 | [BdF]4 [BdF]4 | [CEG]4 [CEG]4 | [D^FA]4 [D^FA]4 |
+% Verse melody
+G2 G2 A2 B2 | d4 d2 B2 | A2 G2 E2 D2 | G6 z2 |
+% Chorus melody
+d4 d2 e2 | d4 z4 | B2 B2 d2 e2 | d4 B2 G2 |]`,
+          target_tempo: 66,
+          tips: ['This is substantial—pace yourself', 'Keep tempo steady throughout'],
+          common_mistakes: ['Speeding up or slowing down through sections']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'The Ending',
+      objectives: [
+        'Learn the outro pattern',
+        'The "freeway" hook repeats'
+      ],
+      content: `The ending repeats "freeway cars and trucks" over a descending chord pattern: G - C#m - C - Dmaj7. It fades out with repetition.`,
+      exercises: [
+        {
+          id: exerciseId(12, 5, 1),
+          title: 'Outro',
+          description: 'The ending hook and chord pattern.',
+          abc_notation: `X:1
+T:Outro
+M:4/4
+L:1/8
+Q:1/4=74
+K:G
+% Freeway hook with ending chords
+A2 A2 B2 c2 | B4 z4 | A2 A2 B2 c2 | B4 z4 |]`,
+          target_tempo: 74,
+          tips: ['This can repeat as long as you want', 'Gradually soften toward the end'],
+          common_mistakes: ['Ending abruptly instead of fading']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Complete Run-Through',
+      objectives: [
+        'Play entire song structure, RH only',
+        'Identify weak spots'
+      ],
+      content: `Try to play through the whole song. Note where you stumble—those are your practice priorities.`,
+      exercises: [
+        {
+          id: exerciseId(12, 6, 1),
+          title: 'Full Song RH',
+          description: 'Complete song, right hand.',
+          abc_notation: `X:1
+T:Complete Song RH
+M:4/4
+L:1/4
+Q:1/4=74
+K:G
+% This is a reminder of the structure - play from memory
+G2 G2 | B d B G | A G E D | G4 |]`,
+          target_tempo: 70,
+          tips: ['Don\'t stop for mistakes—push through', 'Note what needs work'],
+          common_mistakes: ['Stopping every time you make a mistake']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 12 Checkpoint - Phase 2 Midpoint',
+      objectives: [
+        'Complete RH run-through',
+        'Assess readiness for LH work'
+      ],
+      content: `This is the midpoint of Phase 2. Your right hand should be able to navigate the entire song. Not perfect—but competent.`,
+      exercises: [
+        {
+          id: exerciseId(12, 7, 1),
+          title: 'RH Final Check',
+          description: 'Play through song, right hand, as complete as possible.',
+          abc_notation: `X:1
+T:RH Check
+M:4/4
+L:1/4
+K:G
+G4 |]`,
+          target_tempo: 70,
+          tips: ['This doesn\'t need notation—play from memory', 'Sing along if it helps'],
+          common_mistakes: ['Relying on notation instead of memory']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can play through complete song structure RH',
+        'Transitions between sections are smooth',
+        'Know the melody and chord voicings from memory',
+        'Ready to add left hand'
+      ]
+    }
+  ]
+}
+
+const week13: WeekContent = {
+  week_number: 13,
+  phase: 2,
+  title: 'Left Hand Bass Patterns',
+  overview: 'Time to teach your left hand its job. In this style of piano playing, the left hand provides the bass and harmonic foundation. This week: basic patterns that work for the entire song.',
+  theory_concepts: ['Bass lines', 'Root-fifth pattern', 'Stride basics'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'LH Role',
+      objectives: [
+        'Understand left hand function',
+        'Learn root note pattern',
+        'Establish the groove'
+      ],
+      content: `Your left hand has one main job: lay down the foundation. In jazz and folk piano, this typically means playing root notes (the bass) on beats 1 and 3, or sometimes just beat 1.
+
+**Simplest pattern:** Just play the root note of each chord on beat 1 and hold it. That's where we start.
+
+G chord = G bass note
+Bm chord = B bass note
+C chord = C bass note
+D chord = D bass note`,
+      exercises: [
+        {
+          id: exerciseId(13, 1, 1),
+          title: 'Root Notes Only',
+          description: 'Play just the root of each chord, whole notes.',
+          abc_notation: `X:1
+T:LH Root Notes
+M:4/4
+L:1
+Q:1/4=74
+K:G bass
+G,, | B,, | C, | D, |]`,
+          target_tempo: 74,
+          tips: ['This is the skeleton of your bass line', 'Let the notes ring'],
+          common_mistakes: ['Playing too loud—bass should support, not dominate']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Root-Fifth Pattern',
+      objectives: [
+        'Add the fifth to your bass pattern',
+        'Root on beat 1, fifth on beat 3'
+      ],
+      content: `Add the fifth: Root on beat 1, fifth on beat 3. For G, that's G then D. This creates movement while staying simple.`,
+      exercises: [
+        {
+          id: exerciseId(13, 2, 1),
+          title: 'Root-Fifth Pattern',
+          description: 'G: G-D, Bm: B-F#, C: C-G, D: D-A',
+          abc_notation: `X:1
+T:LH Root-Fifth
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 66,
+          tips: ['Beat 1 root, beat 3 fifth', 'Keep it steady like a heartbeat'],
+          common_mistakes: ['Uneven rhythm between root and fifth']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Octave Pattern',
+      objectives: [
+        'Learn root-octave pattern',
+        'Alternative to root-fifth'
+      ],
+      content: `Another option: root on beat 1, same note an octave up on beat 3. Root-octave is simpler than root-fifth (no new note to find) but less melodic.`,
+      exercises: [
+        {
+          id: exerciseId(13, 3, 1),
+          title: 'Root-Octave Pattern',
+          description: 'G low to G high, etc.',
+          abc_notation: `X:1
+T:LH Root-Octave
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, G, | B,, B, | C, c | D, d |]`,
+          target_tempo: 66,
+          tips: ['This has a more driving feel', 'Good for higher energy sections'],
+          common_mistakes: ['Stretching too far and creating tension']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Quarter Note Bass',
+      objectives: [
+        'Four bass notes per bar',
+        'Walking bass concept'
+      ],
+      content: `For more energy, play root-fifth-root-fifth (four quarter notes). This creates a gentle walking bass feel.`,
+      exercises: [
+        {
+          id: exerciseId(13, 4, 1),
+          title: 'Quarter Note Bass',
+          description: 'Root-fifth-root-fifth per bar.',
+          abc_notation: `X:1
+T:LH Quarter Notes
+M:4/4
+L:1/4
+Q:1/4=74
+K:G bass
+G,, D, G,, D, | B,, ^F, B,, ^F, | C, G, C, G, | D, A, D, A, |]`,
+          target_tempo: 66,
+          tips: ['Even quarter notes', 'This is more active but still simple'],
+          common_mistakes: ['Rushing the quarter notes']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Verse Progression LH',
+      objectives: [
+        'Apply bass pattern to verse chords',
+        'Full verse, LH only'
+      ],
+      content: `Apply your preferred pattern to the full verse chord progression. Try root-fifth for now.`,
+      exercises: [
+        {
+          id: exerciseId(13, 5, 1),
+          title: 'Verse Bass Line',
+          description: 'Complete verse progression, LH.',
+          abc_notation: `X:1
+T:Verse Bass
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | G,, D, | B,, ^F, | B,, ^F, | C, G, | C, G, | D, A, | D, A, |]`,
+          target_tempo: 66,
+          tips: ['This should feel like second nature', 'Don\'t look at your hand'],
+          common_mistakes: ['Losing track of chord changes']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Metronome Work',
+      objectives: [
+        'Lock LH with metronome',
+        'Build rock-solid timing'
+      ],
+      content: `Your left hand is the timekeeper. Today: metronome on every beat. Your bass notes must be perfectly aligned.`,
+      exercises: [
+        {
+          id: exerciseId(13, 6, 1),
+          title: 'Metronome Lock',
+          description: 'Full verse progression with metronome.',
+          abc_notation: `X:1
+T:Metronome Practice
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, | G,, D, | G,, D, |]`,
+          target_tempo: 74,
+          tips: ['Every note aligned with the click', 'This is your foundation'],
+          common_mistakes: ['Drifting ahead of or behind the beat']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 13 Checkpoint',
+      objectives: [
+        'Solid LH bass pattern',
+        'Can play through verse progression without looking'
+      ],
+      content: `Your left hand should now feel comfortable on the verse progression. Root-fifth pattern, steady as a heartbeat.`,
+      exercises: [
+        {
+          id: exerciseId(13, 7, 1),
+          title: 'LH Check',
+          description: 'Play verse bass line with eyes closed.',
+          abc_notation: `X:1
+T:LH Final Check
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Eyes closed for real', 'Trust your hands'],
+          common_mistakes: ['Peeking']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can play root-fifth pattern smoothly',
+        'Verse progression memorized for LH',
+        'Timing locked with metronome',
+        'Can play without looking at hands'
+      ]
+    }
+  ]
+}
+
+const week14: WeekContent = {
+  week_number: 14,
+  phase: 2,
+  title: 'Left Hand on Verse',
+  overview: 'This week we drill the left hand on the complete verse. By the end, the verse bass line should be automatic—you shouldn\'t have to think about it.',
+  theory_concepts: ['Muscle memory', 'Automaticity', 'Bass line variations'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Verse Deep Dive',
+      objectives: [
+        'Map out complete verse bass line',
+        'Understand where Gmaj7 fits'
+      ],
+      content: `The verse goes: G - G - Bm - Bm - C - C - D - D - G - Gmaj7 - G. The bass line is mostly root-fifth, but on Gmaj7 you can just hold the G bass (no change needed in LH).
+
+This week is about repetition. The verse should become completely automatic.`,
+      exercises: [
+        {
+          id: exerciseId(14, 1, 1),
+          title: 'Complete Verse Bass',
+          description: 'Full verse with all chord changes.',
+          abc_notation: `X:1
+T:Complete Verse Bass
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | G,, D, | B,, ^F, | B,, ^F, | C, G, | C, G, | D, A, | D, A, | G,, D, | G,, D, | G,, D, | G,,4 |]`,
+          target_tempo: 66,
+          tips: ['This is the full verse', 'Notice the G stays for Gmaj7'],
+          common_mistakes: ['Changing bass note on Gmaj7']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Repetition Day 1',
+      objectives: [
+        'Play verse bass 10 times',
+        'Build automaticity'
+      ],
+      content: `Today: play through the verse bass line 10 times. Yes, 10 times. This is how muscle memory forms.`,
+      exercises: [
+        {
+          id: exerciseId(14, 2, 1),
+          title: 'Rep Session 1',
+          description: 'Verse bass line x10.',
+          abc_notation: `X:1
+T:Verse Bass Rep
+M:4/4
+L:1/2
+Q:1/4=70
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 70,
+          tips: ['Don\'t count—just keep going', 'Notice when it starts feeling automatic'],
+          common_mistakes: ['Getting bored and losing focus']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Repetition Day 2',
+      objectives: [
+        'More repetitions',
+        'Increase tempo slightly'
+      ],
+      content: `More of the same. Push tempo up a bit if yesterday felt solid.`,
+      exercises: [
+        {
+          id: exerciseId(14, 3, 1),
+          title: 'Rep Session 2',
+          description: 'Verse bass at increased tempo.',
+          abc_notation: `X:1
+T:Verse Bass - Faster
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Target tempo now', 'Should feel easier than yesterday'],
+          common_mistakes: ['Tension creeping in at faster speed']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Eyes Closed',
+      objectives: [
+        'Play verse bass without looking',
+        'Trust muscle memory'
+      ],
+      content: `Close your eyes. Play the verse bass line. If you can do this, you've internalized it.`,
+      exercises: [
+        {
+          id: exerciseId(14, 4, 1),
+          title: 'Eyes Closed',
+          description: 'Verse bass, no looking.',
+          abc_notation: `X:1
+T:Verse Bass Blind
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, | G,, D, | G,,4 |]`,
+          target_tempo: 70,
+          tips: ['Really close your eyes', 'Trust the patterns you\'ve built'],
+          common_mistakes: ['Peeking when you feel lost']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Dynamics',
+      objectives: [
+        'Add dynamic variation',
+        'Subtle swells and dips'
+      ],
+      content: `Now that the notes are automatic, add feel. Slightly louder on beat 1, softer on beat 3. Small variations make it musical.`,
+      exercises: [
+        {
+          id: exerciseId(14, 5, 1),
+          title: 'Dynamic Bass',
+          description: 'Verse bass with dynamic variation.',
+          abc_notation: `X:1
+T:Dynamic Bass
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Beat 1 slightly stronger', 'This is subtle—not loud/quiet extremes'],
+          common_mistakes: ['Overdoing dynamics']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Verse x3',
+      objectives: [
+        'Play through three verses back to back',
+        'Build stamina'
+      ],
+      content: `The song has three verses. Can you play the bass line three times in a row without your focus drifting?`,
+      exercises: [
+        {
+          id: exerciseId(14, 6, 1),
+          title: 'Triple Verse',
+          description: 'Bass line for verses 1, 2, and 3.',
+          abc_notation: `X:1
+T:Triple Verse
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+% Repeat this pattern three times mentally
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Don\'t stop between verses', 'Maintain consistency'],
+          common_mistakes: ['Quality degrading on verse 2 and 3']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 14 Checkpoint',
+      objectives: [
+        'Verse bass completely automatic',
+        'Ready for chorus bass'
+      ],
+      content: `The verse bass should now be effortless. If it's not, spend another few days here before moving on.`,
+      exercises: [
+        {
+          id: exerciseId(14, 7, 1),
+          title: 'Verse Bass Final',
+          description: 'Full verse bass, automatic, musical.',
+          abc_notation: `X:1
+T:Verse Bass Final
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, | G,, D, | G,,4 |]`,
+          target_tempo: 74,
+          tips: ['This should feel easy now'],
+          common_mistakes: ['Moving on before it\'s truly automatic']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can play verse bass with eyes closed',
+        'Tempo is locked at 74 BPM',
+        'Dynamic variation present',
+        'Can play three verses consecutively'
+      ]
+    }
+  ]
+}
+
+const week15: WeekContent = {
+  week_number: 15,
+  phase: 2,
+  title: 'Left Hand on Chorus & Ending',
+  overview: 'Chorus and ending bass patterns. The chorus uses the same chords as the verse (with D7sus4), so the bass is similar. The ending has a descending pattern that\'s slightly different.',
+  theory_concepts: ['Chromatic bass', 'Descending lines', 'Outro patterns'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Chorus Bass',
+      objectives: [
+        'Apply bass pattern to chorus chords',
+        'Note D7sus4 uses D bass (same as D)'
+      ],
+      content: `Good news: the chorus bass is almost identical to the verse. G - Bm - C - D7sus4. The bass notes are still G, B, C, D.
+
+The only difference is the feel—chorus should have slightly more energy. Same notes, more confidence.`,
+      exercises: [
+        {
+          id: exerciseId(15, 1, 1),
+          title: 'Chorus Bass',
+          description: 'G - Bm - C - D7sus4 bass pattern.',
+          abc_notation: `X:1
+T:Chorus Bass
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | G,, D, | B,, ^F, | B,, ^F, | C, G, | C, G, | D, A, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Same pattern as verse', 'Just more energy'],
+          common_mistakes: ['Playing it exactly like verse—add some life']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Verse to Chorus Transition',
+      objectives: [
+        'Smooth bass transition between sections',
+        'Maintain tempo through change'
+      ],
+      content: `Practice going from verse bass directly into chorus bass. The chord sequence continues naturally.`,
+      exercises: [
+        {
+          id: exerciseId(15, 2, 1),
+          title: 'Section Transition',
+          description: 'End of verse into chorus, LH.',
+          abc_notation: `X:1
+T:Verse to Chorus LH
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+D, A, | G,, D, | G,, D, | G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['No pause between sections', 'Tempo stays rock solid'],
+          common_mistakes: ['Hesitating at section boundary']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Ending Bass Pattern',
+      objectives: [
+        'Learn the outro chord bass',
+        'G - C#m - C - Dmaj7'
+      ],
+      content: `The ending is different. It goes G - C#m - C - Dmaj7. The bass walks down chromatically at points. G - C# - C - D.`,
+      exercises: [
+        {
+          id: exerciseId(15, 3, 1),
+          title: 'Ending Bass',
+          description: 'Outro bass pattern.',
+          abc_notation: `X:1
+T:Ending Bass
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | ^C, ^G, | C, G, | D, A, |]`,
+          target_tempo: 70,
+          tips: ['Notice the C# bass for C#m', 'It\'s chromatic: G-C#-C'],
+          common_mistakes: ['Missing the C# (it\'s a black key)']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Ending Loop',
+      objectives: [
+        'Practice ending pattern on repeat',
+        'This section loops until fade out'
+      ],
+      content: `The ending repeats this 4-bar pattern until the song fades. Practice looping it seamlessly.`,
+      exercises: [
+        {
+          id: exerciseId(15, 4, 1),
+          title: 'Ending Loop',
+          description: 'Repeat the ending pattern 4 times.',
+          abc_notation: `X:1
+T:Ending Loop
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | ^C, ^G, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Seamless loop—no bump at the restart', 'This could go on forever'],
+          common_mistakes: ['Audible seam where pattern repeats']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Complete Song Bass',
+      objectives: [
+        'Play through entire song bass line',
+        'Intro through ending'
+      ],
+      content: `String together verse bass, chorus bass, and ending bass. This is the complete LH part of the song.`,
+      exercises: [
+        {
+          id: exerciseId(15, 5, 1),
+          title: 'Full Song Bass',
+          description: 'Complete bass line, all sections.',
+          abc_notation: `X:1
+T:Full Song Bass
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+% Play verse pattern, chorus pattern, ending pattern in sequence
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['This is the full journey', 'Know where you are at all times'],
+          common_mistakes: ['Getting lost in the form']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Dynamics Through Sections',
+      objectives: [
+        'Vary energy between sections',
+        'Verse mellow, chorus brighter, ending fades'
+      ],
+      content: `Add dynamic shape to the whole bass line. Start mellow (verse), lift (chorus), fade out (ending).`,
+      exercises: [
+        {
+          id: exerciseId(15, 6, 1),
+          title: 'Dynamic Journey',
+          description: 'Full bass line with dynamic arc.',
+          abc_notation: `X:1
+T:Dynamic Bass Journey
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Tell a story with volume', 'Ending should almost disappear'],
+          common_mistakes: ['Same volume throughout']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 15 Checkpoint',
+      objectives: [
+        'Complete LH part memorized',
+        'All sections, all transitions'
+      ],
+      content: `Can you play the entire song bass line from memory? That's the goal.`,
+      exercises: [
+        {
+          id: exerciseId(15, 7, 1),
+          title: 'LH Complete Check',
+          description: 'Full song bass line, memory only.',
+          abc_notation: `X:1
+T:LH Final Check
+M:4/4
+L:1
+Q:1/4=74
+K:G bass
+G,, |]`,
+          target_tempo: 74,
+          tips: ['Close the app, play from memory', 'You know this now'],
+          common_mistakes: ['Doubting yourself']
+        }
+      ],
+      checkpoint_criteria: [
+        'Verse bass automatic',
+        'Chorus bass automatic',
+        'Ending pattern memorized',
+        'Can play full song LH from memory'
+      ]
+    }
+  ]
+}
+
+const week16: WeekContent = {
+  week_number: 16,
+  phase: 2,
+  title: 'Left Hand Mastery & Phase 2 Finale',
+  overview: 'Final week of Phase 2. This week is about polish—making the left hand completely solid before we combine hands in Phase 3.',
+  theory_concepts: ['Consolidation', 'Preparation for hands together'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Phase 2 Review',
+      objectives: [
+        'Review all LH material',
+        'Identify any remaining weak spots'
+      ],
+      content: `This is the final week before we put hands together. Your LH needs to be absolutely solid—it's going to be the foundation while your RH does the more complex work.
+
+Today: Play through the complete bass line slowly. Note anything that still feels uncertain.`,
+      exercises: [
+        {
+          id: exerciseId(16, 1, 1),
+          title: 'Slow Review',
+          description: 'Full bass line at 60 BPM—identify weak spots.',
+          abc_notation: `X:1
+T:Slow Review
+M:4/4
+L:1/2
+Q:1/4=60
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, | G,, D, |]`,
+          target_tempo: 60,
+          tips: ['Slow reveals problems that fast hides', 'Be honest about weak spots'],
+          common_mistakes: ['Glossing over problems']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Weak Spot Drill',
+      objectives: [
+        'Target your weakest transition',
+        'Repetition until solid'
+      ],
+      content: `Whatever felt weakest yesterday, drill it today. 20 repetitions minimum.`,
+      exercises: [
+        {
+          id: exerciseId(16, 2, 1),
+          title: 'Target Practice',
+          description: 'Your weakest spot, 20 reps.',
+          abc_notation: `X:1
+T:Target Practice
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+% Insert your weakest transition here
+G,, D, | B,, ^F, |]`,
+          target_tempo: 74,
+          tips: ['Isolate the problem', 'Repetition is the answer'],
+          common_mistakes: ['Not doing enough reps']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Speed Test',
+      objectives: [
+        'Push tempo to 80 BPM',
+        'Test your ceiling'
+      ],
+      content: `Can you play the bass line at 80 BPM? This is above target tempo—if you can do this, 74 will feel easy.`,
+      exercises: [
+        {
+          id: exerciseId(16, 3, 1),
+          title: 'Speed Test',
+          description: 'Full bass line at 80 BPM.',
+          abc_notation: `X:1
+T:Speed Test
+M:4/4
+L:1/2
+Q:1/4=80
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 80,
+          tips: ['This is a test, not the goal', 'See what you can do'],
+          common_mistakes: ['Getting sloppy at speed']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Endurance Run',
+      objectives: [
+        'Play full song bass line 3 times through',
+        'Build stamina'
+      ],
+      content: `Three complete run-throughs, no stopping. This builds the endurance you'll need for the full performance.`,
+      exercises: [
+        {
+          id: exerciseId(16, 4, 1),
+          title: 'Endurance Run',
+          description: '3x full song bass line.',
+          abc_notation: `X:1
+T:Endurance Run
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['No stopping', 'Push through fatigue'],
+          common_mistakes: ['Stopping when tired']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Eyes Closed Full Song',
+      objectives: [
+        'Complete bass line, no looking',
+        'Pure muscle memory'
+      ],
+      content: `The ultimate test: eyes closed, full song. If you can do this, your LH is ready.`,
+      exercises: [
+        {
+          id: exerciseId(16, 5, 1),
+          title: 'Blind Run',
+          description: 'Full bass line, eyes closed.',
+          abc_notation: `X:1
+T:Blind Run
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Really close them', 'Trust your hands'],
+          common_mistakes: ['Peeking']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Musical Bass',
+      objectives: [
+        'Add expression to bass line',
+        'This isn\'t just notes—it\'s music'
+      ],
+      content: `Your bass line should groove. Slight swing, dynamic variation, intentional feel. Make it musical.`,
+      exercises: [
+        {
+          id: exerciseId(16, 6, 1),
+          title: 'Groove Session',
+          description: 'Full bass line with maximum feel.',
+          abc_notation: `X:1
+T:Groove Session
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, |]`,
+          target_tempo: 74,
+          tips: ['Swing it', 'Breathe with the music'],
+          common_mistakes: ['Playing mechanically']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Phase 2 Complete!',
+      objectives: [
+        'Celebrate Phase 2 completion',
+        'Ready for hands together'
+      ],
+      content: `**Phase 2 Complete!** You now know the complete song with each hand separately. RH has melody and chords. LH has the bass line. 
+
+Phase 3 is where we put them together. It's going to be hard—but you're ready.`,
+      exercises: [
+        {
+          id: exerciseId(16, 7, 1),
+          title: 'Phase 2 Finale',
+          description: 'Full song, LH only, one final time.',
+          abc_notation: `X:1
+T:Phase 2 Finale
+M:4/4
+L:1/2
+Q:1/4=74
+K:G bass
+G,, D, | B,, ^F, | C, G, | D, A, | G,, D, | G,,4 |]`,
+          target_tempo: 74,
+          tips: ['Take a moment to appreciate how far you\'ve come', 'You know this song now'],
+          common_mistakes: ['Rushing through without acknowledging progress']
+        }
+      ],
+      checkpoint_criteria: [
+        'LH plays complete song bass from memory',
+        'Can play at 74-80 BPM comfortably',
+        'Eyes-closed playing is solid',
+        'Musical expression present',
+        'PHASE 2 COMPLETE - Ready for hands together!'
+      ]
+    }
+  ]
 }
 
 // Combine into curriculum
@@ -1104,8 +2816,14 @@ export const curriculum: Curriculum = {
       name: 'Foundation',
       description: 'Building the physical and theoretical fundamentals. No song yet—just the skills you\'ll need.',
       weeks: [week1, week2, week3, week4, week5, week6, week7, week8]
+    },
+    {
+      number: 2,
+      name: 'Song Introduction',
+      description: 'Learning the actual song, hands separate. Right hand gets melody and chords, left hand gets bass patterns.',
+      weeks: [week9, week10, week11, week12, week13, week14, week15, week16]
     }
-    // Phases 2-6 would be added as curriculum expands
+    // Phases 3-6 would be added as curriculum expands
   ]
 }
 
