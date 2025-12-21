@@ -209,7 +209,7 @@ export default async function DashboardPage() {
 
         {/* Version and debug */}
         <div className="flex items-center justify-center gap-4 mt-8 mb-4">
-          <span className="text-xs text-midnight-400">v0.14.0</span>
+          <span className="text-xs text-midnight-400">v0.15.0</span>
           <DebugMenu 
             userId={user.id} 
             currentWeek={currentWeek} 

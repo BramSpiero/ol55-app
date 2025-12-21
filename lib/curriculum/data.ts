@@ -2808,6 +2808,1703 @@ G,, D, | B,, ^F, | C, G, | D, A, | G,, D, | G,,4 |]`,
   ]
 }
 
+// ============================================================================
+// PHASE 3: Hands Together (Weeks 17-24)
+// The hard part. Slow, methodical integration of both hands.
+// ============================================================================
+
+const week17: WeekContent = {
+  week_number: 17,
+  phase: 3,
+  title: 'First Steps - Hands Together',
+  overview: 'Welcome to the grind. This is where most adult beginners quit. You\'re not going to. Putting hands together feels like starting over—your brain has to coordinate two independent streams. It\'s going to feel clumsy. That\'s not failure—that\'s the process.',
+  theory_concepts: ['Hand independence', 'Coordination', 'Slow practice methodology'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'The Hands Together Challenge',
+      objectives: [
+        'Understand why this is hard',
+        'Learn the approach: painfully slow',
+        'Play first chord with both hands'
+      ],
+      content: `**Phase 3 begins.** This is the mountain.
+
+Here's the truth: putting hands together feels like you've forgotten everything. Your LH, which was solid, suddenly stumbles. Your RH, which was automatic, freezes. This is completely normal.
+
+**The approach:** We go PAINFULLY slow. 40 BPM. Maybe slower. Speed is not the goal right now—coordination is. You're building new neural pathways between your hands.
+
+**Today's only goal:** Play a G chord with both hands at the same time. LH plays G bass, RH plays G triad. Just that. One chord. Together.`,
+      exercises: [
+        {
+          id: exerciseId(17, 1, 1),
+          title: 'First Chord Together',
+          description: 'G chord, both hands, simultaneously.',
+          abc_notation: `X:1
+T:First Chord Together
+M:4/4
+L:1
+Q:1/4=40
+K:G
+[G,,D,][GBd] |]`,
+          target_tempo: 40,
+          tips: ['Both hands hit at EXACTLY the same time', 'Listen for the blend'],
+          common_mistakes: ['One hand arriving before the other']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Four Chords Together',
+      objectives: [
+        'Play G, Bm, C, D with both hands',
+        'No movement yet—just chord hits'
+      ],
+      content: `Yesterday: one chord. Today: four chords. Still no movement between them—just hit each chord cleanly with both hands.`,
+      exercises: [
+        {
+          id: exerciseId(17, 2, 1),
+          title: 'Four Chords Static',
+          description: 'G, Bm, C, D - each chord held, both hands.',
+          abc_notation: `X:1
+T:Four Chords Together
+M:4/4
+L:1
+Q:1/4=40
+K:G
+[G,,D,][GBd] | [B,,^F,][BdF] | [C,G,][CEG] | [D,A,][D^FA] |]`,
+          target_tempo: 40,
+          tips: ['Pause between chords to reset', 'Quality over speed'],
+          common_mistakes: ['Rushing to the next chord']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'G to Bm Transition',
+      objectives: [
+        'Move between two chords',
+        'First real coordination challenge'
+      ],
+      content: `Now we move. G to Bm, back and forth. This is your first real hands-together transition. Go absurdly slow.`,
+      exercises: [
+        {
+          id: exerciseId(17, 3, 1),
+          title: 'G to Bm Movement',
+          description: 'Transition between G and Bm, both hands.',
+          abc_notation: `X:1
+T:G to Bm
+M:4/4
+L:1/2
+Q:1/4=40
+K:G
+[G,,D,][GBd]2 | [B,,^F,][BdF]2 | [G,,D,][GBd]2 | [B,,^F,][BdF]2 |]`,
+          target_tempo: 40,
+          tips: ['Visualize both hand positions before moving', 'Move hands together, not one then the other'],
+          common_mistakes: ['Moving one hand, then the other']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Full Progression - Slow',
+      objectives: [
+        'G - Bm - C - D progression',
+        'Still at 40 BPM'
+      ],
+      content: `The full verse progression, both hands, glacially slow. This is the foundation of the entire song.`,
+      exercises: [
+        {
+          id: exerciseId(17, 4, 1),
+          title: 'Verse Progression HT',
+          description: 'G - Bm - C - D, hands together.',
+          abc_notation: `X:1
+T:Verse Progression HT
+M:4/4
+L:1/2
+Q:1/4=40
+K:G
+[G,,D,][GBd]2 | [B,,^F,][BdF]2 | [C,G,][CEG]2 | [D,A,][D^FA]2 |]`,
+          target_tempo: 40,
+          tips: ['If you stumble, don\'t restart—isolate the problem spot'],
+          common_mistakes: ['Restarting from the beginning every time you stumble']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Adding Bass Movement',
+      objectives: [
+        'LH plays root-fifth while RH holds chord',
+        'First taste of independence'
+      ],
+      content: `Now LH starts moving while RH holds. LH plays root, then fifth. RH just sustains the chord. This is baby-steps hand independence.`,
+      exercises: [
+        {
+          id: exerciseId(17, 5, 1),
+          title: 'LH Movement Under RH',
+          description: 'RH holds G chord, LH plays G-D-G-D.',
+          abc_notation: `X:1
+T:LH Movement Under RH
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd] [D,]z [G,,]z [D,]z |]`,
+          target_tempo: 40,
+          tips: ['RH stays completely still', 'LH does all the moving'],
+          common_mistakes: ['RH sympathetically moving with LH']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'First Two Bars',
+      objectives: [
+        'Bars 1-2 of verse, hands together',
+        'LH bass pattern, RH chords'
+      ],
+      content: `Two bars. That's it. LH plays the bass pattern, RH plays chords. This is the actual texture of the song.`,
+      exercises: [
+        {
+          id: exerciseId(17, 6, 1),
+          title: 'Verse Bars 1-2',
+          description: 'First two bars of verse, full texture.',
+          abc_notation: `X:1
+T:Verse Bars 1-2
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 40,
+          tips: ['This is what it\'s supposed to sound like', 'Two bars is a victory'],
+          common_mistakes: ['Trying to do too much too soon']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 17 Checkpoint',
+      objectives: [
+        'Can play four chords HT',
+        'Can play 2 bars of verse HT'
+      ],
+      content: `Week 1 of hands together is done. If you can play two bars at 40 BPM with both hands, you're on track. It doesn't need to be pretty yet.`,
+      exercises: [
+        {
+          id: exerciseId(17, 7, 1),
+          title: 'Week 17 Check',
+          description: 'Two bars of verse, hands together, 40 BPM.',
+          abc_notation: `X:1
+T:Week 17 Check
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 40,
+          tips: ['This is harder than it looks', 'Celebrate small wins'],
+          common_mistakes: ['Being too hard on yourself']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can play G-Bm-C-D progression HT at 40 BPM',
+        'Can play 2 bars with bass pattern under chords',
+        'Hands move together, not sequentially',
+        'Mentally prepared for more slow work'
+      ]
+    }
+  ]
+}
+
+const week18: WeekContent = {
+  week_number: 18,
+  phase: 3,
+  title: 'Verse Section - Hands Together',
+  overview: 'Building out the complete verse, still slow. By the end of this week, you should be able to play the full verse with both hands at 40-45 BPM.',
+  theory_concepts: ['Section building', 'Patience', 'Incremental progress'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Verse Expansion',
+      objectives: [
+        'Review bars 1-2',
+        'Add bars 3-4 (Bm section)'
+      ],
+      content: `You have bars 1-2. Now we add bars 3-4 (the Bm chord). Same approach: absurdly slow, focus on coordination, not speed.`,
+      exercises: [
+        {
+          id: exerciseId(18, 1, 1),
+          title: 'Add Bm Section',
+          description: 'Bars 3-4: Bm chord with bass pattern.',
+          abc_notation: `X:1
+T:Bm Section HT
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 40,
+          tips: ['Same pattern, different chord', 'B to F# in LH'],
+          common_mistakes: ['Forgetting F# is sharp']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Connect G to Bm',
+      objectives: [
+        'Bars 1-4 connected',
+        'Smooth transition'
+      ],
+      content: `Connect what you know. Bars 1-2 (G) into bars 3-4 (Bm). Four bars, hands together.`,
+      exercises: [
+        {
+          id: exerciseId(18, 2, 1),
+          title: 'Bars 1-4 HT',
+          description: 'G section into Bm section.',
+          abc_notation: `X:1
+T:Verse Bars 1-4
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 40,
+          tips: ['The transition is the hard part', 'Prepare both hands for Bm while still on G'],
+          common_mistakes: ['Pausing at the transition']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Add C Section',
+      objectives: [
+        'Bars 5-6: C chord',
+        'Connect to previous material'
+      ],
+      content: `Bars 5-6 are the C chord. Add them to your growing verse.`,
+      exercises: [
+        {
+          id: exerciseId(18, 3, 1),
+          title: 'C Section HT',
+          description: 'Bars 5-6: C chord with bass pattern.',
+          abc_notation: `X:1
+T:C Section HT
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] |]`,
+          target_tempo: 40,
+          tips: ['C to G in LH', 'RH stays on C-E-G'],
+          common_mistakes: ['LH fifth is G, not C']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Add D Section',
+      objectives: [
+        'Bars 7-8: D chord',
+        'Complete verse structure'
+      ],
+      content: `Final piece: D chord for bars 7-8. This completes the verse chord pattern.`,
+      exercises: [
+        {
+          id: exerciseId(18, 4, 1),
+          title: 'D Section HT',
+          description: 'Bars 7-8: D chord with bass pattern.',
+          abc_notation: `X:1
+T:D Section HT
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 40,
+          tips: ['D to A in LH', 'RH has F# - don\'t forget'],
+          common_mistakes: ['Playing F natural instead of F#']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Full Verse Attempt',
+      objectives: [
+        'All 8 bars together',
+        'First full verse HT'
+      ],
+      content: `Moment of truth. All 8 bars, hands together, 40 BPM. Don't stop for mistakes—push through.`,
+      exercises: [
+        {
+          id: exerciseId(18, 5, 1),
+          title: 'Full Verse HT',
+          description: 'Complete verse, hands together.',
+          abc_notation: `X:1
+T:Full Verse HT
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 40,
+          tips: ['Don\'t stop', 'Note where you stumbled'],
+          common_mistakes: ['Stopping every time there\'s an error']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Problem Spot Drill',
+      objectives: [
+        'Identify your weakest transition',
+        'Drill it 20 times'
+      ],
+      content: `Yesterday you played through the verse. Where did you stumble? That spot gets 20 reps today.`,
+      exercises: [
+        {
+          id: exerciseId(18, 6, 1),
+          title: 'Weak Spot Drill',
+          description: 'Your problem transition, 20 times.',
+          abc_notation: `X:1
+T:Drill Your Weak Spot
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+% Insert your problem transition
+[G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 40,
+          tips: ['Isolate the exact moment of trouble', 'Repetition fixes everything'],
+          common_mistakes: ['Not being honest about where you struggle']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 18 Checkpoint',
+      objectives: [
+        'Full verse HT at 40 BPM',
+        'Ready to add tempo'
+      ],
+      content: `Can you play the complete verse, hands together, at 40 BPM? It doesn't need to be perfect—just continuous.`,
+      exercises: [
+        {
+          id: exerciseId(18, 7, 1),
+          title: 'Verse HT Check',
+          description: 'Full verse, hands together, 40 BPM.',
+          abc_notation: `X:1
+T:Verse Check
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 40,
+          tips: ['Continuous, not perfect'],
+          common_mistakes: ['Waiting for perfection before moving on']
+        }
+      ],
+      checkpoint_criteria: [
+        'Can play full verse HT at 40 BPM',
+        'No complete breakdowns mid-verse',
+        'Know your weak spots',
+        'Ready to increase tempo'
+      ]
+    }
+  ]
+}
+
+const week19: WeekContent = {
+  week_number: 19,
+  phase: 3,
+  title: 'Verse - Building Speed',
+  overview: 'You can play the verse at 40 BPM. This week we gradually increase tempo while maintaining quality. By week\'s end: 50-55 BPM.',
+  theory_concepts: ['Tempo building', 'Quality maintenance', 'The speed plateau'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Tempo Increase Strategy',
+      objectives: [
+        'Understand tempo building',
+        'First bump: 40 to 45 BPM'
+      ],
+      content: `You've been at 40 BPM. Now we inch up. The rule: only increase tempo when the current tempo feels comfortable. If 45 feels like chaos, go back to 42.
+
+**Today:** Try the verse at 45 BPM. If it falls apart, drop to 42. Find your edge.`,
+      exercises: [
+        {
+          id: exerciseId(19, 1, 1),
+          title: 'Verse at 45 BPM',
+          description: 'Full verse, hands together, tempo bump.',
+          abc_notation: `X:1
+T:Verse at 45
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 45,
+          tips: ['5 BPM is significant at these slow speeds', 'Back off if needed'],
+          common_mistakes: ['Ego preventing you from going slower']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Consolidate 45 BPM',
+      objectives: [
+        'Multiple reps at 45 BPM',
+        'Make it feel comfortable'
+      ],
+      content: `Don't rush to 50. Make 45 feel easy first. Play the verse 5 times at 45 BPM.`,
+      exercises: [
+        {
+          id: exerciseId(19, 2, 1),
+          title: 'Verse at 45 x5',
+          description: 'Five full verses at 45 BPM.',
+          abc_notation: `X:1
+T:Verse at 45 x5
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 45,
+          tips: ['By rep 5, it should feel more natural'],
+          common_mistakes: ['Quality degrading with each rep']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Push to 48 BPM',
+      objectives: [
+        'Incremental tempo increase',
+        'Test your ceiling'
+      ],
+      content: `Small bump to 48. Three BPM might not seem like much, but your hands notice.`,
+      exercises: [
+        {
+          id: exerciseId(19, 3, 1),
+          title: 'Verse at 48 BPM',
+          description: 'Full verse at 48 BPM.',
+          abc_notation: `X:1
+T:Verse at 48
+M:4/4
+L:1/4
+Q:1/4=48
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 48,
+          tips: ['Stay relaxed', 'Tension kills speed'],
+          common_mistakes: ['Tensing shoulders as tempo increases']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Target: 50 BPM',
+      objectives: [
+        'Half of target tempo',
+        'Major milestone'
+      ],
+      content: `50 BPM is a milestone—you're now at half the target tempo. This is real progress.`,
+      exercises: [
+        {
+          id: exerciseId(19, 4, 1),
+          title: 'Verse at 50 BPM',
+          description: 'Half-tempo milestone.',
+          abc_notation: `X:1
+T:Verse at 50
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Celebrate this', 'You\'re halfway to target tempo'],
+          common_mistakes: ['Not acknowledging progress']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Consolidate 50 BPM',
+      objectives: [
+        'Make 50 feel comfortable',
+        'Multiple clean reps'
+      ],
+      content: `Same as Day 2—don't rush. Make 50 BPM feel easy before pushing further.`,
+      exercises: [
+        {
+          id: exerciseId(19, 5, 1),
+          title: 'Verse at 50 x5',
+          description: 'Lock in 50 BPM.',
+          abc_notation: `X:1
+T:Verse at 50 x5
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Consistency is the goal'],
+          common_mistakes: ['Rushing ahead before 50 is solid']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Push to 55 BPM',
+      objectives: [
+        'Week\'s target tempo',
+        'Test but don\'t force'
+      ],
+      content: `Final push for the week: 55 BPM. If this feels chaotic, stay at 50-52 and try again next week.`,
+      exercises: [
+        {
+          id: exerciseId(19, 6, 1),
+          title: 'Verse at 55 BPM',
+          description: 'Week 19 target.',
+          abc_notation: `X:1
+T:Verse at 55
+M:4/4
+L:1/4
+Q:1/4=55
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 55,
+          tips: ['Only if 50 is solid', 'No shame in staying at 50'],
+          common_mistakes: ['Forcing tempo before ready']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 19 Checkpoint',
+      objectives: [
+        'Verse HT at 50-55 BPM',
+        'Ready for dynamics'
+      ],
+      content: `Where did you land? 50 BPM? 55? Whatever your comfortable tempo is, that's your baseline for next week.`,
+      exercises: [
+        {
+          id: exerciseId(19, 7, 1),
+          title: 'Week 19 Check',
+          description: 'Verse at your comfortable tempo.',
+          abc_notation: `X:1
+T:Verse Tempo Check
+M:4/4
+L:1/4
+Q:1/4=52
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 52,
+          tips: ['Be honest about your actual comfortable tempo'],
+          common_mistakes: ['Claiming faster than you can reliably play']
+        }
+      ],
+      checkpoint_criteria: [
+        'Verse HT at minimum 50 BPM',
+        'No complete breakdowns',
+        'Transitions are smooth',
+        'Ready to add chorus'
+      ]
+    }
+  ]
+}
+
+const week20: WeekContent = {
+  week_number: 20,
+  phase: 3,
+  title: 'Adding Dynamics - Verse',
+  overview: 'Before adding more sections, let\'s make the verse musical. Dynamics, breathing, expression. Notes are just the beginning—now we make music.',
+  theory_concepts: ['Dynamics', 'Phrasing', 'Musical expression'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Beyond the Notes',
+      objectives: [
+        'Understand dynamic variation',
+        'Verse as a story'
+      ],
+      content: `You can play the notes. Now we make it sound like music.
+
+**Dynamics 101:**
+- Beat 1 slightly louder (downbeat emphasis)
+- Phrase endings soften slightly
+- Chord changes can have subtle swells
+
+The verse tells a story. "Well my time went so quickly..." It's wistful, nostalgic. That feeling should come through in how you play—not just what you play.`,
+      exercises: [
+        {
+          id: exerciseId(20, 1, 1),
+          title: 'Downbeat Emphasis',
+          description: 'Slightly louder on beat 1 of each bar.',
+          abc_notation: `X:1
+T:Downbeat Emphasis
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Subtle—not banging', 'Beat 1 is the anchor'],
+          common_mistakes: ['Too much contrast', 'Accenting every beat']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Phrase Shaping',
+      objectives: [
+        'Slight swell into bar 3',
+        'Soft landing on bar 4'
+      ],
+      content: `Shape the four-bar phrase. Bars 1-2 establish, bar 3 peaks slightly, bar 4 resolves.`,
+      exercises: [
+        {
+          id: exerciseId(20, 2, 1),
+          title: 'Phrase Shape',
+          description: 'Build and release over 4 bars.',
+          abc_notation: `X:1
+T:Phrase Shape
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 50,
+          tips: ['Think: breathe in (bars 1-2), speak (bar 3), exhale (bar 4)'],
+          common_mistakes: ['Flat dynamics throughout']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'LH/RH Balance',
+      objectives: [
+        'RH slightly louder than LH',
+        'Melody/harmony balance'
+      ],
+      content: `In the final arrangement, RH carries the melody. Start training the balance now—RH is the voice, LH is the support.`,
+      exercises: [
+        {
+          id: exerciseId(20, 3, 1),
+          title: 'Balance Practice',
+          description: 'RH more prominent than LH.',
+          abc_notation: `X:1
+T:RH/LH Balance
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['LH should almost disappear under RH', 'This is subtle'],
+          common_mistakes: ['LH overpowering', 'Making it too obvious']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Full Verse Musical',
+      objectives: [
+        'Apply all dynamics to full verse',
+        'Make it feel like a song'
+      ],
+      content: `Put it together: downbeat emphasis, phrase shaping, balance. Play the full verse as music, not an exercise.`,
+      exercises: [
+        {
+          id: exerciseId(20, 4, 1),
+          title: 'Musical Verse',
+          description: 'Full verse with expression.',
+          abc_notation: `X:1
+T:Musical Verse
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Close your eyes', 'Feel the song'],
+          common_mistakes: ['Thinking too much, feeling too little']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Tempo + Dynamics',
+      objectives: [
+        'Push tempo to 55 with dynamics',
+        'Quality at speed'
+      ],
+      content: `Now try at 55 BPM while maintaining the dynamics. Faster often means flatter—fight that tendency.`,
+      exercises: [
+        {
+          id: exerciseId(20, 5, 1),
+          title: 'Verse 55 + Dynamics',
+          description: 'Faster with expression maintained.',
+          abc_notation: `X:1
+T:Verse 55 + Dynamics
+M:4/4
+L:1/4
+Q:1/4=55
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 55,
+          tips: ['Dynamics don\'t disappear at speed'],
+          common_mistakes: ['Going flat when tempo increases']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Eyes Closed Musical',
+      objectives: [
+        'Play musically without looking',
+        'Full internalization'
+      ],
+      content: `Eyes closed, full verse, with dynamics. This is where it starts to feel real.`,
+      exercises: [
+        {
+          id: exerciseId(20, 6, 1),
+          title: 'Eyes Closed Verse',
+          description: 'No looking, full expression.',
+          abc_notation: `X:1
+T:Eyes Closed Verse
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Trust yourself', 'Feel the music'],
+          common_mistakes: ['Peeking']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 20 Checkpoint',
+      objectives: [
+        'Musical verse at 50-55 BPM',
+        'Ready for chorus'
+      ],
+      content: `Your verse should now sound like music, not just correct notes. That's the difference between playing and performing.`,
+      exercises: [
+        {
+          id: exerciseId(20, 7, 1),
+          title: 'Musical Verse Check',
+          description: 'Full verse, musical, 50-55 BPM.',
+          abc_notation: `X:1
+T:Musical Verse Check
+M:4/4
+L:1/4
+Q:1/4=52
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 52,
+          tips: ['This should feel good to play'],
+          common_mistakes: ['Still treating it as an exercise']
+        }
+      ],
+      checkpoint_criteria: [
+        'Verse HT at 50-55 BPM',
+        'Clear dynamic variation',
+        'Phrase shaping present',
+        'Can play with eyes closed',
+        'Ready for chorus section'
+      ]
+    }
+  ]
+}
+
+const week21: WeekContent = {
+  week_number: 21,
+  phase: 3,
+  title: 'Chorus - Hands Together',
+  overview: 'Now the chorus. Same slow-build approach as the verse. The chorus uses similar chords but with D7sus4—the voicing you learned in Week 11.',
+  theory_concepts: ['Section contrast', 'Energy shift', 'Chorus feel'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Chorus HT Introduction',
+      objectives: [
+        'Apply verse skills to chorus',
+        'Note the D7sus4 difference'
+      ],
+      content: `The chorus chords are: G - Bm - C - D7sus4. Similar to verse, but D7sus4 instead of D. You already know this voicing.
+
+**The energy shift:** Chorus should feel brighter, more open than verse. "Sun's coming up"—there's hope in this section.
+
+Start at 40 BPM, just like the verse.`,
+      exercises: [
+        {
+          id: exerciseId(21, 1, 1),
+          title: 'Chorus Chords HT',
+          description: 'G - Bm - C - D7sus4, hands together.',
+          abc_notation: `X:1
+T:Chorus Chords HT
+M:4/4
+L:1/2
+Q:1/4=40
+K:G
+[G,,D,][GBd]2 | [B,,^F,][BdF]2 | [C,G,][CEG]2 | [D,A,][DGA]2 |]`,
+          target_tempo: 40,
+          tips: ['D7sus4 is D-G-A in RH', 'Same LH pattern as D major'],
+          common_mistakes: ['Playing D major instead of D7sus4']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Chorus Bass Pattern',
+      objectives: [
+        'Add bass movement to chorus',
+        'Same pattern, different chords'
+      ],
+      content: `Apply the root-fifth bass pattern to chorus chords. Same technique as verse.`,
+      exercises: [
+        {
+          id: exerciseId(21, 2, 1),
+          title: 'Chorus Full Pattern',
+          description: 'Chorus with bass movement.',
+          abc_notation: `X:1
+T:Chorus Full Pattern
+M:4/4
+L:1/4
+Q:1/4=40
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 40,
+          tips: ['Exact same LH pattern as verse', 'Only RH chord on D changes'],
+          common_mistakes: ['Confusing D7sus4 with D']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Chorus at 45 BPM',
+      objectives: [
+        'Tempo bump',
+        'Apply verse lessons'
+      ],
+      content: `You built verse tempo slowly. Apply those lessons—bump to 45 when 40 feels solid.`,
+      exercises: [
+        {
+          id: exerciseId(21, 3, 1),
+          title: 'Chorus at 45',
+          description: 'Full chorus, 45 BPM.',
+          abc_notation: `X:1
+T:Chorus at 45
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 45,
+          tips: ['Same approach as verse tempo building'],
+          common_mistakes: ['Rushing the process']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Chorus at 50 BPM',
+      objectives: [
+        'Match verse tempo',
+        'Sections should align'
+      ],
+      content: `Get chorus to 50 BPM—same as your verse. The sections need to flow at the same tempo.`,
+      exercises: [
+        {
+          id: exerciseId(21, 4, 1),
+          title: 'Chorus at 50',
+          description: 'Match verse tempo.',
+          abc_notation: `X:1
+T:Chorus at 50
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Sections must be at same tempo'],
+          common_mistakes: ['Chorus and verse at different tempos']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Verse into Chorus',
+      objectives: [
+        'Connect the sections',
+        'Smooth transition HT'
+      ],
+      content: `Now connect verse to chorus. End of verse D chord into beginning of chorus G. Feel the lift.`,
+      exercises: [
+        {
+          id: exerciseId(21, 5, 1),
+          title: 'V to C Transition HT',
+          description: 'Last bars of verse into first bars of chorus.',
+          abc_notation: `X:1
+T:V to C Transition
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] | [G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Feel the energy lift', 'No pause at transition'],
+          common_mistakes: ['Hesitating between sections']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Full Run: V + C',
+      objectives: [
+        'Play verse then chorus',
+        'First full section HT'
+      ],
+      content: `Full verse into full chorus. This is the core of the song—you're playing real music now.`,
+      exercises: [
+        {
+          id: exerciseId(21, 6, 1),
+          title: 'Verse + Chorus HT',
+          description: 'Both sections, hands together.',
+          abc_notation: `X:1
+T:Verse + Chorus
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+% Verse
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |
+% Chorus
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][DGA]2 [A,] | [D,][DGA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['This is substantial', 'Push through any stumbles'],
+          common_mistakes: ['Stopping at every mistake']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 21 Checkpoint',
+      objectives: [
+        'Chorus at 50 BPM',
+        'V + C connected'
+      ],
+      content: `Can you play verse into chorus, hands together, at 50 BPM? This is major progress.`,
+      exercises: [
+        {
+          id: exerciseId(21, 7, 1),
+          title: 'V + C Check',
+          description: 'Full verse + chorus, 50 BPM.',
+          abc_notation: `X:1
+T:V + C Check
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |]`,
+          target_tempo: 50,
+          tips: ['Major milestone'],
+          common_mistakes: ['Undervaluing this achievement']
+        }
+      ],
+      checkpoint_criteria: [
+        'Chorus HT at 50 BPM',
+        'D7sus4 voicing correct',
+        'V + C transition smooth',
+        'Can play both sections consecutively'
+      ]
+    }
+  ]
+}
+
+const week22: WeekContent = {
+  week_number: 22,
+  phase: 3,
+  title: 'Bridge & Ending - Hands Together',
+  overview: 'The bridge and ending. The bridge is essentially another verse. The ending has the chromatic descent you learned—G to C#m to C to Dmaj7.',
+  theory_concepts: ['Song form completion', 'Chromatic bass', 'Endings'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Bridge Section',
+      objectives: [
+        'Understand bridge = verse variant',
+        'Same HT skills apply'
+      ],
+      content: `The bridge ("And I had the parade...") uses the same chord pattern as the verse. If you can play the verse, you can play the bridge. Same hands-together technique.`,
+      exercises: [
+        {
+          id: exerciseId(22, 1, 1),
+          title: 'Bridge HT',
+          description: 'Bridge section (verse pattern).',
+          abc_notation: `X:1
+T:Bridge HT
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] | [G,,][GBd]2 [D,] | [B,,][BdF]2 [^F,] | [B,,][BdF]2 [^F,] |
+[C,][CEG]2 [G,] | [C,][CEG]2 [G,] | [D,][D^FA]2 [A,] | [D,][D^FA]2 [A,] |]`,
+          target_tempo: 50,
+          tips: ['Same as verse', 'Different lyrics, same chords'],
+          common_mistakes: ['Overcomplicating it']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Ending Chords HT',
+      objectives: [
+        'Learn ending pattern both hands',
+        'G - C#m - C - Dmaj7'
+      ],
+      content: `The ending is different. G - C#m - C - Dmaj7. The bass walks chromatically: G - C# - C - D. Practice these chords together.`,
+      exercises: [
+        {
+          id: exerciseId(22, 2, 1),
+          title: 'Ending Chords',
+          description: 'G - C#m - C - Dmaj7 progression.',
+          abc_notation: `X:1
+T:Ending Chords
+M:4/4
+L:1/2
+Q:1/4=40
+K:G
+[G,,D,][GBd]2 | [^C,^G,][^CEG]2 | [C,G,][CEG]2 | [D,A,][D^FAc]2 |]`,
+          target_tempo: 40,
+          tips: ['C#m has C#-E-G#', 'Dmaj7 has D-F#-A-C#'],
+          common_mistakes: ['Missing the sharps in C#m', 'Wrong notes in Dmaj7']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Ending Pattern',
+      objectives: [
+        'Add bass movement',
+        'Full ending texture'
+      ],
+      content: `Add the bass pattern to the ending. It's a simple root pattern—no fifth needed for this section.`,
+      exercises: [
+        {
+          id: exerciseId(22, 3, 1),
+          title: 'Ending Full Pattern',
+          description: 'Ending with bass movement.',
+          abc_notation: `X:1
+T:Ending Pattern
+M:4/4
+L:1/4
+Q:1/4=45
+K:G
+[G,,][GBd]2 [G,,] | [^C,][^CEG]2 [^C,] | [C,][CEG]2 [C,] | [D,][D^FAc]2 [D,] |]`,
+          target_tempo: 45,
+          tips: ['Bass walks: G - C# - C - D', 'Chromatic movement is the hook'],
+          common_mistakes: ['Missing the chromatic bass line']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Ending Loop',
+      objectives: [
+        'Loop the ending smoothly',
+        'Seamless repeat'
+      ],
+      content: `The ending repeats until fade. Practice looping it—D back to G should be seamless.`,
+      exercises: [
+        {
+          id: exerciseId(22, 4, 1),
+          title: 'Ending Loop HT',
+          description: 'Loop ending pattern 4 times.',
+          abc_notation: `X:1
+T:Ending Loop
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [G,,] | [^C,][^CEG]2 [^C,] | [C,][CEG]2 [C,] | [D,][D^FAc]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['No audible restart', 'Continuous loop'],
+          common_mistakes: ['Bump at the loop point']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Chorus into Ending',
+      objectives: [
+        'Connect chorus to ending',
+        'Transition practice'
+      ],
+      content: `The ending follows the final chorus. Practice that transition—D7sus4 to ending G.`,
+      exercises: [
+        {
+          id: exerciseId(22, 5, 1),
+          title: 'C to Ending',
+          description: 'Chorus end into ending section.',
+          abc_notation: `X:1
+T:Chorus to Ending
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[D,][DGA]2 [A,] | [D,][DGA]2 [A,] | [G,,][GBd]2 [G,,] | [^C,][^CEG]2 [^C,] |]`,
+          target_tempo: 50,
+          tips: ['D7sus4 resolves to G', 'Ending begins'],
+          common_mistakes: ['Losing momentum at transition']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Full Song Structure',
+      objectives: [
+        'Play through complete structure HT',
+        'Identify remaining gaps'
+      ],
+      content: `Try the complete song structure: V - C - V - C - Bridge - C - Ending. Note where you struggle.`,
+      exercises: [
+        {
+          id: exerciseId(22, 6, 1),
+          title: 'Full Structure',
+          description: 'Complete song, hands together.',
+          abc_notation: `X:1
+T:Full Structure
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+% Abbreviated - play full song from memory
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Don\'t stop', 'Note weak spots'],
+          common_mistakes: ['Not attempting the full structure']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 22 Checkpoint',
+      objectives: [
+        'All sections HT at 50 BPM',
+        'Complete song structure possible'
+      ],
+      content: `You can now play every section of the song with both hands. It may not be smooth, but the building blocks are there.`,
+      exercises: [
+        {
+          id: exerciseId(22, 7, 1),
+          title: 'Structure Check',
+          description: 'All sections, hands together.',
+          abc_notation: `X:1
+T:Structure Check
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Every section at least possible'],
+          common_mistakes: ['Skipping the hard parts']
+        }
+      ],
+      checkpoint_criteria: [
+        'Bridge HT at 50 BPM',
+        'Ending HT at 50 BPM',
+        'All transitions practiced',
+        'Complete song structure attempted'
+      ]
+    }
+  ]
+}
+
+const week23: WeekContent = {
+  week_number: 23,
+  phase: 3,
+  title: 'Full Song - Hands Together',
+  overview: 'Complete run-throughs. By the end of this week, you should be able to play the entire song, hands together, at 50-55 BPM without stopping.',
+  theory_concepts: ['Complete performance', 'Continuity', 'Playing through mistakes'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'No Stopping Rule',
+      objectives: [
+        'Learn to push through mistakes',
+        'Complete run-through mindset'
+      ],
+      content: `New rule: **no stopping.** When you make a mistake, keep going. In performance, you don't get do-overs. Train that now.
+
+This week is about continuity. Play the whole song, start to finish, mistakes and all.`,
+      exercises: [
+        {
+          id: exerciseId(23, 1, 1),
+          title: 'No-Stop Run',
+          description: 'Full song, no stopping for any reason.',
+          abc_notation: `X:1
+T:No-Stop Run
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+% Play full song from memory - no notation needed
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Mistakes happen—keep going', 'Stopping is not an option'],
+          common_mistakes: ['Stopping when you stumble']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Run-Through Analysis',
+      objectives: [
+        'Play through and note weak spots',
+        'Target tomorrow\'s practice'
+      ],
+      content: `Play through the whole song. Afterward, list the 2-3 spots that were weakest. Those are tomorrow's focus.`,
+      exercises: [
+        {
+          id: exerciseId(23, 2, 1),
+          title: 'Analysis Run',
+          description: 'Full song with mental note-taking.',
+          abc_notation: `X:1
+T:Analysis Run
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Remember where you struggled', 'Write them down'],
+          common_mistakes: ['Forgetting what went wrong']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Weak Spot Surgery',
+      objectives: [
+        'Drill your 2-3 weak spots',
+        'Isolation and repetition'
+      ],
+      content: `Take yesterday's weak spots. Drill each one 15 times. This is how you fix problems.`,
+      exercises: [
+        {
+          id: exerciseId(23, 3, 1),
+          title: 'Weak Spot Drill',
+          description: 'Your problem areas, 15 reps each.',
+          abc_notation: `X:1
+T:Weak Spot Drill
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+% Insert your weak transitions here
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Isolate the exact problem', '15 clean reps minimum'],
+          common_mistakes: ['Not enough repetitions']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Run-Through #2',
+      objectives: [
+        'Second complete run-through',
+        'Check if weak spots improved'
+      ],
+      content: `After yesterday's drilling, run through the whole song again. Did the weak spots improve?`,
+      exercises: [
+        {
+          id: exerciseId(23, 4, 1),
+          title: 'Second Run',
+          description: 'Full song, testing improvements.',
+          abc_notation: `X:1
+T:Second Run
+M:4/4
+L:1/4
+Q:1/4=50
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 50,
+          tips: ['Notice improvement in drilled spots'],
+          common_mistakes: ['New weak spots appearing']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Push to 55 BPM',
+      objectives: [
+        'Full song at 55 BPM',
+        'Speed while maintaining quality'
+      ],
+      content: `Try the complete song at 55 BPM. This is challenging—maintain quality, don't just survive.`,
+      exercises: [
+        {
+          id: exerciseId(23, 5, 1),
+          title: 'Full Song 55',
+          description: 'Complete song at 55 BPM.',
+          abc_notation: `X:1
+T:Full Song 55
+M:4/4
+L:1/4
+Q:1/4=55
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 55,
+          tips: ['Quality over survival', 'Relax into the tempo'],
+          common_mistakes: ['Tension at faster tempo']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Performance Simulation',
+      objectives: [
+        'Play as if performing',
+        'No do-overs, full commitment'
+      ],
+      content: `Pretend someone is watching. Sit down, take a breath, count yourself in, and play the whole song. One take.`,
+      exercises: [
+        {
+          id: exerciseId(23, 6, 1),
+          title: 'Performance Sim',
+          description: 'One take, full commitment.',
+          abc_notation: `X:1
+T:Performance Sim
+M:4/4
+L:1/4
+Q:1/4=52
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 52,
+          tips: ['Treat it like the real thing', 'Breathe, then begin'],
+          common_mistakes: ['Not taking it seriously']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Week 23 Checkpoint',
+      objectives: [
+        'Complete song HT, 50-55 BPM',
+        'Can play without stopping'
+      ],
+      content: `Can you play the complete song, hands together, at 50-55 BPM, without stopping? That's the Phase 3 goal within reach.`,
+      exercises: [
+        {
+          id: exerciseId(23, 7, 1),
+          title: 'Complete Song Check',
+          description: 'Full song, hands together, no stops.',
+          abc_notation: `X:1
+T:Complete Song Check
+M:4/4
+L:1/4
+Q:1/4=52
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 52,
+          tips: ['This is major progress'],
+          common_mistakes: ['Underestimating achievement']
+        }
+      ],
+      checkpoint_criteria: [
+        'Complete song HT possible',
+        'Can play 50-55 BPM',
+        'No complete breakdowns',
+        'Push-through-mistakes skill developed'
+      ]
+    }
+  ]
+}
+
+const week24: WeekContent = {
+  week_number: 24,
+  phase: 3,
+  title: 'Phase 3 Finale - Hands Together Mastery',
+  overview: 'Final week of Phase 3. Polish, speed work, and preparation for adding voice. By the end of this week, hands together should feel solid—automatic enough to add singing.',
+  theory_concepts: ['Tempo target', 'Preparation for vocals', 'Phase completion'],
+  days: [
+    {
+      day_number: 1,
+      type: 'info_dump',
+      title: 'Push to 60 BPM',
+      objectives: [
+        'Target: 60 BPM full song',
+        'Approach with confidence'
+      ],
+      content: `Phase 3's final push: get to 60 BPM. That's about 80% of target tempo. If you can play solidly at 60, you're ready to add voice.`,
+      exercises: [
+        {
+          id: exerciseId(24, 1, 1),
+          title: 'Full Song 60',
+          description: 'Complete song at 60 BPM.',
+          abc_notation: `X:1
+T:Full Song 60
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['This is a significant tempo', 'Stay relaxed'],
+          common_mistakes: ['Tension building']
+        }
+      ]
+    },
+    {
+      day_number: 2,
+      type: 'practice',
+      title: 'Consolidate 60 BPM',
+      objectives: [
+        'Multiple runs at 60',
+        'Make it comfortable'
+      ],
+      content: `Don't push to 65 yet. Make 60 feel easy. Three complete run-throughs.`,
+      exercises: [
+        {
+          id: exerciseId(24, 2, 1),
+          title: '60 BPM x3',
+          description: 'Three full songs at 60 BPM.',
+          abc_notation: `X:1
+T:60 x3
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Consistency is the goal'],
+          common_mistakes: ['Quality dropping on later runs']
+        }
+      ]
+    },
+    {
+      day_number: 3,
+      type: 'practice',
+      title: 'Test 65 BPM',
+      objectives: [
+        'Push tempo boundary',
+        'Find your ceiling'
+      ],
+      content: `Test your ceiling: try 65 BPM. This is above your comfortable zone—see what happens.`,
+      exercises: [
+        {
+          id: exerciseId(24, 3, 1),
+          title: 'Test 65',
+          description: 'Full song at 65 BPM.',
+          abc_notation: `X:1
+T:Test 65
+M:4/4
+L:1/4
+Q:1/4=65
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 65,
+          tips: ['This is a test, not the goal', 'See where you are'],
+          common_mistakes: ['Getting frustrated if it\'s too hard']
+        }
+      ]
+    },
+    {
+      day_number: 4,
+      type: 'practice',
+      title: 'Eyes Closed Full Song',
+      objectives: [
+        'No looking, complete song',
+        'Total internalization'
+      ],
+      content: `Eyes closed, full song, 55-60 BPM. This proves you've internalized it—ready for the mental space singing requires.`,
+      exercises: [
+        {
+          id: exerciseId(24, 4, 1),
+          title: 'Eyes Closed Full',
+          description: 'Complete song, no looking.',
+          abc_notation: `X:1
+T:Eyes Closed Full
+M:4/4
+L:1/4
+Q:1/4=55
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 55,
+          tips: ['If you can do this, you\'re ready'],
+          common_mistakes: ['Peeking']
+        }
+      ]
+    },
+    {
+      day_number: 5,
+      type: 'practice',
+      title: 'Musical Full Song',
+      objectives: [
+        'Complete song with expression',
+        'Dynamics through all sections'
+      ],
+      content: `Dynamics through the whole song: verse mellow, chorus bright, ending fading. This is music, not an exercise.`,
+      exercises: [
+        {
+          id: exerciseId(24, 5, 1),
+          title: 'Musical Full Song',
+          description: 'Complete song with expression.',
+          abc_notation: `X:1
+T:Musical Full Song
+M:4/4
+L:1/4
+Q:1/4=58
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 58,
+          tips: ['Tell the story with dynamics'],
+          common_mistakes: ['Flat dynamics']
+        }
+      ]
+    },
+    {
+      day_number: 6,
+      type: 'practice',
+      title: 'Final Performance Sim',
+      objectives: [
+        'One take performance',
+        'Full commitment'
+      ],
+      content: `Final simulation before Phase 4: one take, full song, 60 BPM, with expression. Ready or not.`,
+      exercises: [
+        {
+          id: exerciseId(24, 6, 1),
+          title: 'Final Sim',
+          description: 'Performance simulation, full commitment.',
+          abc_notation: `X:1
+T:Final Sim
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['Treat this as real', 'Breathe, commit, play'],
+          common_mistakes: ['Not taking it seriously']
+        }
+      ]
+    },
+    {
+      day_number: 7,
+      type: 'review',
+      title: 'Phase 3 Complete!',
+      objectives: [
+        'Celebrate Phase 3',
+        'Ready for vocals'
+      ],
+      content: `**Phase 3 Complete!** You can play the entire song, hands together, at 60+ BPM. Your hands work together. 
+
+Phase 4 is where we add your voice. The piano part needs to be automatic—and it is. You're ready.`,
+      exercises: [
+        {
+          id: exerciseId(24, 7, 1),
+          title: 'Phase 3 Finale',
+          description: 'Final hands together run.',
+          abc_notation: `X:1
+T:Phase 3 Finale
+M:4/4
+L:1/4
+Q:1/4=60
+K:G
+[G,,][GBd]2 [D,] |]`,
+          target_tempo: 60,
+          tips: ['You did it', 'Hands together is conquered'],
+          common_mistakes: ['Not celebrating']
+        }
+      ],
+      checkpoint_criteria: [
+        'Full song HT at 60+ BPM',
+        'Can play with eyes closed',
+        'Musical expression present',
+        'Can push through mistakes',
+        'PHASE 3 COMPLETE - Ready for vocals!'
+      ]
+    }
+  ]
+}
+
 // Combine into curriculum
 export const curriculum: Curriculum = {
   phases: [
@@ -2822,8 +4519,14 @@ export const curriculum: Curriculum = {
       name: 'Song Introduction',
       description: 'Learning the actual song, hands separate. Right hand gets melody and chords, left hand gets bass patterns.',
       weeks: [week9, week10, week11, week12, week13, week14, week15, week16]
+    },
+    {
+      number: 3,
+      name: 'Hands Together',
+      description: 'The hard part. Slow, methodical integration of both hands. This is where most adult beginners quit—you won\'t.',
+      weeks: [week17, week18, week19, week20, week21, week22, week23, week24]
     }
-    // Phases 3-6 would be added as curriculum expands
+    // Phases 4-6 would be added as curriculum expands
   ]
 }
 
