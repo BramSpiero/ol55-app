@@ -6230,6 +6230,418 @@ K:G
   ]
 }
 
+// ============================================================================
+// PHASE 5: Refinement (Weeks 33-40)
+// Polish, target tempo, professional quality
+// ============================================================================
+
+const week33: WeekContent = {
+  week_number: 33,
+  phase: 5,
+  title: 'Target Tempo Push',
+  overview: 'Phase 5 begins. You can perform the song—now we make it performance-ready. First goal: hit the actual target tempo of 74 BPM while maintaining all the quality you\'ve built.',
+  theory_concepts: ['Target tempo', 'Performance quality', 'Final polish'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['The Final 10%', 'Tempo 72 Consolidation', 'Target Tempo: 74 BPM', 'Problem Spots at Tempo', 'Second 74 Attempt', 'Overspeed Training', 'Week 33 Checkpoint'][i],
+    objectives: ['Push to target tempo', 'Lock in 74 BPM'],
+    content: `Week 33 Day ${i + 1}: Working toward target tempo of 74 BPM. ${i === 0 ? 'Phase 5 begins—the final push to performance quality.' : 'Continue building toward target tempo.'}`,
+    exercises: [{
+      id: exerciseId(33, i + 1, 1),
+      title: 'Target Tempo Work',
+      description: 'Full song pushing toward 74 BPM.',
+      abc_notation: `X:1\nT:Target Tempo\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Quality over speed', '74 BPM is the goal'],
+      common_mistakes: ['Sacrificing quality for tempo']
+    }],
+    checkpoint_criteria: i === 6 ? ['Can play at 74 BPM', 'Quality maintained'] : undefined
+  }))
+}
+
+const week34: WeekContent = {
+  week_number: 34,
+  phase: 5,
+  title: 'Locking in Target Tempo',
+  overview: 'Make 74 BPM feel like home. This week is about repetition at target tempo until it feels natural.',
+  theory_concepts: ['Tempo consolidation', 'Muscle memory at speed'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['74 BPM Daily', '74 x2', 'Quality at 74', '74 x3', 'Cold Start at 74', 'Overspeed Revisit', 'Week 34 Checkpoint'][i],
+    objectives: ['Lock in 74 BPM', 'Make it feel natural'],
+    content: `Week 34 Day ${i + 1}: Making 74 BPM your new normal through repetition and consolidation.`,
+    exercises: [{
+      id: exerciseId(34, i + 1, 1),
+      title: '74 BPM Lock-in',
+      description: 'Full song at target tempo.',
+      abc_notation: `X:1\nT:74 Lock-in\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['74 should feel comfortable', 'Repetition builds comfort'],
+      common_mistakes: ['Not enough repetition']
+    }],
+    checkpoint_criteria: i === 6 ? ['74 BPM feels comfortable', 'Can do multiple runs'] : undefined
+  }))
+}
+
+const week35: WeekContent = {
+  week_number: 35,
+  phase: 5,
+  title: 'Polishing Transitions',
+  overview: 'Transitions between sections are where performances fall apart. This week: smooth every transition until they\'re invisible.',
+  theory_concepts: ['Transitions', 'Seamless performance'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Transition Audit', 'Verse to Chorus', 'Chorus to Verse', 'Into the Ending', 'All Transitions', 'Seamless Run', 'Week 35 Checkpoint'][i],
+    objectives: ['Smooth all transitions', 'Invisible section changes'],
+    content: `Week 35 Day ${i + 1}: Polishing transitions so the song flows as one continuous piece.`,
+    exercises: [{
+      id: exerciseId(35, i + 1, 1),
+      title: 'Transition Work',
+      description: 'Focus on section transitions.',
+      abc_notation: `X:1\nT:Transitions\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[D,][D^FA]2 [A,] | [G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Transitions should be invisible', 'Practice the seams'],
+      common_mistakes: ['Audible section breaks']
+    }],
+    checkpoint_criteria: i === 6 ? ['All transitions smooth', 'Song flows naturally'] : undefined
+  }))
+}
+
+const week36: WeekContent = {
+  week_number: 36,
+  phase: 5,
+  title: 'Vocal Refinement',
+  overview: 'Your piano is solid. Now refine the voice. Pitch accuracy, breath control, emotional delivery.',
+  theory_concepts: ['Vocal technique', 'Pitch accuracy', 'Breath control'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Vocal Assessment', 'Pitch Work', 'Breath Control', 'Emotional Delivery', 'Voice/Piano Balance', 'Full Vocal Performance', 'Week 36 Checkpoint'][i],
+    objectives: ['Refine vocal technique', 'Improve pitch and breath'],
+    content: `Week 36 Day ${i + 1}: Refining your vocals—pitch, breath, emotion, and balance with piano.`,
+    exercises: [{
+      id: exerciseId(36, i + 1, 1),
+      title: 'Vocal Refinement',
+      description: 'Focus on vocal quality.',
+      abc_notation: `X:1\nT:Vocal Refinement\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Record and listen back', 'Pitch and breath control'],
+      common_mistakes: ['Ignoring vocal issues']
+    }],
+    checkpoint_criteria: i === 6 ? ['Vocals refined', 'Pitch and breath improved'] : undefined
+  }))
+}
+
+const week37: WeekContent = {
+  week_number: 37,
+  phase: 5,
+  title: 'Piano Refinement',
+  overview: 'Now refine the piano. Touch, voicing, dynamics, pedaling. The details that separate amateur from professional.',
+  theory_concepts: ['Piano touch', 'Voicing', 'Dynamics', 'Pedaling'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Piano Assessment', 'Touch Quality', 'Voicing', 'Dynamic Range', 'Sustain Pedal', 'Refined Piano', 'Week 37 Checkpoint'][i],
+    objectives: ['Refine piano technique', 'Professional sound quality'],
+    content: `Week 37 Day ${i + 1}: Refining piano—touch, voicing, dynamics, and pedaling for professional sound.`,
+    exercises: [{
+      id: exerciseId(37, i + 1, 1),
+      title: 'Piano Refinement',
+      description: 'Focus on piano quality.',
+      abc_notation: `X:1\nT:Piano Refinement\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Warm tone', 'Appropriate dynamics'],
+      common_mistakes: ['Harsh touch', 'No dynamic variation']
+    }],
+    checkpoint_criteria: i === 6 ? ['Piano sounds professional', 'All elements refined'] : undefined
+  }))
+}
+
+const week38: WeekContent = {
+  week_number: 38,
+  phase: 5,
+  title: 'Integration and Consistency',
+  overview: 'Vocal refinement + piano refinement, together. Make sure all the polish survives when you combine everything.',
+  theory_concepts: ['Integration', 'Consistency'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Combined Refinements', 'Consistency Run 1', 'Morning Performance', 'Evening Performance', 'Distraction Test', 'Five-Run Day', 'Week 38 Checkpoint'][i],
+    objectives: ['Integrate all refinements', 'Build consistency'],
+    content: `Week 38 Day ${i + 1}: Integrating all refinements and building consistent performance quality.`,
+    exercises: [{
+      id: exerciseId(38, i + 1, 1),
+      title: 'Integration Practice',
+      description: 'All refinements together.',
+      abc_notation: `X:1\nT:Integration\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Consistency is key', 'Same quality every time'],
+      common_mistakes: ['Losing refinements when combining']
+    }],
+    checkpoint_criteria: i === 6 ? ['Consistent quality', 'All refinements integrated'] : undefined
+  }))
+}
+
+const week39: WeekContent = {
+  week_number: 39,
+  phase: 5,
+  title: 'Recording Your Performance',
+  overview: 'Create a proper recording of your performance. This is your proof of achievement and helps identify final polish areas.',
+  theory_concepts: ['Recording', 'Self-assessment'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Recording Setup', 'First Take', 'Review and Note', 'Address Notes', 'Second Take', 'Best Take', 'Week 39 Checkpoint'][i],
+    objectives: ['Create quality recording', 'Document progress'],
+    content: `Week 39 Day ${i + 1}: Recording your performance to document progress and identify final improvements.`,
+    exercises: [{
+      id: exerciseId(39, i + 1, 1),
+      title: 'Recording Practice',
+      description: 'Performance recording.',
+      abc_notation: `X:1\nT:Recording\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Record and listen back', 'Document your progress'],
+      common_mistakes: ['Not recording', 'Not listening critically']
+    }],
+    checkpoint_criteria: i === 6 ? ['Quality recording created', 'Progress documented'] : undefined
+  }))
+}
+
+const week40: WeekContent = {
+  week_number: 40,
+  phase: 5,
+  title: 'Phase 5 Finale - Refinement Complete',
+  overview: 'Final week of Phase 5. Your performance should now be polished and consistent. Phase 6 will prepare you for actual performance.',
+  theory_concepts: ['Phase completion', 'Performance readiness'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Phase 5 Review', 'Confidence Building', 'Speed Reserve', 'Relaxed 74', 'Final Polish', 'Performance Ready', 'Phase 5 Complete!'][i],
+    objectives: ['Complete Phase 5', 'Ready for performance prep'],
+    content: `Week 40 Day ${i + 1}: ${i === 6 ? '**Phase 5 Complete!** Your performance is polished and consistent. Ready for Phase 6.' : 'Final refinement and preparation for performance phase.'}`,
+    exercises: [{
+      id: exerciseId(40, i + 1, 1),
+      title: 'Phase 5 Finale',
+      description: 'Polished performance.',
+      abc_notation: `X:1\nT:Phase 5 Finale\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['You\'re polished and ready', 'Performance phase is next'],
+      common_mistakes: ['Not recognizing readiness']
+    }],
+    checkpoint_criteria: i === 6 ? ['Target tempo comfortable', 'All refinements complete', 'PHASE 5 COMPLETE'] : undefined
+  }))
+}
+
+// ============================================================================
+// PHASE 6: Performance Preparation (Weeks 41-48)
+// Mock performances, stage presence, real performance
+// ============================================================================
+
+const week41: WeekContent = {
+  week_number: 41,
+  phase: 6,
+  title: 'Performance Mindset',
+  overview: 'Welcome to the final phase. These eight weeks prepare you to perform for real people. First: developing the right mindset.',
+  theory_concepts: ['Performance anxiety', 'Mindset', 'Presence'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['The Performance Mindset', 'Nervous Simulation', 'One Take Only', 'Mistake Recovery', 'Positive Self-Talk', 'Pre-Performance Routine', 'Week 41 Checkpoint'][i],
+    objectives: ['Develop performance mindset', 'Channel nerves productively'],
+    content: `Week 41 Day ${i + 1}: Developing the mental skills for performance—managing nerves and building confidence.`,
+    exercises: [{
+      id: exerciseId(41, i + 1, 1),
+      title: 'Mindset Work',
+      description: 'Performance mindset development.',
+      abc_notation: `X:1\nT:Mindset\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Nerves are energy', 'Channel them positively'],
+      common_mistakes: ['Fighting nerves instead of using them']
+    }],
+    checkpoint_criteria: i === 6 ? ['Pre-performance routine established', 'Can perform under pressure'] : undefined
+  }))
+}
+
+const week42: WeekContent = {
+  week_number: 42,
+  phase: 6,
+  title: 'Stage Presence',
+  overview: 'How you present yourself matters. Stage presence turns a good performance into a memorable one.',
+  theory_concepts: ['Stage presence', 'Body language', 'Audience connection'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Beyond the Notes', 'Posture and Position', 'Beginning and Ending', 'Eye Contact', 'Video Yourself', 'Full Presence Performance', 'Week 42 Checkpoint'][i],
+    objectives: ['Develop stage presence', 'Connect with audience'],
+    content: `Week 42 Day ${i + 1}: Developing stage presence—how you present yourself matters as much as how you play.`,
+    exercises: [{
+      id: exerciseId(42, i + 1, 1),
+      title: 'Presence Practice',
+      description: 'Stage presence development.',
+      abc_notation: `X:1\nT:Presence\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Posture matters', 'Connect with your audience'],
+      common_mistakes: ['Focusing only on notes']
+    }],
+    checkpoint_criteria: i === 6 ? ['Confident posture', 'Strong beginning and ending'] : undefined
+  }))
+}
+
+const week43: WeekContent = {
+  week_number: 43,
+  phase: 6,
+  title: 'Mock Performance #1 - Family',
+  overview: 'First real audience: family or close friends. Low stakes, supportive audience. Get used to performing for actual people.',
+  theory_concepts: ['First audience', 'Supportive environment'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Planning Mock Performance', 'Dress Rehearsal #1', 'Dress Rehearsal #2', 'Anticipation Management', 'Final Rehearsal', 'MOCK PERFORMANCE #1', 'Mock Performance Debrief'][i],
+    objectives: ['First real performance', 'Perform for supportive audience'],
+    content: `Week 43 Day ${i + 1}: ${i === 5 ? '**MOCK PERFORMANCE #1** - Perform for family or close friends!' : 'Preparing for your first real performance.'}`,
+    exercises: [{
+      id: exerciseId(43, i + 1, 1),
+      title: i === 5 ? 'MOCK PERFORMANCE #1' : 'Performance Prep',
+      description: i === 5 ? 'Perform for family/friends.' : 'Preparing for mock performance.',
+      abc_notation: `X:1\nT:Mock Performance\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: [i === 5 ? 'This is real!' : 'Prepare thoroughly'],
+      common_mistakes: ['Not scheduling actual performance']
+    }],
+    checkpoint_criteria: i === 6 ? ['First mock performance completed', 'Reflected on experience'] : undefined
+  }))
+}
+
+const week44: WeekContent = {
+  week_number: 44,
+  phase: 6,
+  title: 'Learning from Performance',
+  overview: 'Process what you learned from your first performance. Address weaknesses. Build on strengths.',
+  theory_concepts: ['Performance review', 'Iteration', 'Growth'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Performance Analysis', 'Address Weakness #1', 'Tempo Under Pressure', 'Memory Reinforcement', 'Full Performance Simulation', 'Confidence Rebuilding', 'Week 44 Checkpoint'][i],
+    objectives: ['Learn from first performance', 'Address weaknesses'],
+    content: `Week 44 Day ${i + 1}: Processing lessons from your first performance and addressing any issues.`,
+    exercises: [{
+      id: exerciseId(44, i + 1, 1),
+      title: 'Performance Learning',
+      description: 'Apply lessons from mock performance.',
+      abc_notation: `X:1\nT:Learning\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Learn from experience', 'Address specific issues'],
+      common_mistakes: ['Not reflecting on performance']
+    }],
+    checkpoint_criteria: i === 6 ? ['Weaknesses addressed', 'Improvement visible'] : undefined
+  }))
+}
+
+const week45: WeekContent = {
+  week_number: 45,
+  phase: 6,
+  title: 'Mock Performance #2 - Expanded Audience',
+  overview: 'Second performance with a slightly larger or different audience. Build on first performance experience.',
+  theory_concepts: ['Expanding comfort zone', 'Different audiences'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Planning Second Performance', 'Dress Rehearsal', 'Audience Visualization', 'Final Preparation', 'Rest Day', 'MOCK PERFORMANCE #2', 'Second Performance Debrief'][i],
+    objectives: ['Second real performance', 'Expanded audience'],
+    content: `Week 45 Day ${i + 1}: ${i === 5 ? '**MOCK PERFORMANCE #2** - Perform for an expanded audience!' : 'Preparing for your second performance.'}`,
+    exercises: [{
+      id: exerciseId(45, i + 1, 1),
+      title: i === 5 ? 'MOCK PERFORMANCE #2' : 'Performance Prep',
+      description: i === 5 ? 'Perform for expanded audience.' : 'Preparing for second mock performance.',
+      abc_notation: `X:1\nT:Mock Performance 2\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: [i === 5 ? 'Build on first performance' : 'Prepare thoroughly'],
+      common_mistakes: ['Staying in comfort zone']
+    }],
+    checkpoint_criteria: i === 6 ? ['Second performance completed', 'Growth from first'] : undefined
+  }))
+}
+
+const week46: WeekContent = {
+  week_number: 46,
+  phase: 6,
+  title: 'Performance Refinement',
+  overview: 'Two performances done. Refine based on what you\'ve learned. Prepare for your final mock performance.',
+  theory_concepts: ['Iteration', 'Performance polish'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Two Performances Review', 'Pattern Drilling', 'Performance Energy', 'Enjoyment Focus', 'Peak Performance Attempt', 'Consistency Check', 'Week 46 Checkpoint'][i],
+    objectives: ['Refine based on performances', 'Achieve peak performance'],
+    content: `Week 46 Day ${i + 1}: Refining your performance based on two real experiences.`,
+    exercises: [{
+      id: exerciseId(46, i + 1, 1),
+      title: 'Performance Refinement',
+      description: 'Peak performance work.',
+      abc_notation: `X:1\nT:Refinement\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: ['Learn from both performances', 'Find peak performance'],
+      common_mistakes: ['Not applying learnings']
+    }],
+    checkpoint_criteria: i === 6 ? ['Peak performance achievable', 'Ready for final mock'] : undefined
+  }))
+}
+
+const week47: WeekContent = {
+  week_number: 47,
+  phase: 6,
+  title: 'Mock Performance #3 - Dress Rehearsal',
+  overview: 'Final mock performance. Treat this as your dress rehearsal for the real debut. Everything counts.',
+  theory_concepts: ['Dress rehearsal', 'Final preparation'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Final Mock Planning', 'Full Dress Rehearsal', 'Confidence Solidification', 'Emergency Recovery', 'Pre-Performance Rest', 'DRESS REHEARSAL', 'Dress Rehearsal Debrief'][i],
+    objectives: ['Final dress rehearsal', 'Ready for debut'],
+    content: `Week 47 Day ${i + 1}: ${i === 5 ? '**DRESS REHEARSAL** - Final mock performance before your debut!' : 'Final preparation for your debut performance.'}`,
+    exercises: [{
+      id: exerciseId(47, i + 1, 1),
+      title: i === 5 ? 'DRESS REHEARSAL' : 'Final Prep',
+      description: i === 5 ? 'Final mock performance.' : 'Preparing for dress rehearsal.',
+      abc_notation: `X:1\nT:Dress Rehearsal\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: [i === 5 ? 'Treat as the real thing' : 'Everything counts'],
+      common_mistakes: ['Not taking dress rehearsal seriously']
+    }],
+    checkpoint_criteria: i === 6 ? ['Dress rehearsal completed', 'READY FOR DEBUT'] : undefined
+  }))
+}
+
+const week48: WeekContent = {
+  week_number: 48,
+  phase: 6,
+  title: 'PERFORMANCE DEBUT',
+  overview: 'This is it. Week 48. Your performance debut. 48 weeks of preparation culminate in this moment.',
+  theory_concepts: ['Performance', 'Achievement', 'Celebration'],
+  days: Array.from({ length: 7 }, (_, i) => ({
+    day_number: i + 1,
+    type: i === 0 ? 'info_dump' : i === 6 ? 'review' : 'practice' as const,
+    title: ['Debut Week', 'Maintenance Run', 'Mental Preparation', 'Trust Your Preparation', 'Rest and Prepare', 'PERFORMANCE DEBUT', 'PROGRAM COMPLETE!'][i],
+    objectives: [i === 5 ? 'PERFORM!' : i === 6 ? 'CELEBRATE!' : 'Prepare for debut'],
+    content: i === 5 ? `**THIS IS YOUR MOMENT.** 48 weeks of preparation. Go perform "Ol' 55" for real.` : 
+             i === 6 ? `**CONGRATULATIONS!** You completed the 48-week program. You can sing and play "Ol' 55." You are now a person who can perform piano and vocals. This is just the beginning.` :
+             `Week 48 Day ${i + 1}: Final preparation for your performance debut.`,
+    exercises: [{
+      id: exerciseId(48, i + 1, 1),
+      title: i === 5 ? 'PERFORMANCE DEBUT' : i === 6 ? 'CELEBRATION' : 'Debut Prep',
+      description: i === 5 ? 'Your debut performance!' : i === 6 ? 'You did it!' : 'Final preparation.',
+      abc_notation: `X:1\nT:${i === 5 ? 'DEBUT' : i === 6 ? 'COMPLETE' : 'Prep'}\nM:4/4\nL:1/4\nQ:1/4=74\nK:G\n[G,,][GBd]2 [D,] |]`,
+      target_tempo: 74,
+      tips: [i === 5 ? 'YOU DID IT!' : i === 6 ? 'CELEBRATE!' : 'Trust your preparation'],
+      common_mistakes: [i >= 5 ? 'Not celebrating enough' : 'Last-minute changes']
+    }],
+    checkpoint_criteria: i === 6 ? ['DEBUT COMPLETED', '48-WEEK PROGRAM COMPLETE', 'GOAL ACHIEVED', 'CONGRATULATIONS!'] : undefined
+  }))
+}
+
 // Combine into curriculum
 export const curriculum: Curriculum = {
   phases: [
@@ -6256,8 +6668,19 @@ export const curriculum: Curriculum = {
       name: 'Adding Voice',
       description: 'Singing while playing. The ultimate coordination challenge. You\'ll learn to perform, not just play.',
       weeks: [week25, week26, week27, week28, week29, week30, week31, week32]
+    },
+    {
+      number: 5,
+      name: 'Refinement',
+      description: 'Polish and perfect. Target tempo, smooth transitions, refined vocals and piano. Professional quality.',
+      weeks: [week33, week34, week35, week36, week37, week38, week39, week40]
+    },
+    {
+      number: 6,
+      name: 'Performance Preparation',
+      description: 'Mock performances, stage presence, and your debut. 48 weeks culminate in performing for real.',
+      weeks: [week41, week42, week43, week44, week45, week46, week47, week48]
     }
-    // Phases 5-6 would be added as curriculum expands
   ]
 }
 

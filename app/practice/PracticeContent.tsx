@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import ABCRenderer from '@/components/music/ABCRenderer'
 import KeyboardDiagram from '@/components/music/KeyboardDiagram'
+import VocalDemo from '@/components/practice/VocalDemo'
 import AppShell from '@/components/layout/AppShell'
 import type { WeekContent, DayContent } from '@/lib/curriculum/types'
 
@@ -20,6 +21,24 @@ interface PracticeContentProps {
   todaysPractice: any
   userId: string
   isReviewMode: boolean
+}
+
+// Determine which vocal section to show based on current week
+function getVocalSection(week: number): 'verse1' | 'verse2' | 'verse3' | 'chorus' | 'ending' | null {
+  // Phase 4: Adding Voice (weeks 25-32)
+  if (week >= 25 && week <= 26) return 'verse1'
+  if (week >= 27 && week <= 27) return 'verse1' // Full verse
+  if (week >= 28 && week <= 28) return 'chorus'
+  if (week >= 29 && week <= 32) return 'verse1' // Full song practice - start with verse1
+  
+  // Phase 5-6: Refinement and Performance (weeks 33-48)
+  // Rotate through sections to keep practice varied
+  if (week >= 33) {
+    const sections: ('verse1' | 'verse2' | 'verse3' | 'chorus')[] = ['verse1', 'chorus', 'verse2', 'verse3']
+    return sections[(week - 33) % 4]
+  }
+  
+  return null
 }
 
 export default function PracticeContent({
@@ -258,6 +277,25 @@ export default function PracticeContent({
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Vocal Demo - shown for Phase 4+ (weeks 25+) */}
+        {currentWeek >= 25 && getVocalSection(currentWeek) && (
+          <div className="mb-6 md:mb-8">
+            <h2 className="font-semibold text-midnight-800 text-lg md:text-xl mb-4">🎤 Vocal Reference</h2>
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 md:p-6 border border-purple-100">
+              <p className="text-sm text-purple-700 mb-4">
+                Listen to how the vocal melody should sound. Use this as a reference when practicing your singing.
+              </p>
+              <VocalDemo 
+                section={getVocalSection(currentWeek)!}
+                className="bg-white"
+              />
+              <p className="text-xs text-purple-500 mt-3">
+                💡 Powered by AI voice synthesis. The melody is your guide—make it your own!
+              </p>
+            </div>
           </div>
         )}
 
