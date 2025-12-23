@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import AddToHomeScreen from '@/components/onboarding/AddToHomeScreen'
 
-type Step = 'name' | 'background' | 'equipment' | 'schedule'
+type Step = 'name' | 'background' | 'equipment' | 'schedule' | 'install'
 
 export default function OnboardingPage() {
   const router = useRouter()
@@ -29,7 +30,7 @@ export default function OnboardingPage() {
     return nextMonday.toISOString().split('T')[0]
   }
 
-  const handleSubmit = async () => {
+  const saveProfileAndSendEmail = async () => {
     setLoading(true)
     
     const { data: { user } } = await supabase.auth.getUser()
@@ -62,11 +63,32 @@ export default function OnboardingPage() {
       return
     }
 
+    // Send welcome email
+    try {
+      await fetch('/api/email/welcome', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: user.email,
+          displayName: formData.display_name,
+          startDate: formData.start_date
+        })
+      })
+    } catch (emailError) {
+      // Don't block onboarding if email fails
+      console.error('Welcome email failed:', emailError)
+    }
+
+    setLoading(false)
+    setStep('install')
+  }
+
+  const handleComplete = () => {
     router.push('/dashboard')
   }
 
   const nextStep = () => {
-    const steps: Step[] = ['name', 'background', 'equipment', 'schedule']
+    const steps: Step[] = ['name', 'background', 'equipment', 'schedule', 'install']
     const currentIndex = steps.indexOf(step)
     if (currentIndex < steps.length - 1) {
       setStep(steps[currentIndex + 1])
@@ -74,7 +96,7 @@ export default function OnboardingPage() {
   }
 
   const prevStep = () => {
-    const steps: Step[] = ['name', 'background', 'equipment', 'schedule']
+    const steps: Step[] = ['name', 'background', 'equipment', 'schedule', 'install']
     const currentIndex = steps.indexOf(step)
     if (currentIndex > 0) {
       setStep(steps[currentIndex - 1])
@@ -87,20 +109,23 @@ export default function OnboardingPage() {
       case 'background': return formData.musical_background !== ''
       case 'equipment': return formData.equipment !== ''
       case 'schedule': return formData.practice_time_preference !== ''
+      case 'install': return true
       default: return false
     }
   }
+
+  const stepsList: Step[] = ['name', 'background', 'equipment', 'schedule', 'install']
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-whiskey-50 to-whiskey-100 flex items-center justify-center px-4">
       <div className="w-full max-w-lg">
         <div className="flex justify-center gap-2 mb-8">
-          {['name', 'background', 'equipment', 'schedule'].map((s) => (
+          {stepsList.map((s) => (
             <div
               key={s}
               className={`w-3 h-3 rounded-full ${
                 s === step ? 'bg-whiskey-600' : 
-                ['name', 'background', 'equipment', 'schedule'].indexOf(s) < ['name', 'background', 'equipment', 'schedule'].indexOf(step) 
+                stepsList.indexOf(s) < stepsList.indexOf(step) 
                   ? 'bg-whiskey-400' : 'bg-whiskey-200'
               }`}
             />
@@ -225,36 +250,46 @@ export default function OnboardingPage() {
             </div>
           )}
 
-          <div className="flex justify-between mt-8 pt-6 border-t border-midnight-100">
-            {step !== 'name' ? (
-              <button
-                onClick={prevStep}
-                className="px-6 py-2 text-midnight-600 hover:text-midnight-800 font-medium"
-              >
-                Back
-              </button>
-            ) : (
-              <div />
-            )}
-            
-            {step === 'schedule' ? (
-              <button
-                onClick={handleSubmit}
-                disabled={!canProceed() || loading}
-                className="px-8 py-3 bg-whiskey-600 hover:bg-whiskey-700 disabled:bg-whiskey-400 text-white font-semibold rounded-lg transition-colors"
-              >
-                {loading ? 'Setting up...' : 'Start Learning'}
-              </button>
-            ) : (
-              <button
-                onClick={nextStep}
-                disabled={!canProceed()}
-                className="px-8 py-3 bg-whiskey-600 hover:bg-whiskey-700 disabled:bg-whiskey-400 text-white font-semibold rounded-lg transition-colors"
-              >
-                Continue
-              </button>
-            )}
-          </div>
+          {step === 'install' && (
+            <AddToHomeScreen 
+              onSkip={handleComplete}
+              onComplete={handleComplete}
+              showSkip={true}
+            />
+          )}
+
+          {step !== 'install' && (
+            <div className="flex justify-between mt-8 pt-6 border-t border-midnight-100">
+              {step !== 'name' ? (
+                <button
+                  onClick={prevStep}
+                  className="px-6 py-2 text-midnight-600 hover:text-midnight-800 font-medium"
+                >
+                  Back
+                </button>
+              ) : (
+                <div />
+              )}
+              
+              {step === 'schedule' ? (
+                <button
+                  onClick={saveProfileAndSendEmail}
+                  disabled={!canProceed() || loading}
+                  className="px-8 py-3 bg-whiskey-600 hover:bg-whiskey-700 disabled:bg-whiskey-400 text-white font-semibold rounded-lg transition-colors"
+                >
+                  {loading ? 'Setting up...' : 'Continue'}
+                </button>
+              ) : (
+                <button
+                  onClick={nextStep}
+                  disabled={!canProceed()}
+                  className="px-8 py-3 bg-whiskey-600 hover:bg-whiskey-700 disabled:bg-whiskey-400 text-white font-semibold rounded-lg transition-colors"
+                >
+                  Continue
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </main>
